@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://p6tjrvvo02cv"]
+
+[ext_resource type="AudioStream" uid="uid://55emgq1y6ng5" path="res://Assets/Music/layer01.wav" id="1_fqpxi"]
+[ext_resource type="AudioStream" uid="uid://dyhm1js4tpdme" path="res://Assets/Music/layer02.wav" id="2_4thc6"]
+[ext_resource type="AudioStream" uid="uid://cpk3hhvdmk6sg" path="res://Assets/Music/layer03.wav" id="3_k46ri"]
+[ext_resource type="AudioStream" uid="uid://c7mbicn3eojwa" path="res://Assets/Music/layer04.wav" id="4_etkin"]
+[ext_resource type="AudioStream" uid="uid://dhcginvcbxbs5" path="res://Assets/Music/layer05.wav" id="5_fkw8n"]
+[ext_resource type="Script" uid="uid://cmf1gjob6rhg8" path="res://Scripts/audio.gd" id="6_4thc6"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_e0u3b"]
+stream_count = 5
+stream_0/stream = ExtResource("1_fqpxi")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("2_4thc6")
+stream_1/volume = 0.0
+stream_2/stream = ExtResource("3_k46ri")
+stream_2/volume = 0.0
+stream_3/stream = ExtResource("4_etkin")
+stream_3/volume = 0.0
+stream_4/stream = ExtResource("5_fkw8n")
+stream_4/volume = 0.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=970392893]
+stream = SubResource("AudioStreamSynchronized_e0u3b")
+autoplay = true
+script = ExtResource("6_4thc6")
