@@ -1,37 +1,37 @@
-[gd_scene format=3 uid="uid://cy4jy5bo3mre4"]
+[gd_scene format=3 uid="uid://bv8htic037but"]
 
-[ext_resource type="Script" path="res://Scripts/interactable_character.gd" id="1_voxju"]
-[ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_a4vga"]
-[ext_resource type="Script" uid="uid://dvdef5j3i8kfd" path="res://Scripts/DialogueCommands/ActionCommand.gd" id="3_4ia6t"]
-[ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_le64h"]
-[ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_7ougv"]
-[ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/blackbeltf_spritesheet.png" id="6_mrduy"]
+[ext_resource type="Script" path="res://Scripts/interactable_character.gd" id="1_ikp3f"]
+[ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_r524b"]
+[ext_resource type="Script" uid="uid://dvdef5j3i8kfd" path="res://Scripts/DialogueCommands/ActionCommand.gd" id="3_n4nio"]
+[ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_noo06"]
+[ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_mscfv"]
+[ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/blackbeltf_spritesheet.png" id="6_4352s"]
 
 [sub_resource type="Resource" id="Resource_4teau"]
-script = ExtResource("2_a4vga")
+script = ExtResource("2_r524b")
 metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 
 [sub_resource type="Resource" id="Resource_et4wj"]
-script = ExtResource("3_4ia6t")
+script = ExtResource("3_n4nio")
 metadata/_custom_type_script = "uid://dvdef5j3i8kfd"
 
 [sub_resource type="Resource" id="Resource_021n5"]
-script = ExtResource("2_a4vga")
+script = ExtResource("2_r524b")
 followupCommand = SubResource("Resource_et4wj")
 metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 
 [sub_resource type="Resource" id="Resource_shgqj"]
-script = ExtResource("4_le64h")
+script = ExtResource("4_noo06")
 text = "This is when you choose option 2"
 next_conversation = SubResource("Resource_021n5")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
 [sub_resource type="Resource" id="Resource_mwvus"]
-script = ExtResource("2_a4vga")
+script = ExtResource("2_r524b")
 metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 
 [sub_resource type="Resource" id="Resource_u23te"]
-script = ExtResource("5_7ougv")
+script = ExtResource("5_mscfv")
 text = "What should you choose?"
 button1text = "Interesting"
 button1followup = SubResource("Resource_4teau")
@@ -42,19 +42,19 @@ button3followup = SubResource("Resource_mwvus")
 metadata/_custom_type_script = "uid://dqfr480su1o7h"
 
 [sub_resource type="Resource" id="Resource_5455w"]
-script = ExtResource("4_le64h")
+script = ExtResource("4_noo06")
 text = "This is the first dialogue"
 next_conversation = SubResource("Resource_u23te")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wict8"]
 
-[node name="Home_CD_Player" type="StaticBody2D" unique_id=558507055]
-script = ExtResource("1_voxju")
+[node name="Station_Train_Door" type="StaticBody2D" unique_id=558507055]
+script = ExtResource("1_ikp3f")
 dialogue = SubResource("Resource_5455w")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
-texture = ExtResource("6_mrduy")
+texture = ExtResource("6_4352s")
 hframes = 3
 vframes = 4
 

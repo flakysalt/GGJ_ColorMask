@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wict8"]
 
-[node name="FastFood_Waiter" type="StaticBody2D" unique_id=558507055]
+[node name="FastFood_Interface" type="StaticBody2D" unique_id=558507055]
 script = ExtResource("1_pqb1v")
 dialogue = SubResource("Resource_7p1o6")
 
