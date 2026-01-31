@@ -5,16 +5,16 @@
 [resource]
 shader = ExtResource("1_i3b7o")
 shader_parameter/show_reds = false
-shader_parameter/show_oranges = false
-shader_parameter/show_yellows = false
-shader_parameter/show_greens = false
+shader_parameter/show_oranges = true
+shader_parameter/show_yellows = true
+shader_parameter/show_greens = true
 shader_parameter/show_cyans = false
 shader_parameter/show_blues = false
 shader_parameter/show_magentas = false
 shader_parameter/red_saturation = 1.0
-shader_parameter/orange_saturation = 1.0
-shader_parameter/yellow_saturation = 1.0
-shader_parameter/green_saturation = 1.0
+shader_parameter/orange_saturation = 0.18000000855
+shader_parameter/yellow_saturation = 0.170000008075
+shader_parameter/green_saturation = 0.138000006555
 shader_parameter/cyan_saturation = 1.0
 shader_parameter/blue_saturation = 1.0
 shader_parameter/magenta_saturation = 1.0

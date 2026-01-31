@@ -1,25 +1,62 @@
 extends Control
+class_name UiSystem
 
+var nextCommand : DialogueCommand
 
-# Called when the node enters the scene tree for the first time.
+var button1Command : DialogueCommand
+var button2Command : DialogueCommand
+var button3Command : DialogueCommand
+
+@export var button1 : Button
+@export var button2 : Button
+@export var button3 : Button
+
 func _ready() -> void:
-	pass # Replace with function body.
+	add_to_group("ui_system")
 
-func show_text(text: String):
-	$VBoxContainer/RichTextLabel.text= text
-	$AnimationPlayer.play("DisplayText")
+func show_dialogue(command: DialogueCommand):
+	visible = true
+	$AnimationPlayer.stop()
+
+	$VBoxContainer/AnsweButtons.visible = false
+	if(command is ChoiceConversationCommand):
+		$VBoxContainer/AnsweButtons.visible = true
+		nextCommand = null
+		button1Command = command.button1followup
+		button2Command = command.button2followup
+		button3Command = command.button3followup
+		button1.text = command.button1text
+		button2.text = command.button2text
+		button3.text = command.button3text
+
+		button1.visible = command.button1followup != null
+		button2.visible = command.button2followup != null
+		button3.visible = command.button3followup != null
+		$VBoxContainer/RichTextLabel.text= command.text
+		$AnimationPlayer.play("DisplayText")
 	pass
+	
+	if(command is ContinueConversationCommand):
+		nextCommand = command.next_conversation
+		$VBoxContainer/RichTextLabel.text= command.text
+		$AnimationPlayer.play("DisplayText")
+	pass
+
+func close_conversation():
+	#make player move again
+	visible =false
 	
 func _on_color_rect_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		print("Left click!")
-
-
-func show_placeholder():
-	var test = "This is a long long test text.\n It even [b]supports [i]styling like this [/i] [/b]\n sounds crazy but works just like this"
-	show_text(test)
-
+		if $AnimationPlayer.is_playing():
+			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
+			return
+		if nextCommand != null:
+			nextCommand.execute(self)
 
 func _on_button_pressed() -> void:
-	show_placeholder()
-	pass # Replace with function body.
+	button1Command.execute(self)
+func _on_button_2_pressed() -> void:
+	button2Command.execute(self)
+func _on_button_3_pressed() -> void:
+	button3Command.execute(self)

@@ -54,14 +54,15 @@ func handle_interact():
 	if currentInteractable != null && Input.is_action_just_pressed("interact"):
 		currentInteractable.interact()
 
-func interact(body: Node2D):
+func interactwith(body: Node2D):
+	print(body.name)
 	if(body.has_method("interact")):
 		currentInteractable = body
 
 func _on_interact_area_area_entered(area: Area2D) -> void:
-	interact(area)
+	interactwith(area)
 func _on_interact_area_body_entered(body: Node2D) -> void:
-	interact(body)
+	interactwith(body)
 func _on_interact_area_body_exited(body: Node2D) -> void:
 	if body == currentInteractable:
 		currentInteractable = null

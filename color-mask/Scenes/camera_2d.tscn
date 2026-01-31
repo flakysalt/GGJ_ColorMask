@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://bkbs2n6dut4qb"]
 
+[ext_resource type="Script" uid="uid://cujxt21wtuw7u" path="res://Scripts/camera.gd" id="1_ev1no"]
 [ext_resource type="Material" uid="uid://co7gks0f6squa" path="res://Assets/Shader/camera_mat_color_curve.tres" id="1_omgnx"]
+[ext_resource type="Script" uid="uid://cpjcc8nwd2tu1" path="res://Scripts/debug_ui.gd" id="3_0e4st"]
 
 [node name="Camera2D" type="Camera2D" unique_id=1035717600]
 zoom = Vector2(7, 7)
+script = ExtResource("1_ev1no")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=838548264]
 
@@ -15,3 +18,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="DebugUi" type="CanvasLayer" parent="." unique_id=1006461937 node_paths=PackedStringArray("camera")]
+script = ExtResource("3_0e4st")
+camera = NodePath("..")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DebugUi" unique_id=1039176053]
+anchors_preset = -1
+anchor_left = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ColorButton" type="Button" parent="DebugUi/VBoxContainer" unique_id=579642943]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "AllColors"
+
+[node name="GreyButton" type="Button" parent="DebugUi/VBoxContainer" unique_id=1942528997]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Full Grey"
+
+[connection signal="pressed" from="DebugUi/VBoxContainer/ColorButton" to="DebugUi" method="_on_color_button_pressed"]
+[connection signal="pressed" from="DebugUi/VBoxContainer/GreyButton" to="DebugUi" method="_on_grey_button_pressed"]
