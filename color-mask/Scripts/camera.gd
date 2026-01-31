@@ -6,7 +6,7 @@ class_name ShaderCamera
 
 # Define presets as dictionaries
 var presets = {
-	"all_colors": {
+	GlobalStateClass.MaskState.Full: {
 		"show_reds": true,
 		"show_oranges": true,
 		"show_yellows": true,
@@ -22,7 +22,7 @@ var presets = {
 		"blue_saturation": 1.0,
 		"magenta_saturation": 1.0
 	},
-	"grayscale": {
+	GlobalStateClass.MaskState.Grey: {
 		"show_reds": false,
 		"show_oranges": false,
 		"show_yellows": false,
@@ -37,15 +37,32 @@ var presets = {
 		"cyan_saturation": 0.0,
 		"blue_saturation": 0.0,
 		"magenta_saturation": 0.0
-	}
+	},
+	GlobalStateClass.MaskState.One: {
+		"show_reds": false,
+		"show_oranges": false,
+		"show_yellows": false,
+		"show_greens": true,
+		"show_cyans": true,
+		"show_blues": false,
+		"show_magentas": false,
+		"red_saturation": 1.0,
+		"orange_saturation": 1.0,
+		"yellow_saturation": 1.0,
+		"green_saturation": 1.0,
+		"cyan_saturation": 1.0,
+		"blue_saturation": 1.0,
+		"magenta_saturation": 1.0
+	},
+	
 }
 
 func _ready():
 	add_to_group("camera")
-	apply_preset("all_colors")
+	apply_preset(GlobalStateClass.MaskState.Full)
 
 # Apply a preset by name
-func apply_preset(preset_name: String):
+func apply_preset(preset_name: GlobalStateClass.MaskState):
 	if not presets.has(preset_name):
 		push_error("Preset '%s' not found!" % preset_name)
 		return
@@ -55,7 +72,7 @@ func apply_preset(preset_name: String):
 		shader_material.set_shader_parameter(param_name, preset[param_name])
 
 # Example: gradually transition between presets
-func transition_to_preset(preset_name: String, duration: float = 1.0):
+func transition_to_preset(preset_name: GlobalStateClass.MaskState, duration: float = 1.0):
 	if not presets.has(preset_name):
 		push_error("Preset '%s' not found!" % preset_name)
 		return

@@ -5,6 +5,8 @@ class_name PlayerCharacter
 @export var step_length : int = 50
 @export var use_smooth_movement :bool
 
+var impulse_velocity : Vector2 = Vector2.ZERO
+
 var state : State
 var currentInteractable
 var goal_movement_position : Vector2
@@ -40,7 +42,8 @@ func _process(delta: float) -> void:
 		State.Walking:
 			handle_movement(delta)
 		State.SmoothMovement:
-			velocity = inputVector * speed
+			velocity = inputVector * speed + impulse_velocity
+			impulse_velocity = impulse_velocity.lerp(Vector2.ZERO, 5 * delta)  # Decay over time
 			move_and_slide()
 	pass
 	

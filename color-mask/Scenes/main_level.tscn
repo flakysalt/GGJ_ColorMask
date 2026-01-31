@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://ca1e7m4k4nre4" path="res://Scenes/player.tscn" id="3_qbrl8"]
 [ext_resource type="PackedScene" uid="uid://bua23yprvvx5w" path="res://Scenes/interactable_character.tscn" id="5_a2ia3"]
 [ext_resource type="PackedScene" uid="uid://b71wrw204jeu8" path="res://Scenes/conversation_system.tscn" id="6_236hc"]
+[ext_resource type="PackedScene" uid="uid://bjscxbuyk4rgr" path="res://Scenes/SceneTransition.tscn" id="7_lwkuy"]
+[ext_resource type="PackedScene" uid="uid://bpi50q0p2380m" path="res://Scenes/push_zone.tscn" id="8_tqiex"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5erdv"]
 shader = ExtResource("1_ikcpc")
@@ -42,3 +44,13 @@ position = Vector2(-69, 0)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1092367271]
 
 [node name="ConversationSystem" parent="CanvasLayer" unique_id=2006110401 instance=ExtResource("6_236hc")]
+
+[node name="SceneTransition" parent="." unique_id=1734695462 instance=ExtResource("7_lwkuy")]
+position = Vector2(-46, 35)
+
+[node name="PushZone" parent="." unique_id=933193684 instance=ExtResource("8_tqiex")]
+position = Vector2(-46, -35)
+id_to_deactivate = "aa"
+push_speed = 150.0
+
+[editable path="Player/Camera2D"]
