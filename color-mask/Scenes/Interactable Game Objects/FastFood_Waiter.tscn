@@ -43,7 +43,8 @@ metadata/_custom_type_script = "uid://dqfr480su1o7h"
 
 [sub_resource type="Resource" id="Resource_5455w"]
 script = ExtResource("4_cqna8")
-text = "This is the first dialogue"
+text = "Here is your food. Enjoy your meal and have a nice and colorful day."
+speaker = "Waiter"
 next_conversation = SubResource("Resource_u23te")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 

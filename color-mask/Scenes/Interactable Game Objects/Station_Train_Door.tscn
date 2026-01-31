@@ -7,51 +7,56 @@
 [ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_mscfv"]
 [ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/blackbeltf_spritesheet.png" id="6_4352s"]
 
-[sub_resource type="Resource" id="Resource_4teau"]
+[sub_resource type="Resource" id="Resource_ikp3f"]
 script = ExtResource("2_r524b")
 metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 
-[sub_resource type="Resource" id="Resource_et4wj"]
+[sub_resource type="Resource" id="Resource_r524b"]
+script = ExtResource("4_noo06")
+text = "I wish I could go visit the nature reserve. But I don't dare to go alone."
+speaker = "Me"
+next_conversation = SubResource("Resource_ikp3f")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_n4nio"]
 script = ExtResource("3_n4nio")
 metadata/_custom_type_script = "uid://dvdef5j3i8kfd"
 
-[sub_resource type="Resource" id="Resource_021n5"]
+[sub_resource type="Resource" id="Resource_noo06"]
 script = ExtResource("2_r524b")
-followupCommand = SubResource("Resource_et4wj")
+followupCommand = SubResource("Resource_n4nio")
 metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 
-[sub_resource type="Resource" id="Resource_shgqj"]
+[sub_resource type="Resource" id="Resource_mscfv"]
 script = ExtResource("4_noo06")
-text = "This is when you choose option 2"
-next_conversation = SubResource("Resource_021n5")
+text = "You leave town for a day trip to the nature reserve with your friend.
+
+YOU'VE WON THE GAME!"
+speaker = "Me"
+next_conversation = SubResource("Resource_noo06")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
-[sub_resource type="Resource" id="Resource_mwvus"]
+[sub_resource type="Resource" id="Resource_4352s"]
 script = ExtResource("2_r524b")
 metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 
-[sub_resource type="Resource" id="Resource_u23te"]
+[sub_resource type="Resource" id="Resource_wsajx"]
 script = ExtResource("5_mscfv")
-text = "What should you choose?"
-button1text = "Interesting"
-button1followup = SubResource("Resource_4teau")
-button2text = "Tell me more"
-button2followup = SubResource("Resource_shgqj")
-button3text = "Leave me alone"
-button3followup = SubResource("Resource_mwvus")
+text = "This train leaves for the nature reserve. "
+speaker = "Me"
+button1text = "Examine"
+button1followup = SubResource("Resource_r524b")
+button2text = "Board the Train"
+button2followup = SubResource("Resource_mscfv")
+button3text = "Leave"
+button3followup = SubResource("Resource_4352s")
 metadata/_custom_type_script = "uid://dqfr480su1o7h"
-
-[sub_resource type="Resource" id="Resource_5455w"]
-script = ExtResource("4_noo06")
-text = "This is the first dialogue"
-next_conversation = SubResource("Resource_u23te")
-metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wict8"]
 
 [node name="Station_Train_Door" type="StaticBody2D" unique_id=558507055]
 script = ExtResource("1_ikp3f")
-dialogue = SubResource("Resource_5455w")
+dialogue = SubResource("Resource_wsajx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
 texture = ExtResource("6_4352s")

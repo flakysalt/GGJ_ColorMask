@@ -1,11 +1,26 @@
 [gd_scene format=3 uid="uid://xidpyncasgfa"]
 
 [ext_resource type="Script" path="res://Scripts/interactable_character.gd" id="1_kxxmc"]
+[ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_r47cc"]
 [ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_t7tdp"]
 [ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/blackbeltf_spritesheet.png" id="6_0wock"]
 
+[sub_resource type="Resource" id="Resource_otow8"]
+script = ExtResource("2_r47cc")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_kxxmc"]
+script = ExtResource("2_r47cc")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
 [sub_resource type="Resource" id="Resource_sydo8"]
 script = ExtResource("5_t7tdp")
+text = "Hi, there you are. The train is leaving shortly. Let's go! I'll board the train right behind you. "
+speaker = "Friend"
+button1text = "Not yet"
+button1followup = SubResource("Resource_otow8")
+button2text = "Let's go!"
+button2followup = SubResource("Resource_kxxmc")
 metadata/_custom_type_script = "uid://dqfr480su1o7h"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wict8"]
