@@ -1,5 +1,34 @@
-[gd_scene format=3 uid="uid://bbeju8ot4mhyi"]
+[gd_scene format=4 uid="uid://bbeju8ot4mhyi"]
+
+[ext_resource type="Shader" uid="uid://cc7d1ybmuywqp" path="res://Assets/Shader/isolate_color.gdshader" id="1_ikcpc"]
+[ext_resource type="TileSet" uid="uid://bjk4xfx3sjbfa" path="res://Assets/forest_tileset.tres" id="2_ikcpc"]
+[ext_resource type="PackedScene" uid="uid://bkbs2n6dut4qb" path="res://Scenes/camera_2d.tscn" id="3_5erdv"]
+[ext_resource type="PackedScene" uid="uid://ca1e7m4k4nre4" path="res://Scenes/player.tscn" id="3_qbrl8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5erdv"]
+shader = ExtResource("1_ikcpc")
+shader_parameter/hide = true
+shader_parameter/color = Color(0.25441423, 0.5433338, 0.04846759, 1)
+shader_parameter/strength = 0.575
+shader_parameter/saturation = 0.3090000146775
 
 [node name="MainLevel" type="Node2D" unique_id=450960749]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1642172785]
+material = SubResource("ShaderMaterial_5erdv")
+tile_map_data = PackedByteArray("AAAAAPz/AAAAAAAAAAACAPz/AAAAAAAAAAAFAPz/AAAAAAAAAAAIAPz/AAAAAAAAAAAAAP//AAAFAAEAAAABAP//AAAFAAEAAAACAP//AAAFAAEAAAADAP//AAAGAAEAAAADAAAAAAAFAAIAAAAEAAAAAAAGAAIAAAAFAAAAAAAFAAIAAAAGAAAAAAAFAAIAAAAHAAAAAAAFAAIAAAAIAAAAAAAHAAIAAAAJAAAAAAADAAEAAAAKAAAAAAAEAAIAAAAJAP//AAADAAAAAAAIAP//AAAHAAEAAAAHAP//AAAGAAEAAAAGAP//AAAGAAEAAAAFAP//AAAGAAEAAAAEAP//AAAGAAEAAAABAAAAAAAGAAIAAAAAAAAAAAAFAAIAAAACAAAAAAAFAAIAAAAKAP//AAAHAAEAAAALAP//AAAFAAAAAAALAAAAAAAHAAIAAAALAAEAAAAHAAMAAAAKAAEAAAAHAAMAAAAJAAEAAAAHAAEAAAAIAAEAAAAFAAQAAAAHAAEAAAAGAAMAAAAGAAEAAAAFAAMAAAAFAAEAAAAFAAMAAAAEAAEAAAAGAAMAAAD//wAAAAAEAAIAAAD/////AAAEAAEAAAD//wEAAAAEAAMAAAAAAAEAAAAFAAMAAAABAAEAAAAFAAMAAAACAAEAAAAGAAMAAAADAAEAAAAGAAMAAAAMAP//AAAHAAAAAAAMAAAAAAAHAAAAAAAMAAEAAAAHAAAAAAANAAEAAAAHAAAAAAAOAAEAAAAHAAAAAAAPAAEAAAAHAAAAAAAPAAAAAAAHAAAAAAAPAP//AAAHAAAAAAAPAP7/AAAHAAAAAAAOAP7/AAAHAAAAAAANAP7/AAAHAAAAAAAMAP7/AAAHAAAAAAAMAP3/AAAHAAAAAAALAP3/AAAHAAAAAAAKAP3/AAAHAAAAAAAKAP7/AAAHAAAAAAAHAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAANAAMAAAAAAAAAAAAJAAIAAAAHAAMAAAAIAAIAAAAEAAMAAAA=")
+tile_set = ExtResource("2_ikcpc")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1159125784]
+tile_map_data = PackedByteArray("AAAJAP//AAACAAQAAAAGAAAAAAAFAAUAAAADAAAAAAAGAAUAAAAAAAEAAAAHAAYAAAA=")
+tile_set = ExtResource("2_ikcpc")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=694400388]
+tile_map_data = PackedByteArray("AAD//wEAAAABAAUAAAAAAAEAAAABAAUAAAABAP//AAABAAUAAAACAP//AAABAAUAAAACAAEAAAABAAUAAAABAAEAAAABAAUAAAA=")
+tile_set = ExtResource("2_ikcpc")
+
+[node name="Player" parent="." unique_id=833487810 instance=ExtResource("3_qbrl8")]
+position = Vector2(8, 8)
+speed = 30
+
+[node name="Camera2D" parent="Player" unique_id=1035717600 instance=ExtResource("3_5erdv")]

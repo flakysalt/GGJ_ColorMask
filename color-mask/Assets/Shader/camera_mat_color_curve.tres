@@ -1,0 +1,28 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://co7gks0f6squa"]
+
+[ext_resource type="Shader" uid="uid://dhefesmfnga8f" path="res://Assets/Shader/color_curve_screenspace.gdshader" id="1_i3b7o"]
+
+[resource]
+shader = ExtResource("1_i3b7o")
+shader_parameter/show_reds = false
+shader_parameter/show_oranges = false
+shader_parameter/show_yellows = false
+shader_parameter/show_greens = false
+shader_parameter/show_cyans = false
+shader_parameter/show_blues = false
+shader_parameter/show_magentas = false
+shader_parameter/red_saturation = 1.0
+shader_parameter/orange_saturation = 1.0
+shader_parameter/yellow_saturation = 1.0
+shader_parameter/green_saturation = 1.0
+shader_parameter/cyan_saturation = 1.0
+shader_parameter/blue_saturation = 1.0
+shader_parameter/magenta_saturation = 1.0
+shader_parameter/red_hue_center = 0.0
+shader_parameter/orange_hue_center = 0.083
+shader_parameter/yellow_hue_center = 0.167
+shader_parameter/green_hue_center = 0.333
+shader_parameter/cyan_hue_center = 0.5
+shader_parameter/blue_hue_center = 0.667
+shader_parameter/magenta_hue_center = 0.833
+shader_parameter/hue_range = 0.083

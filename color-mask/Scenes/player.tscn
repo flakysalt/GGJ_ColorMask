@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cw411bnd1130" path="res://Scripts/player.gd" id="1_v0iea"]
 [ext_resource type="Shader" uid="uid://cc7d1ybmuywqp" path="res://Assets/Shader/isolate_color.gdshader" id="2_6t5aa"]
-[ext_resource type="Texture2D" uid="uid://5dqx6kmjyuri" path="res://icon.svg" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://t4i3f3e5uhb2" path="res://Assets/Placeholder/thieff_spritesheet.png" id="3_6t5aa"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vgqql"]
 shader = ExtResource("2_6t5aa")
@@ -12,17 +12,22 @@ shader_parameter/strength = 0.2
 shader_parameter/saturation = 1.0000000475
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
+radius = 7.9
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6t5aa"]
 radius = 20.0
 
 [node name="Player" type="CharacterBody2D" unique_id=833487810]
 script = ExtResource("1_v0iea")
+speed = 10
+step_length = 16
 use_smooth_movement = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1555008638]
 material = SubResource("ShaderMaterial_vgqql")
-texture = ExtResource("2_cvnsp")
+texture = ExtResource("3_6t5aa")
+hframes = 3
+vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1708319619]
 shape = SubResource("CircleShape2D_cvnsp")

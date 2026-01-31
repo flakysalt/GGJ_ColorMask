@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bkbs2n6dut4qb"]
+
+[ext_resource type="Material" uid="uid://co7gks0f6squa" path="res://Assets/Shader/camera_mat_color_curve.tres" id="1_omgnx"]
+
+[node name="Camera2D" type="Camera2D" unique_id=1035717600]
+zoom = Vector2(7, 7)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=838548264]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1020675818]
+material = ExtResource("1_omgnx")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

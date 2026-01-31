@@ -14,6 +14,10 @@ config/name="ColorMask"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/always_on_top=true
+
 [input]
 
 move_up={
@@ -53,4 +57,5 @@ click={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
