@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" format=3 uid="uid://bgbpuxk8ywscj"]
+
+[ext_resource type="FontVariation" uid="uid://bmjk3k8seyiks" path="res://Assets/Font/font_bold.tres" id="1_goc4i"]
+
+[resource]
+base_font = ExtResource("1_goc4i")
+variation_embolden = 1.0

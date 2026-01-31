@@ -1,0 +1,192 @@
+[gd_scene format=3 uid="uid://b71wrw204jeu8"]
+
+[ext_resource type="Script" uid="uid://ckd7hel7p133f" path="res://Scripts/conversation_system.gd" id="1_1luoo"]
+[ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="2_s4hv8"]
+[ext_resource type="FontFile" uid="uid://n2lo0cj6uqjw" path="res://Assets/Font/ci-gamedev-font.ttf" id="2_u3yxg"]
+[ext_resource type="FontVariation" uid="uid://bgbpuxk8ywscj" path="res://Assets/Font/font_bold_italic.tres" id="3_x3o2n"]
+[ext_resource type="FontVariation" uid="uid://dw8bu4mckbpml" path="res://Assets/Font/font_italic.tres" id="4_8aew3"]
+
+[sub_resource type="FontVariation" id="FontVariation_x3o2n"]
+base_font = ExtResource("3_x3o2n")
+variation_embolden = 1.0
+variation_transform = Transform2D(1, 0.3, 0, 1, 0, 0)
+
+[sub_resource type="Animation" id="Animation_1luoo"]
+resource_name = "DisplayText"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_s4hv8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u3yxg"]
+_data = {
+&"DisplayText": SubResource("Animation_1luoo"),
+&"RESET": SubResource("Animation_s4hv8")
+}
+
+[node name="ConversationSystem" type="Control" unique_id=2006110401]
+layout_mode = 3
+anchor_top = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_1luoo")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1879298935]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11858138, 0.11858138, 0.11858138, 1)
+
+[node name="ReferenceRect" type="ReferenceRect" parent="ColorRect" unique_id=2084926302]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+border_color = Color(1, 1, 1, 1)
+border_width = 10.0
+editor_only = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=936177990]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.1
+anchor_right = 0.95
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=498817508]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_u3yxg")
+theme_override_font_sizes/font_size = 50
+text = "Testname"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=1956392314]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_u3yxg")
+theme_override_fonts/bold_font = ExtResource("3_x3o2n")
+theme_override_fonts/bold_italics_font = SubResource("FontVariation_x3o2n")
+theme_override_fonts/italics_font = ExtResource("4_8aew3")
+theme_override_font_sizes/normal_font_size = 38
+theme_override_font_sizes/bold_font_size = 38
+theme_override_font_sizes/bold_italics_font_size = 38
+theme_override_font_sizes/italics_font_size = 38
+theme_override_font_sizes/mono_font_size = 38
+bbcode_enabled = true
+text = "this is a [b]test [i]another[/i][/b][i] italic[/i]"
+script = ExtResource("2_s4hv8")
+
+[node name="AnsweButtons" type="HBoxContainer" parent="VBoxContainer" unique_id=230214348]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/AnsweButtons" unique_id=2048409295]
+layout_mode = 2
+text = "Answer 1"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="VBoxContainer/AnsweButtons/Button" unique_id=1560117882]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+border_color = Color(1, 1, 1, 1)
+border_width = 5.0
+editor_only = false
+
+[node name="Button2" type="Button" parent="VBoxContainer/AnsweButtons" unique_id=341391084]
+layout_mode = 2
+text = "Answer 1"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="VBoxContainer/AnsweButtons/Button2" unique_id=1050013414]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+border_color = Color(1, 1, 1, 1)
+border_width = 5.0
+editor_only = false
+
+[node name="Button3" type="Button" parent="VBoxContainer/AnsweButtons" unique_id=1538796789]
+layout_mode = 2
+text = "Answer 1"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="VBoxContainer/AnsweButtons/Button3" unique_id=2080737056]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+border_color = Color(1, 1, 1, 1)
+border_width = 5.0
+editor_only = false
+
+[node name="Button4" type="Button" parent="VBoxContainer/AnsweButtons" unique_id=764925029]
+layout_mode = 2
+text = "Answer 1"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="VBoxContainer/AnsweButtons/Button4" unique_id=430136294]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+border_color = Color(1, 1, 1, 1)
+border_width = 5.0
+editor_only = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1125371387]
+libraries/ = SubResource("AnimationLibrary_u3yxg")
+
+[connection signal="gui_input" from="ColorRect" to="." method="_on_color_rect_gui_input"]
+[connection signal="pressed" from="VBoxContainer/AnsweButtons/Button" to="." method="_on_button_pressed"]

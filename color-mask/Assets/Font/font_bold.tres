@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" format=3 uid="uid://bmjk3k8seyiks"]
+
+[ext_resource type="FontFile" uid="uid://n2lo0cj6uqjw" path="res://Assets/Font/ci-gamedev-font.ttf" id="1_42knh"]
+
+[resource]
+base_font = ExtResource("1_42knh")
+variation_embolden = 1.0
