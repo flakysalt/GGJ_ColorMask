@@ -2,6 +2,7 @@ extends DialogueCommand
 class_name ChoiceConversationCommand
 
 @export_multiline var text: String
+@export var speaker : String
 
 @export var button1text: String
 @export var button1followup: DialogueCommand

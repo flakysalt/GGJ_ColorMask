@@ -39,8 +39,6 @@ position = Vector2(1, 0)
 [node name="InteractableCharacter" parent="." unique_id=221575232 instance=ExtResource("5_a2ia3")]
 position = Vector2(-69, 0)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1881597510]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1092367271]
 
 [node name="ConversationSystem" parent="CanvasLayer" unique_id=2006110401 instance=ExtResource("6_236hc")]
-offset_top = -388.80002
-offset_bottom = -388.80002

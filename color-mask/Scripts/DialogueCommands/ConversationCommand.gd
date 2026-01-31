@@ -2,6 +2,7 @@ extends DialogueCommand
 class_name ContinueConversationCommand
 
 @export_multiline var text: String
+@export var speaker : String
 @export var next_conversation: DialogueCommand
 
 func execute(caller : Node) -> void:

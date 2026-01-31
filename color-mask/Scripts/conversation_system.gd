@@ -33,6 +33,7 @@ func show_dialogue(command: DialogueCommand):
 		button2.visible = command.button2followup != null
 		button3.visible = command.button3followup != null
 		$VBoxContainer/RichTextLabel.text= command.text
+		$VBoxContainer/Label.text = command.speaker
 		$AnimationPlayer.play("DisplayText")
 	pass
 	
@@ -40,6 +41,7 @@ func show_dialogue(command: DialogueCommand):
 		nextCommand = command.next_conversation
 		$VBoxContainer/RichTextLabel.text= command.text
 		$AnimationPlayer.play("DisplayText")
+		$VBoxContainer/Label.text = command.speaker
 	pass
 
 func close_conversation():

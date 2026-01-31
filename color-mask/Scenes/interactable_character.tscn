@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_l7l87"]
 [ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/blackbeltf_spritesheet.png" id="1_wict8"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="3_4teau"]
-[ext_resource type="Script" uid="uid://dvdef5j3i8kfd" path="res://Scripts/DialogueCommands/ActionCommand.gd" id="3_lummc"]
+[ext_resource type="Script" uid="uid://c3kp8xfthc2aw" path="res://Scripts/DialogueCommands/ChangeColorCommand.gd" id="3_shgqj"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="3_tvjhp"]
 [ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="4_tvjhp"]
 
@@ -12,8 +12,9 @@ script = ExtResource("3_4teau")
 metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 
 [sub_resource type="Resource" id="Resource_et4wj"]
-script = ExtResource("3_lummc")
-metadata/_custom_type_script = "uid://dvdef5j3i8kfd"
+script = ExtResource("3_shgqj")
+shaderPresetName = "grayscale"
+metadata/_custom_type_script = "uid://c3kp8xfthc2aw"
 
 [sub_resource type="Resource" id="Resource_021n5"]
 script = ExtResource("3_4teau")
@@ -23,6 +24,7 @@ metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 [sub_resource type="Resource" id="Resource_shgqj"]
 script = ExtResource("3_tvjhp")
 text = "This is when you choose option 2"
+speaker = "Tris"
 next_conversation = SubResource("Resource_021n5")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
@@ -33,6 +35,7 @@ metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 [sub_resource type="Resource" id="Resource_u23te"]
 script = ExtResource("4_tvjhp")
 text = "What should you choose?"
+speaker = "Tris"
 button1text = "Interesting"
 button1followup = SubResource("Resource_4teau")
 button2text = "Tell me more"
@@ -44,6 +47,7 @@ metadata/_custom_type_script = "uid://dqfr480su1o7h"
 [sub_resource type="Resource" id="Resource_5455w"]
 script = ExtResource("3_tvjhp")
 text = "This is the first dialogue"
+speaker = "Tris"
 next_conversation = SubResource("Resource_u23te")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
