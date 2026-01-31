@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ca1e7m4k4nre4"]
+
+[ext_resource type="Script" uid="uid://cw411bnd1130" path="res://player.gd" id="1_v0iea"]
+[ext_resource type="Shader" uid="uid://cc7d1ybmuywqp" path="res://Scenes/isolate_color.gdshader" id="2_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://5dqx6kmjyuri" path="res://icon.svg" id="2_cvnsp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vgqql"]
+shader = ExtResource("2_6t5aa")
+shader_parameter/hide = true
+shader_parameter/color = Color(0.21176471, 0.23921569, 0.32156864, 1)
+shader_parameter/strength = 0.2
+shader_parameter/saturation = 1.0000000475
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6t5aa"]
+radius = 20.0
+
+[node name="Player" type="CharacterBody2D" unique_id=833487810]
+script = ExtResource("1_v0iea")
+use_smooth_movement = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1555008638]
+material = SubResource("ShaderMaterial_vgqql")
+texture = ExtResource("2_cvnsp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1708319619]
+shape = SubResource("CircleShape2D_cvnsp")
+
+[node name="InteractArea" type="Area2D" parent="." unique_id=68120282]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractArea" unique_id=874334800]
+shape = SubResource("CircleShape2D_6t5aa")
+debug_color = Color(0.41203457, 0.48126835, 0.9553395, 0.41960785)
+
+[connection signal="area_entered" from="InteractArea" to="." method="_on_interact_area_area_entered"]
+[connection signal="body_entered" from="InteractArea" to="." method="_on_interact_area_body_entered"]
+[connection signal="body_exited" from="InteractArea" to="." method="_on_interact_area_body_exited"]
