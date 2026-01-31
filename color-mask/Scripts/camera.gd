@@ -1,4 +1,5 @@
 extends Camera2D
+class_name ShaderCamera
 
 # Store the shader material
 @onready var shader_material: ShaderMaterial = $CanvasLayer/ColorRect.material
@@ -40,7 +41,7 @@ var presets = {
 }
 
 func _ready():
-	# Apply default preset
+	add_to_group("camera")
 	apply_preset("all_colors")
 
 # Apply a preset by name

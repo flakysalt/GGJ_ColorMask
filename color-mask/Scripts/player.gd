@@ -15,6 +15,7 @@ enum State{
 }
 
 func _ready() -> void:
+	add_to_group("player")
 	if use_smooth_movement:
 		state = State.SmoothMovement
 
