@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://darv62hs6866v"]
+
+[ext_resource type="FontFile" uid="uid://n2lo0cj6uqjw" path="res://Assets/Font/ci-gamedev-font.ttf" id="1_lx37j"]
+
+[resource]
+default_font = ExtResource("1_lx37j")
