@@ -1,7 +1,7 @@
 extends DialogueCommand
 class_name ChangeColorCommand
 
-@export var shaderPresetName : String
+@export var shaderPresetName : GlobalStateClass.MaskState
 @export var transitionTime : float = 3
 
 func execute(caller : Node) -> void:

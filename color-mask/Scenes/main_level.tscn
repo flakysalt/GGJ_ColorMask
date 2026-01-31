@@ -42,3 +42,5 @@ position = Vector2(-69, 0)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1092367271]
 
 [node name="ConversationSystem" parent="CanvasLayer" unique_id=2006110401 instance=ExtResource("6_236hc")]
+
+[editable path="Player/Camera2D"]

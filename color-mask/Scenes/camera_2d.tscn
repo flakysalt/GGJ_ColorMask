@@ -20,6 +20,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="DebugUi" type="CanvasLayer" parent="." unique_id=1006461937 node_paths=PackedStringArray("camera")]
+visible = false
 script = ExtResource("3_0e4st")
 camera = NodePath("..")
 
