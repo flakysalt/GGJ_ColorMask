@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bpi50q0p2380m"]
+
+[ext_resource type="Script" uid="uid://dnk73qst8b36" path="res://push_zone.gd" id="1_mow5c"]
+[ext_resource type="Texture2D" uid="uid://5dqx6kmjyuri" path="res://icon.svg" id="2_8dxh3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8dxh3"]
+radius = 15.0
+
+[node name="PushZone" type="Area2D" unique_id=933193684]
+collision_layer = 256
+collision_mask = 256
+script = ExtResource("1_mow5c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1367706277]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_8dxh3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1952581936]
+shape = SubResource("CircleShape2D_8dxh3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
