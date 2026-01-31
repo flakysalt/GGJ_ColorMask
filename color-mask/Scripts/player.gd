@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name PlayerCharacter
 
 @export var speed = 100
 @export var step_length : int = 50
@@ -11,7 +12,8 @@ var goal_movement_position : Vector2
 enum State{
 	Idle,
 	Walking,
-	SmoothMovement
+	SmoothMovement,
+	Conversation
 }
 
 func _ready() -> void:
@@ -22,6 +24,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	if state == State.Conversation:
+		return
 	handle_interact()
 	var input_y = Input.get_axis("move_up","move_down")
 	var input_x = Input.get_axis("move_left","move_right")

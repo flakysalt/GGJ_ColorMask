@@ -7,9 +7,9 @@ var button1Command : DialogueCommand
 var button2Command : DialogueCommand
 var button3Command : DialogueCommand
 
-@export var button1 : Button
-@export var button2 : Button
-@export var button3 : Button
+@export var button1 : AutoSizeButton
+@export var button2 : AutoSizeButton
+@export var button3 : AutoSizeButton
 
 func _ready() -> void:
 	add_to_group("ui_system")
@@ -25,9 +25,9 @@ func show_dialogue(command: DialogueCommand):
 		button1Command = command.button1followup
 		button2Command = command.button2followup
 		button3Command = command.button3followup
-		button1.text = command.button1text
-		button2.text = command.button2text
-		button3.text = command.button3text
+		button1.button_text = command.button1text
+		button2.button_text = command.button2text
+		button3.button_text = command.button3text
 
 		button1.visible = command.button1followup != null
 		button2.visible = command.button2followup != null
