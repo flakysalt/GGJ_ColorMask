@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bjscxbuyk4rgr"]
+
+[ext_resource type="Script" uid="uid://brk3a7200of6m" path="res://Scripts/ChangeSceneInteractable.gd" id="1_rryme"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v1qfn"]
+
+[node name="SceneTransition" type="Node2D" unique_id=1734695462]
+script = ExtResource("1_rryme")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1576345129]
+collision_layer = 128
+collision_mask = 194
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=108177626]
+shape = SubResource("CircleShape2D_v1qfn")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
