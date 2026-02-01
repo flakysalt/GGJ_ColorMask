@@ -4,14 +4,15 @@
 [ext_resource type="TileSet" uid="uid://d18ojy7cg3g4n" path="res://Assets/walls_interior.tres" id="2_fnh40"]
 [ext_resource type="TileSet" uid="uid://blcqsh7rpfvhl" path="res://objects_int.tres" id="3_fnh40"]
 [ext_resource type="TileSet" uid="uid://ff3cpbewntrj" path="res://objects_int_16x16.tres" id="4_fnh40"]
-[ext_resource type="PackedScene" uid="uid://834s0hn6e1rh" path="res://Scenes/trashpile.tscn" id="5_0pnwe"]
+[ext_resource type="PackedScene" uid="uid://ckj3txt43ifx4" path="res://Scenes/trashpile.tscn" id="5_0pnwe"]
 [ext_resource type="Texture2D" uid="uid://cv631iv8k30dt" path="res://Assets/16x16_objects.png" id="5_aoto3"]
 [ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="6_brlf2"]
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="6_s1ws0"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="7_oa0bn"]
-[ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="8_7u5wn"]
-[ext_resource type="Script" uid="uid://cbjef5gr1vobn" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="9_brgcy"]
+[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="8_7u5wn"]
+[ext_resource type="Script" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="9_brgcy"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="9_oa0bn"]
+[ext_resource type="PackedScene" uid="uid://ca1e7m4k4nre4" path="res://Scenes/player.tscn" id="11_brgcy"]
 
 [sub_resource type="Resource" id="Resource_7u5wn"]
 script = ExtResource("8_7u5wn")
@@ -92,5 +93,8 @@ region_rect = Rect2(368, 6, 16, 28)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trashcan2" unique_id=713020780]
 shape = SubResource("RectangleShape2D_0pnwe")
+
+[node name="Player" parent="." unique_id=833487810 instance=ExtResource("11_brgcy")]
+position = Vector2(157, 125)
 
 [editable path="Trashpile"]

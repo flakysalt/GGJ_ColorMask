@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://8dtee0ohcxgc"]
+
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_mfhun"]
+[ext_resource type="Script" path="res://Scripts/DialogueWithKey.gd" id="2_ld6vy"]
+[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="3_jhx0e"]
+[ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="4_6g8n0"]
+[ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="5_g0nsj"]
+
+[sub_resource type="Resource" id="Resource_eiq4n"]
+script = ExtResource("3_jhx0e")
+id = "B2"
+
+[sub_resource type="Resource" id="Resource_f2krm"]
+script = ExtResource("4_6g8n0")
+followupCommand = SubResource("Resource_eiq4n")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_tt6g1"]
+script = ExtResource("5_g0nsj")
+text = "Goodbye trash. Finally I can use my computer!"
+speaker = "Me"
+next_conversation = SubResource("Resource_f2krm")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_p8fuq"]
+script = ExtResource("2_ld6vy")
+key = "Cleanup"
+command = SubResource("Resource_tt6g1")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucv1q"]
+
+[node name="Trashcan" type="Node2D" unique_id=2009990706]
+script = ExtResource("1_mfhun")
+dialogueList = Array[ExtResource("2_ld6vy")]([SubResource("Resource_p8fuq")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=699857211]
+shape = SubResource("RectangleShape2D_ucv1q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=625811437]

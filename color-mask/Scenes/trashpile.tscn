@@ -1,18 +1,18 @@
-[gd_scene format=3 uid="uid://834s0hn6e1rh"]
+[gd_scene format=3 uid="uid://ckj3txt43ifx4"]
 
 [ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_0odaw"]
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_rkbm2"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="3_4m11r"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_t27ef"]
-[ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_d1jb2"]
-[ext_resource type="Script" uid="uid://cbjef5gr1vobn" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="6_7btea"]
+[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_d1jb2"]
+[ext_resource type="Script" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="6_7btea"]
 [ext_resource type="Texture2D" uid="uid://cv631iv8k30dt" path="res://Assets/16x16_objects.png" id="7_ej8tr"]
 [ext_resource type="Script" uid="uid://dvdef5j3i8kfd" path="res://Scripts/DialogueCommands/ActionCommand.gd" id="7_rkbm2"]
+[ext_resource type="Script" path="res://Scripts/DialogueWithKey.gd" id="8_4m11r"]
 
 [sub_resource type="Resource" id="Resource_7u5wn"]
 script = ExtResource("5_d1jb2")
 id = "Cleanup"
-metadata/_custom_type_script = "uid://blhsq5c5vct26"
 
 [sub_resource type="Resource" id="Resource_brgcy"]
 script = ExtResource("3_4m11r")
@@ -23,7 +23,6 @@ metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 script = ExtResource("6_7btea")
 anim_name = "Cleanup"
 followupCommand = SubResource("Resource_brgcy")
-metadata/_custom_type_script = "uid://cbjef5gr1vobn"
 
 [sub_resource type="Resource" id="Resource_kysu3"]
 script = ExtResource("4_t27ef")
@@ -46,6 +45,16 @@ metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 [sub_resource type="Resource" id="Resource_4m11r"]
 script = ExtResource("7_rkbm2")
 metadata/_custom_type_script = "uid://dvdef5j3i8kfd"
+
+[sub_resource type="Resource" id="Resource_d1jb2"]
+script = ExtResource("8_4m11r")
+key = "Grey"
+command = SubResource("Resource_xk5ad")
+
+[sub_resource type="Resource" id="Resource_t27ef"]
+script = ExtResource("8_4m11r")
+key = "R1"
+command = SubResource("Resource_kysu3")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aoto3"]
 
@@ -85,7 +94,7 @@ _data = {
 &"RESET": SubResource("Animation_rkbm2")
 }
 
-[node name="Trashpile" type="Area2D" unique_id=2098699945 node_paths=PackedStringArray("animationPlayer")]
+[node name="Trashpile" type="StaticBody2D" unique_id=609000859 node_paths=PackedStringArray("animationPlayer")]
 script = ExtResource("1_0odaw")
 dialogues = Dictionary[String, ExtResource("2_rkbm2")]({
 "B2": SubResource("Resource_kysu3"),
@@ -93,6 +102,7 @@ dialogues = Dictionary[String, ExtResource("2_rkbm2")]({
 "asdasd": SubResource("Resource_4m11r"),
 "asddsjasdia": null
 })
+dialogueList = Array[ExtResource("8_4m11r")]([SubResource("Resource_d1jb2"), SubResource("Resource_t27ef")])
 animationPlayer = NodePath("AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2091297231]
