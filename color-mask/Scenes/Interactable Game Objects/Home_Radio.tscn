@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="4_ofpoh"]
 [ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_7ougv"]
 [ext_resource type="Script" uid="uid://c3kp8xfthc2aw" path="res://Scripts/DialogueCommands/ChangeColorCommand.gd" id="5_ofpoh"]
-[ext_resource type="Script" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="6_pqobf"]
+[ext_resource type="Texture2D" uid="uid://bnatovtc6use2" path="res://Assets/notes.png" id="10_pqobf"]
 
 [sub_resource type="Resource" id="Resource_pqobf"]
 script = ExtResource("3_c1t0w")
@@ -83,11 +83,6 @@ speaker = "Radio"
 next_conversation = SubResource("Resource_7swco")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
-[sub_resource type="Resource" id="Resource_w6krs"]
-script = ExtResource("6_pqobf")
-anim_name = "MusicOn"
-followupCommand = SubResource("Resource_5afuf")
-
 [sub_resource type="Resource" id="Resource_lodts"]
 script = ExtResource("5_7ougv")
 text = "This is my trusty radio. Maybe listening to some music will help."
@@ -95,7 +90,7 @@ speaker = "Me"
 button1text = "Not now"
 button1followup = SubResource("Resource_8wpnn")
 button2text = "Turn on"
-button2followup = SubResource("Resource_w6krs")
+button2followup = SubResource("Resource_5afuf")
 metadata/_custom_type_script = "uid://dqfr480su1o7h"
 
 [sub_resource type="Resource" id="Resource_w1gdo"]
@@ -115,15 +110,10 @@ speaker = "Me"
 next_conversation = SubResource("Resource_hn6ma")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
-[sub_resource type="Resource" id="Resource_w6aio"]
-script = ExtResource("6_pqobf")
-anim_name = "MusicOn"
-followupCommand = SubResource("Resource_qxmql")
-
 [sub_resource type="Resource" id="Resource_132ke"]
 script = ExtResource("2_w1gdo")
 key = "NOSKIP"
-command = SubResource("Resource_w6aio")
+command = SubResource("Resource_qxmql")
 metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o45k1"]
@@ -137,9 +127,10 @@ _data = {
 &"MusicOn": SubResource("Animation_vkga5")
 }
 
-[node name="Home_Radio" type="StaticBody2D" unique_id=558507055]
+[node name="Home_Radio" type="StaticBody2D" unique_id=558507055 node_paths=PackedStringArray("animationPlayer")]
 script = ExtResource("1_voxju")
 dialogueList = Array[ExtResource("2_w1gdo")]([SubResource("Resource_v872n"), SubResource("Resource_w1gdo"), SubResource("Resource_132ke")])
+animationPlayer = NodePath("AnimationPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
 scale = Vector2(0.5, 0.5)
@@ -151,4 +142,10 @@ region_rect = Rect2(450, 204, 30, 34)
 shape = SubResource("RectangleShape2D_o45k1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1530760716]
+root_node = NodePath("../CPUParticles2D")
 libraries/ = SubResource("AnimationLibrary_exbb2")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=831663539]
+emitting = false
+amount = 3
+texture = ExtResource("10_pqobf")
