@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://ckn5r6islrat1"]
+
+[ext_resource type="Script" uid="uid://bksud0spqnmtk" path="res://Scripts/flowers_interactable.gd" id="1_8r63t"]
+[ext_resource type="Script" uid="uid://c3kp8xfthc2aw" path="res://Scripts/DialogueCommands/ChangeColorCommand.gd" id="2_odg8p"]
+[ext_resource type="Script" uid="uid://b2j03tb1b60s4" path="res://Scripts/flowers.gd" id="2_wkyfk"]
+
+[sub_resource type="Resource" id="Resource_hqxmk"]
+script = ExtResource("2_odg8p")
+metadata/_custom_type_script = "uid://c3kp8xfthc2aw"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dbma1"]
+
+[node name="FlowersInteractable" type="Node2D" unique_id=430487294]
+script = ExtResource("1_8r63t")
+finishDialogue = SubResource("Resource_hqxmk")
+
+[node name="Flowers1" type="StaticBody2D" parent="." unique_id=416284613]
+position = Vector2(-114.50333, -155.40594)
+script = ExtResource("2_wkyfk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flowers1" unique_id=841295116]
+shape = SubResource("CircleShape2D_dbma1")
+
+[node name="Flowers2" type="StaticBody2D" parent="." unique_id=978700569]
+position = Vector2(-401.50333, -237.40594)
+script = ExtResource("2_wkyfk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flowers2" unique_id=1037920916]
+shape = SubResource("CircleShape2D_dbma1")
+
+[node name="Flowers3" type="StaticBody2D" parent="." unique_id=46854700]
+position = Vector2(-273.50333, -504.40594)
+script = ExtResource("2_wkyfk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flowers3" unique_id=671266506]
+shape = SubResource("CircleShape2D_dbma1")
+
+[node name="Flowers4" type="StaticBody2D" parent="." unique_id=1392874645]
+position = Vector2(45.496674, -471.40594)
+script = ExtResource("2_wkyfk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flowers4" unique_id=2018002094]
+shape = SubResource("CircleShape2D_dbma1")
+
+[node name="Flowers5" type="StaticBody2D" parent="." unique_id=2035040950]
+position = Vector2(13.496674, -281.40594)
+script = ExtResource("2_wkyfk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flowers5" unique_id=2061545711]
+shape = SubResource("CircleShape2D_dbma1")
+
+[connection signal="on_interacted" from="Flowers1" to="." method="_on_flowers_on_interacted"]
+[connection signal="on_interacted" from="Flowers2" to="." method="_on_flowers_on_interacted"]
+[connection signal="on_interacted" from="Flowers3" to="." method="_on_flowers_on_interacted"]
+[connection signal="on_interacted" from="Flowers4" to="." method="_on_flowers_on_interacted"]
+[connection signal="on_interacted" from="Flowers5" to="." method="_on_flowers_on_interacted"]

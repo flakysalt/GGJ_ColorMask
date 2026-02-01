@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ca1e7m4k4nre4" path="res://Scenes/player.tscn" id="5_805re"]
 [ext_resource type="TileSet" uid="uid://ff3cpbewntrj" path="res://objects_int_16x16.tres" id="6_vtsy7"]
 [ext_resource type="TileSet" uid="uid://blcqsh7rpfvhl" path="res://objects_int.tres" id="8_dbma1"]
+[ext_resource type="PackedScene" uid="uid://ckn5r6islrat1" path="res://Scenes/flowers_interactable.tscn" id="9_4ik1y"]
 
 [node name="Node2D" type="Node2D" unique_id=160401232]
 
@@ -55,3 +56,6 @@ tile_set = ExtResource("8_dbma1")
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=316158625]
 tile_map_data = PackedByteArray("AABEAAQAAAAGAAMAAABGAAYAAAAGAAMAAABIAAcAAAAGAAMAAABKAAcAAAAGAAMAAABMAAcAAAAAAAMAAABQAAcAAAACAAMAAABXAAcAAAAGAAMAAABZAAcAAAAGAAMAAABbAAcAAAAGAAMAAABdAAcAAAAGAAMAAABfAAcAAAAGAAMAAABVAAcAAAAGAAMAAAA=")
 tile_set = ExtResource("8_dbma1")
+
+[node name="FlowersInteractable" parent="." unique_id=430487294 instance=ExtResource("9_4ik1y")]
+position = Vector2(476.50333, 813.40594)
