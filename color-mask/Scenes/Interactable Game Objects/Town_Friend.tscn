@@ -3,23 +3,26 @@
 [ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_cnrej"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_0qbnb"]
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_52yab"]
-[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="3_8fynf"]
+[ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="3_8fynf"]
+[ext_resource type="Script" uid="uid://c3kp8xfthc2aw" path="res://Scripts/DialogueCommands/ChangeColorCommand.gd" id="3_52yab"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_8fynf"]
-[ext_resource type="Script" uid="uid://cbjef5gr1vobn" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="4_o1wcs"]
 [ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/Characters/blackbeltf_spritesheet.png" id="6_8i2lw"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="7_8fynf"]
+
+[sub_resource type="Resource" id="Resource_o1wcs"]
+script = ExtResource("3_52yab")
+shaderPresetName = 7
+metadata/_custom_type_script = "uid://c3kp8xfthc2aw"
 
 [sub_resource type="Resource" id="Resource_8i2lw"]
 script = ExtResource("3_8fynf")
 id = "R3"
-
-[sub_resource type="Resource" id="Resource_su420"]
-script = ExtResource("4_o1wcs")
-followupCommand = SubResource("Resource_8i2lw")
-metadata/_custom_type_script = "uid://cbjef5gr1vobn"
+followupCommand = SubResource("Resource_o1wcs")
+metadata/_custom_type_script = "uid://blhsq5c5vct26"
 
 [sub_resource type="Resource" id="Resource_1iij7"]
 script = ExtResource("2_0qbnb")
-followupCommand = SubResource("Resource_su420")
+followupCommand = SubResource("Resource_8i2lw")
 metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 
 [sub_resource type="Resource" id="Resource_domhy"]
@@ -45,6 +48,11 @@ speaker = "Friend"
 next_conversation = SubResource("Resource_f71yq")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
+[sub_resource type="Resource" id="Resource_su420"]
+script = ExtResource("7_8fynf")
+command = SubResource("Resource_pxfrl")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_wict8"]
 
 [node name="Town_Friend" type="StaticBody2D" unique_id=558507055]
@@ -52,6 +60,7 @@ script = ExtResource("1_cnrej")
 dialogues = Dictionary[String, ExtResource("2_52yab")]({
 "NOSKIP": SubResource("Resource_pxfrl")
 })
+dialogueList = Array[ExtResource("7_8fynf")]([SubResource("Resource_su420")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
 texture = ExtResource("6_8i2lw")

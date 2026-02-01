@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dro7508jq7f20" path="res://Scenes/Interactable Game Objects/FastFood_Interface.tscn" id="2_empj5"]
 [ext_resource type="PackedScene" uid="uid://dwas6h80teuwb" path="res://Scenes/Interactable Game Objects/FastFood_Waiter.tscn" id="3_xsi2e"]
 [ext_resource type="PackedScene" uid="uid://gch1k1wpnen0" path="res://Scenes/Interactable Game Objects/Home_Bed.tscn" id="5_f2csj"]
-[ext_resource type="PackedScene" uid="uid://cy4jy5bo3mre4" path="res://Scenes/Interactable Game Objects/Home_CD_Player.tscn" id="6_wxgly"]
+[ext_resource type="PackedScene" uid="uid://cy4jy5bo3mre4" path="res://Scenes/Interactable Game Objects/Home_Radio.tscn" id="6_wxgly"]
 [ext_resource type="PackedScene" uid="uid://b2or3kpoiypdw" path="res://Scenes/Interactable Game Objects/Home_Kitchen_Table.tscn" id="7_xvusb"]
 [ext_resource type="PackedScene" uid="uid://cexv0wp8r4jq0" path="res://Scenes/Interactable Game Objects/Archive/Home_Litter.tscn" id="8_sa8jy"]
 [ext_resource type="PackedScene" uid="uid://b2a6lhu2dpw7d" path="res://Scenes/Interactable Game Objects/Home_PC.tscn" id="9_vxa00"]
@@ -34,7 +34,7 @@ position = Vector2(58, 81)
 position = Vector2(136, 156)
 
 [node name="Home_CD_Player" parent="." unique_id=2079676951 instance=ExtResource("6_wxgly")]
-position = Vector2(99, 191)
+position = Vector2(91, 207)
 
 [node name="Home_Kitchen_Table" parent="." unique_id=1153220843 instance=ExtResource("7_xvusb")]
 position = Vector2(151, 84)

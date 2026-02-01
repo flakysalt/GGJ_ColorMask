@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://cy4jy5bo3mre4"]
+
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_voxju"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="2_w1gdo"]
+[ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="3_c1t0w"]
+[ext_resource type="Texture2D" uid="uid://dyd2e06g8xo65" path="res://Assets/Asset Pack (Donarg)/VX Ace/B-C-D-E All Tiles 7 No Shadows.png" id="4_e8mn1"]
+[ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_le64h"]
+[ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="4_ofpoh"]
+[ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_7ougv"]
+[ext_resource type="Script" uid="uid://c3kp8xfthc2aw" path="res://Scripts/DialogueCommands/ChangeColorCommand.gd" id="5_ofpoh"]
+[ext_resource type="Script" uid="uid://cbjef5gr1vobn" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="6_pqobf"]
+
+[sub_resource type="Resource" id="Resource_pqobf"]
+script = ExtResource("3_c1t0w")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_djfl6"]
+script = ExtResource("4_le64h")
+text = "I'm not in the mood for music. Too hungry. I should eat something. Anything, really."
+speaker = "Me"
+next_conversation = SubResource("Resource_pqobf")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_v872n"]
+script = ExtResource("2_w1gdo")
+key = "G1"
+command = SubResource("Resource_djfl6")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Resource" id="Resource_8wpnn"]
+script = ExtResource("3_c1t0w")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_bxh8f"]
+script = ExtResource("5_ofpoh")
+shaderPresetName = 1
+metadata/_custom_type_script = "uid://c3kp8xfthc2aw"
+
+[sub_resource type="Resource" id="Resource_083qb"]
+script = ExtResource("4_ofpoh")
+id = "B1"
+followupCommand = SubResource("Resource_bxh8f")
+metadata/_custom_type_script = "uid://blhsq5c5vct26"
+
+[sub_resource type="Resource" id="Resource_miewv"]
+script = ExtResource("3_c1t0w")
+followupCommand = SubResource("Resource_083qb")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_unwwd"]
+script = ExtResource("4_le64h")
+text = "Well, I have eaten and I don't feel like garbage any more. Still not great, though. "
+speaker = "Me"
+next_conversation = SubResource("Resource_miewv")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_n7cb1"]
+script = ExtResource("4_le64h")
+text = "Oh, I would love to see them life! Bot going there by train? ALl on my own. That's too much. How am I supposed to survive that when I can barely feed myself?"
+speaker = "Me"
+next_conversation = SubResource("Resource_unwwd")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_xwy58"]
+script = ExtResource("4_le64h")
+text = "🎵🎵🎵🎵
+And don't forget folks, the band will be life in concert at tomorrow. There are still tickets left! Don't miss out!"
+speaker = "Radio"
+next_conversation = SubResource("Resource_n7cb1")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_7swco"]
+script = ExtResource("4_le64h")
+text = "Oh, that's the latest song of my favorite band!"
+speaker = "Me"
+next_conversation = SubResource("Resource_xwy58")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_5afuf"]
+script = ExtResource("4_le64h")
+text = "🎵🎵🎵🎵🎵🎵"
+speaker = "Radio"
+next_conversation = SubResource("Resource_7swco")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_w6krs"]
+script = ExtResource("6_pqobf")
+anim_name = "MusicOn"
+followupCommand = SubResource("Resource_5afuf")
+metadata/_custom_type_script = "uid://cbjef5gr1vobn"
+
+[sub_resource type="Resource" id="Resource_lodts"]
+script = ExtResource("5_7ougv")
+text = "This is my trusty radio. Maybe listening to some music will help."
+speaker = "Me"
+button1text = "Not now"
+button1followup = SubResource("Resource_8wpnn")
+button2text = "Turn on"
+button2followup = SubResource("Resource_w6krs")
+metadata/_custom_type_script = "uid://dqfr480su1o7h"
+
+[sub_resource type="Resource" id="Resource_w1gdo"]
+script = ExtResource("2_w1gdo")
+key = "B1"
+command = SubResource("Resource_lodts")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Resource" id="Resource_hn6ma"]
+script = ExtResource("3_c1t0w")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_qxmql"]
+script = ExtResource("4_le64h")
+text = "I stil can't believe that my favorite band is giving a concert tomorrow. The city is just an hour away by train."
+speaker = "Me"
+next_conversation = SubResource("Resource_hn6ma")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_w6aio"]
+script = ExtResource("6_pqobf")
+anim_name = "MusicOn"
+followupCommand = SubResource("Resource_qxmql")
+metadata/_custom_type_script = "uid://cbjef5gr1vobn"
+
+[sub_resource type="Resource" id="Resource_132ke"]
+script = ExtResource("2_w1gdo")
+key = "NOSKIP"
+command = SubResource("Resource_w6aio")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o45k1"]
+size = Vector2(14, 16)
+
+[sub_resource type="Animation" id="Animation_vkga5"]
+resource_name = "MusicOn"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_exbb2"]
+_data = {
+&"MusicOn": SubResource("Animation_vkga5")
+}
+
+[node name="Home_Radio" type="StaticBody2D" unique_id=558507055]
+script = ExtResource("1_voxju")
+dialogueList = Array[ExtResource("2_w1gdo")]([SubResource("Resource_v872n"), SubResource("Resource_w1gdo"), SubResource("Resource_132ke")])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_e8mn1")
+region_enabled = true
+region_rect = Rect2(450, 204, 30, 34)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=892489500]
+shape = SubResource("RectangleShape2D_o45k1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1530760716]
+libraries/ = SubResource("AnimationLibrary_exbb2")

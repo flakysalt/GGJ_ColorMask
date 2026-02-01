@@ -5,18 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://doid0uxsnvfum" path="res://Assets/Placeholder/Tileset/House_Tileset.png" id="2_y38jf"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="3_bpqkf"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_p0c3d"]
-[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_exygg"]
-
-[sub_resource type="Resource" id="Resource_hrcnh"]
-script = ExtResource("3_bpqkf")
-metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
-
-[sub_resource type="Resource" id="Resource_41uw1"]
-script = ExtResource("4_p0c3d")
-text = "My friend lifes here. But we haven't spoken in months SHe probably has forgotten all about me by now."
-speaker = "Me"
-next_conversation = SubResource("Resource_hrcnh")
-metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+[ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_exygg"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="6_bpqkf"]
 
 [sub_resource type="Resource" id="Resource_rp3ye"]
 script = ExtResource("5_exygg")
@@ -33,6 +23,46 @@ text = "*DING DONG*"
 next_conversation = SubResource("Resource_rkeua")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
+[sub_resource type="Resource" id="Resource_hrcnh"]
+script = ExtResource("3_bpqkf")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_41uw1"]
+script = ExtResource("4_p0c3d")
+text = "My friend lifes here. But we haven't spoken in months SHe probably has forgotten all about me by now."
+speaker = "Me"
+next_conversation = SubResource("Resource_hrcnh")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_p0c3d"]
+script = ExtResource("6_bpqkf")
+key = "G3"
+command = SubResource("Resource_41uw1")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Resource" id="Resource_exygg"]
+script = ExtResource("6_bpqkf")
+key = "BellRang"
+command = SubResource("Resource_7ep7l")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Resource" id="Resource_5723n"]
+script = ExtResource("3_bpqkf")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_x72ai"]
+script = ExtResource("4_p0c3d")
+text = "We've had a great afternoon together. I shouldn't bother her any more. I'll see her tomorrow at the station, after all. I can barely wait."
+speaker = "Me"
+next_conversation = SubResource("Resource_5723n")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_xhowf"]
+script = ExtResource("6_bpqkf")
+key = "NOSKIP"
+command = SubResource("Resource_x72ai")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b16hr"]
 size = Vector2(14, 14)
 
@@ -43,6 +73,7 @@ dialogues = Dictionary[String, ExtResource("2_je82a")]({
 "G3": SubResource("Resource_41uw1"),
 "NOSKIP": null
 })
+dialogueList = Array[ExtResource("6_bpqkf")]([SubResource("Resource_p0c3d"), SubResource("Resource_exygg"), SubResource("Resource_xhowf")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
 texture = ExtResource("2_y38jf")

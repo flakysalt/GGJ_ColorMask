@@ -2,8 +2,35 @@
 
 [ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_ovmwk"]
 [ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="2_ovmwk"]
+[ext_resource type="Script" uid="uid://c3kp8xfthc2aw" path="res://Scripts/DialogueCommands/ChangeColorCommand.gd" id="3_3h2dn"]
+[ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="4_o5g3l"]
 [ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_a6pgv"]
+[ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="5_bwfqp"]
 [ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/Characters/blackbeltf_spritesheet.png" id="6_bwfqp"]
+[ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="6_cwkyo"]
+
+[sub_resource type="Resource" id="Resource_h7rbp"]
+script = ExtResource("3_3h2dn")
+shaderPresetName = 5
+metadata/_custom_type_script = "uid://c3kp8xfthc2aw"
+
+[sub_resource type="Resource" id="Resource_ea35y"]
+script = ExtResource("4_o5g3l")
+id = "R2"
+followupCommand = SubResource("Resource_h7rbp")
+metadata/_custom_type_script = "uid://blhsq5c5vct26"
+
+[sub_resource type="Resource" id="Resource_gpi46"]
+script = ExtResource("5_bwfqp")
+text = "Here is your purchase.
+Have a great day."
+speaker = "Cashier"
+next_conversation = SubResource("Resource_ea35y")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_o5ft7"]
+script = ExtResource("6_cwkyo")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 
 [sub_resource type="Resource" id="Resource_ldcmw"]
 script = ExtResource("5_a6pgv")
@@ -11,6 +38,9 @@ text = "Welcome.
 What would you like to purchase today?"
 speaker = "Cashier"
 button1text = "Buy veggies"
+button1followup = SubResource("Resource_gpi46")
+button2text = "Leave"
+button2followup = SubResource("Resource_o5ft7")
 metadata/_custom_type_script = "uid://dqfr480su1o7h"
 
 [sub_resource type="Resource" id="Resource_bwfqp"]
@@ -19,8 +49,22 @@ key = "R2"
 command = SubResource("Resource_ldcmw")
 metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
 
+[sub_resource type="Resource" id="Resource_3h2dn"]
+script = ExtResource("6_cwkyo")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_o5g3l"]
+script = ExtResource("5_bwfqp")
+text = "I have enough food for a
+the next week now."
+speaker = "Me"
+next_conversation = SubResource("Resource_3h2dn")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
 [sub_resource type="Resource" id="Resource_cwkyo"]
 script = ExtResource("2_ovmwk")
+key = "NOSKIP"
+command = SubResource("Resource_o5g3l")
 metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wict8"]
