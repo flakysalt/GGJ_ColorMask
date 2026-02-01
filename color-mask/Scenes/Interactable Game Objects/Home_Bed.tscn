@@ -4,7 +4,8 @@
 [ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="2_a6d8t"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_tgx8w"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_qfo73"]
-[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_c6q1x"]
+[ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_c6q1x"]
+[ext_resource type="Script" uid="uid://c3kp8xfthc2aw" path="res://Scripts/DialogueCommands/ChangeColorCommand.gd" id="5_fc1tv"]
 [ext_resource type="Texture2D" uid="uid://dyd2e06g8xo65" path="res://Assets/Asset Pack (Donarg)/VX Ace/B-C-D-E All Tiles 7 No Shadows.png" id="6_a6d8t"]
 
 [sub_resource type="Resource" id="Resource_fc1tv"]
@@ -24,9 +25,15 @@ key = "G4"
 command = SubResource("Resource_qfo73")
 metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
 
+[sub_resource type="Resource" id="Resource_86mpt"]
+script = ExtResource("5_fc1tv")
+shaderPresetName = 12
+metadata/_custom_type_script = "uid://c3kp8xfthc2aw"
+
 [sub_resource type="Resource" id="Resource_2ms1w"]
 script = ExtResource("5_c6q1x")
 id = "G4"
+followupCommand = SubResource("Resource_86mpt")
 
 [sub_resource type="Resource" id="Resource_ylxnd"]
 script = ExtResource("2_tgx8w")

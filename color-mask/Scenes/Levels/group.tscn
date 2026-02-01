@@ -8,7 +8,8 @@
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="3_m0quq"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="3_xjhnc"]
 [ext_resource type="Texture2D" uid="uid://duwniy0hnn22q" path="res://Assets/Placeholder/Characters/healer_spritesheet.png" id="4_neqkc"]
-[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_h4hep"]
+[ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_h4hep"]
+[ext_resource type="Script" uid="uid://c3kp8xfthc2aw" path="res://Scripts/DialogueCommands/ChangeColorCommand.gd" id="5_xjhnc"]
 
 [sub_resource type="Resource" id="Resource_aa1kk"]
 script = ExtResource("3_xjhnc")
@@ -27,9 +28,15 @@ key = "R3"
 command = SubResource("Resource_xjhnc")
 metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
 
+[sub_resource type="Resource" id="Resource_1gyb5"]
+script = ExtResource("5_xjhnc")
+shaderPresetName = 11
+metadata/_custom_type_script = "uid://c3kp8xfthc2aw"
+
 [sub_resource type="Resource" id="Resource_l80bp"]
 script = ExtResource("5_h4hep")
 id = "B3"
+followupCommand = SubResource("Resource_1gyb5")
 
 [sub_resource type="Resource" id="Resource_fyu2u"]
 script = ExtResource("3_xjhnc")

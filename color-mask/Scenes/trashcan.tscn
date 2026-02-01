@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_mfhun"]
 [ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="2_ld6vy"]
-[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="3_jhx0e"]
+[ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="3_jhx0e"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="4_6g8n0"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="5_g0nsj"]
+[ext_resource type="Script" uid="uid://c3kp8xfthc2aw" path="res://Scripts/DialogueCommands/ChangeColorCommand.gd" id="5_jhx0e"]
 [ext_resource type="Texture2D" uid="uid://cv631iv8k30dt" path="res://Assets/16x16_objects.png" id="6_ld6vy"]
 
 [sub_resource type="Resource" id="Resource_mfhun"]
@@ -24,9 +25,15 @@ key = "Cleanup"
 command = SubResource("Resource_ld6vy")
 metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
 
+[sub_resource type="Resource" id="Resource_6g8n0"]
+script = ExtResource("5_jhx0e")
+shaderPresetName = 5
+metadata/_custom_type_script = "uid://c3kp8xfthc2aw"
+
 [sub_resource type="Resource" id="Resource_eiq4n"]
 script = ExtResource("3_jhx0e")
 id = "B2"
+followupCommand = SubResource("Resource_6g8n0")
 
 [sub_resource type="Resource" id="Resource_f2krm"]
 script = ExtResource("4_6g8n0")

@@ -8,13 +8,20 @@
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="6_s1ws0"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="7_oa0bn"]
 [ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="8_7u5wn"]
-[ext_resource type="Script" uid="uid://cbjef5gr1vobn" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="9_brgcy"]
+[ext_resource type="Script" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="9_brgcy"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="9_oa0bn"]
 [ext_resource type="PackedScene" uid="uid://ca1e7m4k4nre4" path="res://Scenes/player.tscn" id="11_brgcy"]
 [ext_resource type="PackedScene" uid="uid://8dtee0ohcxgc" path="res://Scenes/trashcan.tscn" id="12_brgcy"]
 [ext_resource type="PackedScene" uid="uid://gch1k1wpnen0" path="res://Scenes/Interactable Game Objects/Home_Bed.tscn" id="13_xk5ad"]
 [ext_resource type="PackedScene" uid="uid://bjscxbuyk4rgr" path="res://Scenes/SceneTransition.tscn" id="14_xk5ad"]
 [ext_resource type="PackedScene" uid="uid://db2t0s4a60j7r" path="res://Scenes/game_start_conversation.tscn" id="15_2uwdw"]
+[ext_resource type="PackedScene" uid="uid://b2or3kpoiypdw" path="res://Scenes/Interactable Game Objects/Home_Kitchen_Table.tscn" id="16_mucyl"]
+[ext_resource type="PackedScene" uid="uid://b2a6lhu2dpw7d" path="res://Scenes/Interactable Game Objects/Home_PC.tscn" id="17_ok8vo"]
+[ext_resource type="PackedScene" uid="uid://b72716ttm4m4g" path="res://Scenes/Interactable Game Objects/Home_Phone.tscn" id="18_lqbg1"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="19_lqbg1"]
+[ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="20_gjs2k"]
+[ext_resource type="PackedScene" uid="uid://duv5tx72xoljd" path="res://Scenes/Interactable Game Objects/Home_Stove.tscn" id="21_4tikl"]
+[ext_resource type="PackedScene" uid="uid://cy4jy5bo3mre4" path="res://Scenes/Interactable Game Objects/Home_Radio.tscn" id="22_c0wx4"]
 
 [sub_resource type="Resource" id="Resource_7u5wn"]
 script = ExtResource("8_7u5wn")
@@ -68,6 +75,143 @@ speaker = "Me"
 next_conversation = SubResource("Resource_mucyl")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
+[sub_resource type="Resource" id="Resource_nsr0v"]
+script = ExtResource("9_oa0bn")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_eeebu"]
+script = ExtResource("7_oa0bn")
+text = "My phone. But whom should I call? I don't want to bother anyone with my problems."
+speaker = "Me"
+next_conversation = SubResource("Resource_nsr0v")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_tkem1"]
+script = ExtResource("9_oa0bn")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_c3vtp"]
+script = ExtResource("9_oa0bn")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_k2ceu"]
+script = ExtResource("9_oa0bn")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_hgp8s"]
+script = ExtResource("9_oa0bn")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_pc3jj"]
+script = ExtResource("9_oa0bn")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_bnjur"]
+script = ExtResource("8_7u5wn")
+id = "R1"
+
+[sub_resource type="Resource" id="Resource_nmonv"]
+script = ExtResource("9_oa0bn")
+followupCommand = SubResource("Resource_bnjur")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_vdxep"]
+script = ExtResource("7_oa0bn")
+text = "That went so much better than expecred! I should get ready."
+speaker = "Me"
+next_conversation = SubResource("Resource_nmonv")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_dxbwa"]
+script = ExtResource("9_brgcy")
+anim_name = "Face Player"
+followupCommand = SubResource("Resource_vdxep")
+
+[sub_resource type="Resource" id="Resource_5bub3"]
+script = ExtResource("7_oa0bn")
+text = "[She hang's up.]"
+next_conversation = SubResource("Resource_dxbwa")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_1uh6u"]
+script = ExtResource("7_oa0bn")
+text = "You know what? It's been too long to catch up over the phone. Just come over!
+See you soon!"
+speaker = "Friend"
+next_conversation = SubResource("Resource_5bub3")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_625a3"]
+script = ExtResource("7_oa0bn")
+text = "Hello! Wow, it's you! I haven't heard from you in so long! How are you?"
+speaker = "Friend"
+next_conversation = SubResource("Resource_1uh6u")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_u3sdu"]
+script = ExtResource("7_oa0bn")
+text = "It's ringing.
+
+Why is this so nerve-wrecking?"
+speaker = "Me"
+next_conversation = SubResource("Resource_625a3")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_sa8od"]
+script = ExtResource("7_oa0bn")
+text = "Okay, three times is the charm! 
+
+Why is it so hard to press these numbers?"
+speaker = "Me"
+next_conversation = SubResource("Resource_u3sdu")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_fnnm5"]
+script = ExtResource("20_gjs2k")
+text = "We haven't been in contact for months. What if she doesn't want to have anything to do with me any more?"
+speaker = "Me"
+button1text = "Leave"
+button1followup = SubResource("Resource_hgp8s")
+button2text = "Give up"
+button2followup = SubResource("Resource_pc3jj")
+button3text = "Call friend"
+button3followup = SubResource("Resource_sa8od")
+metadata/_custom_type_script = "uid://dqfr480su1o7h"
+
+[sub_resource type="Resource" id="Resource_2olvd"]
+script = ExtResource("20_gjs2k")
+text = "Should I really? I don't want to bother them."
+speaker = "Me"
+button1text = "Abort!"
+button1followup = SubResource("Resource_c3vtp")
+button2text = "Turn away"
+button2followup = SubResource("Resource_k2ceu")
+button3text = "Call Friend"
+button3followup = SubResource("Resource_fnnm5")
+metadata/_custom_type_script = "uid://dqfr480su1o7h"
+
+[sub_resource type="Resource" id="Resource_ikoue"]
+script = ExtResource("20_gjs2k")
+text = "My phone."
+speaker = "Me"
+button1text = "Leave"
+button1followup = SubResource("Resource_tkem1")
+button2text = "Call friend"
+button2followup = SubResource("Resource_2olvd")
+metadata/_custom_type_script = "uid://dqfr480su1o7h"
+
+[sub_resource type="Resource" id="Resource_8urku"]
+script = ExtResource("19_lqbg1")
+key = "G2"
+command = SubResource("Resource_eeebu")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Resource" id="Resource_xk7oi"]
+script = ExtResource("19_lqbg1")
+key = "R1"
+command = SubResource("Resource_ikoue")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
 [node name="Node2D2" type="Node2D" unique_id=351562765]
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=803632346]
@@ -85,7 +229,7 @@ tile_map_data = PackedByteArray("AAABAAEAAAAOAAcAAAAFAAEAAAAEAAwAAAAIAAEAAAAGAAw
 tile_set = ExtResource("3_fnh40")
 
 [node name="Interior Mid" type="TileMapLayer" parent="." unique_id=109325202]
-tile_map_data = PackedByteArray("AAAUAAAAAAAcAAQAAAATAAAAAAAaAAQAAAASAAAAAAAaAAQAAAARAAAAAAAaAAQAAAAQAAAAAAAZAAQAAAASAAgAAAAUAAoAAAAMAAAAAAAdAAQAAAAHAAgAAAAGAAQAAAAIAAgAAAAHAAQAAAAHAAcAAAAGAAEAAAAIAAcAAAAFAAEAAAAHAAYAAAAGAAAAAAAIAAYAAAAJAAAAAAA=")
+tile_map_data = PackedByteArray("AAAUAAAAAAAcAAQAAAATAAAAAAAaAAQAAAASAAAAAAAaAAQAAAARAAAAAAAaAAQAAAAQAAAAAAAZAAQAAAASAAgAAAAUAAoAAAAHAAgAAAAGAAQAAAAIAAgAAAAHAAQAAAAHAAcAAAAGAAEAAAAIAAcAAAAFAAEAAAAHAAYAAAAGAAAAAAAIAAYAAAAJAAAAAAA=")
 tile_set = ExtResource("4_fnh40")
 
 [node name="Interior Top" type="TileMapLayer" parent="." unique_id=1995068502]
@@ -115,5 +259,26 @@ scene_to_transition_to = "res://Scenes/town_scene.tscn"
 
 [node name="GameStartConversation" parent="." unique_id=1605847366 instance=ExtResource("15_2uwdw")]
 initicalConversation = SubResource("Resource_ok8vo")
+
+[node name="Home_Kitchen_Table" parent="." unique_id=2100068011 instance=ExtResource("16_mucyl")]
+position = Vector2(48, 96)
+
+[node name="Home_PC" parent="." unique_id=494277193 instance=ExtResource("17_ok8vo")]
+position = Vector2(299, -16)
+
+[node name="Home_Phone" parent="." unique_id=1536547070 instance=ExtResource("18_lqbg1")]
+position = Vector2(122, 117)
+dialogues = Dictionary[String, ExtResource("6_s1ws0")]({
+"G2": SubResource("Resource_eeebu"),
+"NOSKIP": null,
+"R1": SubResource("Resource_ikoue")
+})
+dialogueList = Array[ExtResource("19_lqbg1")]([SubResource("Resource_8urku"), SubResource("Resource_xk7oi")])
+
+[node name="Home_Stove" parent="." unique_id=1569789993 instance=ExtResource("21_4tikl")]
+position = Vector2(104, 9)
+
+[node name="Home_Radio" parent="." unique_id=108814248 instance=ExtResource("22_c0wx4")]
+position = Vector2(204, 1)
 
 [editable path="Trashpile"]

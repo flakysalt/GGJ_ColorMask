@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="3_4m11r"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_t27ef"]
 [ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_d1jb2"]
-[ext_resource type="Script" uid="uid://cbjef5gr1vobn" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="6_7btea"]
+[ext_resource type="Script" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="6_7btea"]
 [ext_resource type="Texture2D" uid="uid://cv631iv8k30dt" path="res://Assets/16x16_objects.png" id="7_ej8tr"]
 [ext_resource type="Script" uid="uid://dvdef5j3i8kfd" path="res://Scripts/DialogueCommands/ActionCommand.gd" id="7_rkbm2"]
 [ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="8_4m11r"]
@@ -53,6 +53,7 @@ command = SubResource("Resource_xk5ad")
 
 [sub_resource type="Resource" id="Resource_t27ef"]
 script = ExtResource("8_4m11r")
+key = "Cleanup"
 command = SubResource("Resource_kysu3")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aoto3"]
