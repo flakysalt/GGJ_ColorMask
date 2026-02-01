@@ -3,12 +3,69 @@
 [ext_resource type="Script" uid="uid://bksud0spqnmtk" path="res://Scripts/flowers_interactable.gd" id="1_8r63t"]
 [ext_resource type="Script" uid="uid://c3kp8xfthc2aw" path="res://Scripts/DialogueCommands/ChangeColorCommand.gd" id="2_odg8p"]
 [ext_resource type="Script" uid="uid://b2j03tb1b60s4" path="res://Scripts/flowers.gd" id="2_wkyfk"]
+[ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="4_hqxmk"]
+[ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="5_1505b"]
 
 [sub_resource type="Resource" id="Resource_hqxmk"]
 script = ExtResource("2_odg8p")
 metadata/_custom_type_script = "uid://c3kp8xfthc2aw"
 
+[sub_resource type="Resource" id="Resource_7gb8v"]
+script = ExtResource("4_hqxmk")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_74cep"]
+script = ExtResource("5_1505b")
+text = "I nearly missed it, but it really smells nice."
+speaker = "Me"
+next_conversation = SubResource("Resource_7gb8v")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_dbma1"]
+
+[sub_resource type="Resource" id="Resource_5l0ba"]
+script = ExtResource("4_hqxmk")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_qoeom"]
+script = ExtResource("5_1505b")
+text = "The fresh air is really nice"
+speaker = "Me"
+next_conversation = SubResource("Resource_5l0ba")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_5cvk8"]
+script = ExtResource("4_hqxmk")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_j88dg"]
+script = ExtResource("5_1505b")
+text = "It's really nice to slow down and take time to smell the flowers"
+speaker = "Me"
+next_conversation = SubResource("Resource_5cvk8")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_1505b"]
+script = ExtResource("4_hqxmk")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_880qs"]
+script = ExtResource("5_1505b")
+text = "Good choice to take a silly little walk"
+speaker = "Me"
+next_conversation = SubResource("Resource_1505b")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_uhued"]
+script = ExtResource("4_hqxmk")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_qimub"]
+script = ExtResource("5_1505b")
+text = "Purple flowers are my favourite"
+speaker = "Me"
+next_conversation = SubResource("Resource_uhued")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
 [node name="FlowersInteractable" type="Node2D" unique_id=430487294]
 script = ExtResource("1_8r63t")
@@ -17,6 +74,7 @@ finishDialogue = SubResource("Resource_hqxmk")
 [node name="Flowers1" type="StaticBody2D" parent="." unique_id=416284613]
 position = Vector2(-114.50333, -155.40594)
 script = ExtResource("2_wkyfk")
+command = SubResource("Resource_74cep")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flowers1" unique_id=841295116]
 shape = SubResource("CircleShape2D_dbma1")
@@ -24,6 +82,7 @@ shape = SubResource("CircleShape2D_dbma1")
 [node name="Flowers2" type="StaticBody2D" parent="." unique_id=978700569]
 position = Vector2(-401.50333, -237.40594)
 script = ExtResource("2_wkyfk")
+command = SubResource("Resource_qoeom")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flowers2" unique_id=1037920916]
 shape = SubResource("CircleShape2D_dbma1")
@@ -31,6 +90,7 @@ shape = SubResource("CircleShape2D_dbma1")
 [node name="Flowers3" type="StaticBody2D" parent="." unique_id=46854700]
 position = Vector2(-273.50333, -504.40594)
 script = ExtResource("2_wkyfk")
+command = SubResource("Resource_j88dg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flowers3" unique_id=671266506]
 shape = SubResource("CircleShape2D_dbma1")
@@ -38,6 +98,7 @@ shape = SubResource("CircleShape2D_dbma1")
 [node name="Flowers4" type="StaticBody2D" parent="." unique_id=1392874645]
 position = Vector2(45.496674, -471.40594)
 script = ExtResource("2_wkyfk")
+command = SubResource("Resource_880qs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flowers4" unique_id=2018002094]
 shape = SubResource("CircleShape2D_dbma1")
@@ -45,6 +106,7 @@ shape = SubResource("CircleShape2D_dbma1")
 [node name="Flowers5" type="StaticBody2D" parent="." unique_id=2035040950]
 position = Vector2(13.496674, -281.40594)
 script = ExtResource("2_wkyfk")
+command = SubResource("Resource_qimub")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flowers5" unique_id=2061545711]
 shape = SubResource("CircleShape2D_dbma1")
