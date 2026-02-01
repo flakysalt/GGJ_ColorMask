@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cya03j16keswg"]
+[gd_scene format=3 uid="uid://bfcqfmaugwjrd"]
 
 [ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_asfnn"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_dyt4a"]

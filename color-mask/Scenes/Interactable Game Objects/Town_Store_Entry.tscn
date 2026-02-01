@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dursjv52r6wyo"]
+
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_cxxgw"]
+[ext_resource type="Texture2D" uid="uid://doid0uxsnvfum" path="res://Assets/Placeholder/Tileset/House_Tileset.png" id="5_ccuun"]
+[ext_resource type="PackedScene" uid="uid://bpi50q0p2380m" path="res://Scenes/push_zone.tscn" id="6_xkufj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b16hr"]
+size = Vector2(14, 14)
+
+[node name="Town_Store_Entry" type="StaticBody2D" unique_id=558507055]
+script = ExtResource("1_cxxgw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
+texture = ExtResource("5_ccuun")
+region_enabled = true
+region_rect = Rect2(545, 33, 14, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=892489500]
+shape = SubResource("RectangleShape2D_b16hr")
+
+[node name="PushZone" parent="." unique_id=933193684 instance=ExtResource("6_xkufj")]
+id_to_deactivate = "B2"

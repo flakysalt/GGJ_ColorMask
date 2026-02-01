@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://br3imwqdhvr10"]
+
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_mbdyx"]
+[ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_5m6op"]
+[ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="3_utcpc"]
+[ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_5mcny"]
+[ext_resource type="Texture2D" uid="uid://doid0uxsnvfum" path="res://Assets/Placeholder/Tileset/House_Tileset.png" id="5_38k7p"]
+[ext_resource type="PackedScene" uid="uid://bpi50q0p2380m" path="res://Scenes/push_zone.tscn" id="6_gcddu"]
+
+[sub_resource type="Resource" id="Resource_lh7x1"]
+script = ExtResource("3_utcpc")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_gqlo3"]
+script = ExtResource("4_5mcny")
+text = "I really don't feel like going in there. It's too bright."
+speaker = "Me"
+next_conversation = SubResource("Resource_lh7x1")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b16hr"]
+size = Vector2(14, 14)
+
+[node name="Store_Exit" type="StaticBody2D" unique_id=558507055]
+script = ExtResource("1_mbdyx")
+dialogues = Dictionary[String, ExtResource("2_5m6op")]({
+"B2": SubResource("Resource_gqlo3")
+})
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
+texture = ExtResource("5_38k7p")
+region_enabled = true
+region_rect = Rect2(545, 33, 14, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=892489500]
+shape = SubResource("RectangleShape2D_b16hr")
+
+[node name="PushZone" parent="." unique_id=933193684 instance=ExtResource("6_gcddu")]
+id_to_deactivate = "BoughtGroceries"

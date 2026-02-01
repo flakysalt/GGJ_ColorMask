@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cya03j16keswg"]
+
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_670cx"]
+[ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_expdb"]
+[ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="3_4mbxp"]
+[ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_ogybp"]
+[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_expdb"]
+[ext_resource type="Texture2D" uid="uid://df42p1ccgr6ec" path="res://Assets/Asset Pack (Donarg)/VX Ace/B-C-D-E All Tiles 6.png" id="6_4mbxp"]
+
+[sub_resource type="Resource" id="Resource_asfnn"]
+script = ExtResource("3_4mbxp")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_dyt4a"]
+script = ExtResource("4_ogybp")
+text = "Damn, it's broken! Looks like I have to deal with people after all. Urgh!"
+speaker = "Me"
+next_conversation = SubResource("Resource_asfnn")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_nq3qn"]
+script = ExtResource("5_expdb")
+id = "GotGroceries"
+
+[sub_resource type="Resource" id="Resource_157b1"]
+script = ExtResource("3_4mbxp")
+followupCommand = SubResource("Resource_nq3qn")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_7qlap"]
+script = ExtResource("4_ogybp")
+text = "What to choose? Well, let's go with veggies. That's always a good choice. Tasty, too."
+speaker = "Me"
+next_conversation = SubResource("Resource_157b1")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_asfnn"]
+size = Vector2(96, 76)
+
+[node name="Store_ Shelf" type="StaticBody2D" unique_id=558507055]
+script = ExtResource("1_670cx")
+dialogues = Dictionary[String, ExtResource("2_expdb")]({
+"GotGroceries": SubResource("Resource_7qlap"),
+"NOSKIP": SubResource("Resource_dyt4a")
+})
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
+texture = ExtResource("6_4mbxp")
+region_enabled = true
+region_rect = Rect2(96, 162, 96, 76)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=892489500]
+shape = SubResource("RectangleShape2D_asfnn")
