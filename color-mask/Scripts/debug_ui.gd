@@ -23,3 +23,8 @@ func _on_color_button_pressed() -> void:
 	camera.transition_to_preset(GlobalStateClass.MaskState.Full)
 func _on_grey_button_pressed() -> void:
 	camera.transition_to_preset(GlobalStateClass.MaskState.Grey)
+
+
+func music_button_pressed() -> void:
+	GlobalState.set_music_on_debug()
+	pass # Replace with function body.

@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="4_6g8n0"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="5_g0nsj"]
 [ext_resource type="Script" uid="uid://c3kp8xfthc2aw" path="res://Scripts/DialogueCommands/ChangeColorCommand.gd" id="5_jhx0e"]
-[ext_resource type="Texture2D" uid="uid://cv631iv8k30dt" path="res://Assets/16x16_objects.png" id="6_ld6vy"]
+[ext_resource type="Texture2D" uid="uid://cv631iv8k30dt" path="res://Assets/Placeholder/16x16_objects.png" id="6_ld6vy"]
 
 [sub_resource type="Resource" id="Resource_mfhun"]
 script = ExtResource("4_6g8n0")

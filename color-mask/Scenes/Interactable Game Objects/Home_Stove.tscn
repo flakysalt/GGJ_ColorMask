@@ -6,9 +6,9 @@
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_yjl1q"]
 [ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_0j5ao"]
 [ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_ghp6w"]
-[ext_resource type="Script" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="6_8hw3k"]
+[ext_resource type="Script" uid="uid://cbjef5gr1vobn" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="6_8hw3k"]
 [ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="8_yjl1q"]
-[ext_resource type="Texture2D" uid="uid://ck83o7myhxcrj" path="res://Assets/32x32_objects.png" id="9_yjl1q"]
+[ext_resource type="Texture2D" uid="uid://ck83o7myhxcrj" path="res://Assets/Placeholder/32x32_objects.png" id="9_yjl1q"]
 
 [sub_resource type="Resource" id="Resource_qcsbk"]
 script = ExtResource("2_kke2d")

@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="6_8smbr"]
 [ext_resource type="Texture2D" uid="uid://dyd2e06g8xo65" path="res://Assets/Asset Pack (Donarg)/VX Ace/B-C-D-E All Tiles 7 No Shadows.png" id="6_pepun"]
 [ext_resource type="Script" uid="uid://c3kp8xfthc2aw" path="res://Scripts/DialogueCommands/ChangeColorCommand.gd" id="6_utf4y"]
-[ext_resource type="Script" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="7_8smbr"]
+[ext_resource type="Script" uid="uid://cbjef5gr1vobn" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="7_8smbr"]
 [ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="8_8smbr"]
 
 [sub_resource type="Resource" id="Resource_5vcw5"]

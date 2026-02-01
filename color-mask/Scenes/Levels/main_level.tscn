@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://d352ui21370r8"]
 
 [ext_resource type="Shader" uid="uid://cc7d1ybmuywqp" path="res://Assets/Shader/isolate_color.gdshader" id="1_ikcpc"]
-[ext_resource type="TileSet" uid="uid://bjk4xfx3sjbfa" path="res://Assets/forest_tileset.tres" id="2_ikcpc"]
+[ext_resource type="TileSet" uid="uid://bjk4xfx3sjbfa" path="res://Assets/Tilesets/forest_tileset.tres" id="2_ikcpc"]
 [ext_resource type="PackedScene" uid="uid://ca1e7m4k4nre4" path="res://Scenes/player.tscn" id="3_qbrl8"]
 [ext_resource type="PackedScene" uid="uid://bua23yprvvx5w" path="res://Scenes/interactable_character.tscn" id="5_a2ia3"]
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="6_2jcip"]

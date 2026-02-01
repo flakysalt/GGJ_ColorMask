@@ -21,6 +21,14 @@ var state: Array[String] = []
 
 var currentMaskState : MaskState
 
+func set_music_on_debug():
+	Audio.set_layer(true,0)
+	Audio.set_layer(true,1)
+	Audio.set_layer(true,2)
+	Audio.set_layer(true,3)
+	Audio.set_layer(true,4)
+	
+
 func set_mask_state(state : MaskState):
 	currentMaskState = state
 	match currentMaskState:

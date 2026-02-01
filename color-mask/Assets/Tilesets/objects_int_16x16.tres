@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://ff3cpbewntrj"]
 
-[ext_resource type="Texture2D" uid="uid://cv631iv8k30dt" path="res://Assets/16x16_objects.png" id="1_shhip"]
+[ext_resource type="Texture2D" uid="uid://cv631iv8k30dt" path="res://Assets/Placeholder/16x16_objects.png" id="1_shhip"]
 [ext_resource type="Texture2D" uid="uid://b56o5ksyham0u" path="res://Assets/Placeholder/Tileset/Crops_Tileset.png" id="2_a06pt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a06pt"]
