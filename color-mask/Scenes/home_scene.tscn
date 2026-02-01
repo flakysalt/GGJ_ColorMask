@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://d18ojy7cg3g4n" path="res://Assets/walls_interior.tres" id="2_fnh40"]
 [ext_resource type="TileSet" uid="uid://blcqsh7rpfvhl" path="res://objects_int.tres" id="3_fnh40"]
 [ext_resource type="TileSet" uid="uid://ff3cpbewntrj" path="res://objects_int_16x16.tres" id="4_fnh40"]
+[ext_resource type="Texture2D" uid="uid://cv631iv8k30dt" path="res://Assets/16x16_objects.png" id="5_aoto3"]
 
 [node name="Node2D2" type="Node2D" unique_id=351562765]
 
@@ -26,5 +27,77 @@ tile_map_data = PackedByteArray("AAAUAAAAAAAcAAQAAAATAAAAAAAaAAQAAAASAAAAAAAaAAQ
 tile_set = ExtResource("4_fnh40")
 
 [node name="Interior Top" type="TileMapLayer" parent="." unique_id=1995068502]
-tile_map_data = PackedByteArray("AAASAP//AAAIAA0AAAASAAAAAAAdAAAAAAAMAAgAAAAXAAAAAAARAAEAAAAMAAUAAAASAAMAAAAWAAYAAAANAAIAAAATAAQAAAARAAMAAAAUAAIAAAATAAAAAAAWAAAAAAARAP//AAAZAAIAAAAQAAMAAAAbAAAAAAASAAQAAAAYAAAAAAAQAAIAAAAdAAMAAAAHAAcAAAANAA0AAAAQAAUAAAAOAAUAAAA=")
+tile_map_data = PackedByteArray("AAAHAAcAAAANAA0AAAA=")
 tile_set = ExtResource("4_fnh40")
+
+[node name="doublepaper" type="Sprite2D" parent="." unique_id=812636045]
+position = Vector2(291, 13)
+texture = ExtResource("5_aoto3")
+region_enabled = true
+region_rect = Rect2(464, 10, 22, 22)
+
+[node name="singlepaper" type="Sprite2D" parent="." unique_id=877057233]
+position = Vector2(264, 55)
+texture = ExtResource("5_aoto3")
+region_enabled = true
+region_rect = Rect2(432, 14, 16, 18)
+
+[node name="hat" type="Sprite2D" parent="." unique_id=1081117851]
+position = Vector2(284, 22)
+texture = ExtResource("5_aoto3")
+region_enabled = true
+region_rect = Rect2(190, 90, 28, 23)
+
+[node name="scribble_yellow" type="Sprite2D" parent="." unique_id=1917107228]
+position = Vector2(238, 33)
+texture = ExtResource("5_aoto3")
+region_enabled = true
+region_rect = Rect2(306, 65, 39, 31)
+
+[node name="scribble_purple" type="Sprite2D" parent="." unique_id=2025051113]
+position = Vector2(320, 47)
+texture = ExtResource("5_aoto3")
+region_enabled = true
+region_rect = Rect2(357, 97, 38, 29)
+
+[node name="hat_brown" type="Sprite2D" parent="." unique_id=1332616557]
+position = Vector2(268, 86)
+texture = ExtResource("5_aoto3")
+region_enabled = true
+region_rect = Rect2(222, 90, 28, 23)
+
+[node name="book_pen" type="Sprite2D" parent="." unique_id=1791715117]
+position = Vector2(296, 72)
+texture = ExtResource("5_aoto3")
+region_enabled = true
+region_rect = Rect2(389, 5, 38, 22)
+
+[node name="pen_upward" type="Sprite2D" parent="." unique_id=1258493920]
+position = Vector2(268, 40)
+texture = ExtResource("5_aoto3")
+region_enabled = true
+region_rect = Rect2(472, 48, 8, 16)
+
+[node name="pen_red" type="Sprite2D" parent="." unique_id=2000483164]
+position = Vector2(280, -8)
+texture = ExtResource("5_aoto3")
+region_enabled = true
+region_rect = Rect2(404, 32, 8, 16)
+
+[node name="book_green" type="Sprite2D" parent="." unique_id=879104885]
+position = Vector2(311, -2)
+texture = ExtResource("5_aoto3")
+region_enabled = true
+region_rect = Rect2(352, 7, 16, 18)
+
+[node name="book_purple" type="Sprite2D" parent="." unique_id=698743388]
+position = Vector2(280, 46)
+texture = ExtResource("5_aoto3")
+region_enabled = true
+region_rect = Rect2(304, 39, 16, 18)
+
+[node name="Trashcan" type="Sprite2D" parent="." unique_id=203301224]
+position = Vector2(194, 130)
+texture = ExtResource("5_aoto3")
+region_enabled = true
+region_rect = Rect2(368, 6, 16, 28)
