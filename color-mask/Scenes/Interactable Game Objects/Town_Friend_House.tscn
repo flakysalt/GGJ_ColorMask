@@ -4,23 +4,31 @@
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_je82a"]
 [ext_resource type="Texture2D" uid="uid://doid0uxsnvfum" path="res://Assets/Placeholder/Tileset/House_Tileset.png" id="2_y38jf"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="3_bpqkf"]
+[ext_resource type="Script" uid="uid://cbjef5gr1vobn" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="3_p0c3d"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_p0c3d"]
-[ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_exygg"]
 [ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="6_bpqkf"]
 
 [sub_resource type="Resource" id="Resource_rp3ye"]
-script = ExtResource("5_exygg")
-id = "BellRang"
+script = ExtResource("3_p0c3d")
+metadata/_custom_type_script = "uid://cbjef5gr1vobn"
 
 [sub_resource type="Resource" id="Resource_rkeua"]
 script = ExtResource("3_bpqkf")
 followupCommand = SubResource("Resource_rp3ye")
 metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 
+[sub_resource type="Resource" id="Resource_bpqkf"]
+script = ExtResource("4_p0c3d")
+text = "Oh, you are here already! I need another minute. Go ahead. I'll meet you at the park."
+speaker = "Friend"
+next_conversation = SubResource("Resource_rkeua")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
 [sub_resource type="Resource" id="Resource_7ep7l"]
 script = ExtResource("4_p0c3d")
 text = "*DING DONG*"
-next_conversation = SubResource("Resource_rkeua")
+speaker = "Door"
+next_conversation = SubResource("Resource_bpqkf")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
 [sub_resource type="Resource" id="Resource_hrcnh"]
@@ -29,7 +37,7 @@ metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 
 [sub_resource type="Resource" id="Resource_41uw1"]
 script = ExtResource("4_p0c3d")
-text = "My friend lifes here. But we haven't spoken in months SHe probably has forgotten all about me by now."
+text = "My friend lifes here. But we haven't spoken in months She probably has forgotten all about me by now."
 speaker = "Me"
 next_conversation = SubResource("Resource_hrcnh")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
@@ -40,10 +48,17 @@ key = "G3"
 command = SubResource("Resource_41uw1")
 metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
 
+[sub_resource type="Resource" id="Resource_6jnym"]
+script = ExtResource("4_p0c3d")
+text = "Alright, here goes nothing... "
+speaker = "Me"
+next_conversation = SubResource("Resource_7ep7l")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
 [sub_resource type="Resource" id="Resource_exygg"]
 script = ExtResource("6_bpqkf")
-key = "BellRang"
-command = SubResource("Resource_7ep7l")
+key = "R3"
+command = SubResource("Resource_6jnym")
 metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
 
 [sub_resource type="Resource" id="Resource_5723n"]
