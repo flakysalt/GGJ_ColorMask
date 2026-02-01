@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ca1e7m4k4nre4" path="res://Scenes/player.tscn" id="5_805re"]
 [ext_resource type="TileSet" uid="uid://ff3cpbewntrj" path="res://objects_int_16x16.tres" id="6_vtsy7"]
 [ext_resource type="TileSet" uid="uid://blcqsh7rpfvhl" path="res://objects_int.tres" id="8_dbma1"]
-[ext_resource type="PackedScene" path="res://Scenes/flowers_interactable.tscn" id="9_4ik1y"]
+[ext_resource type="PackedScene" uid="uid://ckn5r6islrat1" path="res://Scenes/flowers_interactable.tscn" id="9_4ik1y"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="10_d4ljt"]
 
 [sub_resource type="Resource" id="Resource_a074a"]
