@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://bv8htic037but"]
+
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_ikp3f"]
+[ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_hbvtw"]
+[ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_r524b"]
+[ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_noo06"]
+[ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/blackbeltf_spritesheet.png" id="6_4352s"]
+
+[sub_resource type="Resource" id="Resource_b16hr"]
+script = ExtResource("2_r524b")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_bu4d5"]
+script = ExtResource("4_noo06")
+text = "Wouldn't it be nice to travel and see a bit of the world?
+
+One day!"
+speaker = "Me"
+next_conversation = SubResource("Resource_b16hr")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_hb7re"]
+script = ExtResource("2_r524b")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_qaf3w"]
+script = ExtResource("4_noo06")
+text = "Tomorrow we'll make a trip and visit the concert. I'm still feeling a bit of dread, but it'll be fine with my friend coming along. I even feel a bit of excitement! How strange."
+speaker = "Me"
+next_conversation = SubResource("Resource_hb7re")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_53bci"]
+script = ExtResource("2_r524b")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_p72ob"]
+script = ExtResource("4_noo06")
+text = "I should probably greet my friend before boarding the train. Ignoring them would be rude."
+speaker = "Me"
+next_conversation = SubResource("Resource_53bci")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_j8qsv"]
+script = ExtResource("4_noo06")
+text = "Congratulations, you completed the game.
+
+Press ALT + F4 to continue."
+speaker = "THE DEV TEAM"
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_dawux"]
+script = ExtResource("4_noo06")
+text = "Unfortunately, there will be other times in your future when the world loses its color agian. But now you know that the color can come back."
+speaker = "Narrator"
+next_conversation = SubResource("Resource_j8qsv")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_s4gia"]
+script = ExtResource("4_noo06")
+text = "You leave town for a great day with your friend at the concert. You will cherish the memory for the rest of your life. "
+speaker = "Narrator"
+next_conversation = SubResource("Resource_dawux")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wict8"]
+
+[node name="Station_Train_Door" type="StaticBody2D" unique_id=558507055]
+script = ExtResource("1_ikp3f")
+dialogues = Dictionary[String, ExtResource("2_hbvtw")]({
+"FriendGreeted": SubResource("Resource_p72ob"),
+"G4": SubResource("Resource_qaf3w"),
+"NOSKIP": SubResource("Resource_s4gia"),
+"R4": SubResource("Resource_bu4d5")
+})
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
+texture = ExtResource("6_4352s")
+hframes = 3
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=892489500]
+shape = SubResource("CircleShape2D_wict8")

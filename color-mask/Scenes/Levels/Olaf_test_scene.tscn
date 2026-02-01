@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dck0qmngb6gno"]
+
+[ext_resource type="PackedScene" uid="uid://ca1e7m4k4nre4" path="res://Scenes/player.tscn" id="1_v6gsh"]
+[ext_resource type="PackedScene" uid="uid://dro7508jq7f20" path="res://Scenes/Interactable Game Objects/FastFood_Interface.tscn" id="2_empj5"]
+[ext_resource type="PackedScene" uid="uid://dwas6h80teuwb" path="res://Scenes/Interactable Game Objects/FastFood_Waiter.tscn" id="3_xsi2e"]
+
+[node name="OlafTestScene" type="Node2D" unique_id=1581901319]
+
+[node name="Player" parent="." unique_id=833487810 instance=ExtResource("1_v6gsh")]
+position = Vector2(136, 55)
+
+[node name="FastFood_Interface" parent="." unique_id=558507055 instance=ExtResource("2_empj5")]
+position = Vector2(198, 19)
+
+[node name="FastFood_Waiter" parent="." unique_id=1623161283 instance=ExtResource("3_xsi2e")]
+position = Vector2(240, 20)

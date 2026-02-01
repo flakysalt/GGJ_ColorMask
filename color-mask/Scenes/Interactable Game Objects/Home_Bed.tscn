@@ -1,20 +1,56 @@
 [gd_scene format=3 uid="uid://gch1k1wpnen0"]
 
-[ext_resource type="Script" path="res://Scripts/interactable_character.gd" id="1_a6d8t"]
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_a6d8t"]
+[ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_c6q1x"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_tgx8w"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_qfo73"]
+[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_fc1tv"]
 [ext_resource type="Texture2D" uid="uid://dyd2e06g8xo65" path="res://Assets/Asset Pack (Donarg)/VX Ace/B-C-D-E All Tiles 7 No Shadows.png" id="6_a6d8t"]
+[ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="6_qfo73"]
 
-[sub_resource type="Resource" id="Resource_ir5fp"]
+[sub_resource type="Resource" id="Resource_8edqe"]
 script = ExtResource("2_tgx8w")
 metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 
-[sub_resource type="Resource" id="Resource_5455w"]
+[sub_resource type="Resource" id="Resource_2ms1w"]
 script = ExtResource("4_qfo73")
-text = "I should sleep but I although I have no energy, I can't calm down. I need to go out and do something.
-"
+text = "Not in the mood to sleep."
 speaker = "Me"
-next_conversation = SubResource("Resource_ir5fp")
+next_conversation = SubResource("Resource_8edqe")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_ylxnd"]
+script = ExtResource("2_tgx8w")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_5ovn3"]
+script = ExtResource("5_fc1tv")
+id = "G4"
+
+[sub_resource type="Resource" id="Resource_ftpk2"]
+script = ExtResource("2_tgx8w")
+followupCommand = SubResource("Resource_5ovn3")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_86mpt"]
+script = ExtResource("4_qfo73")
+text = "zzzzzz....."
+speaker = "Me"
+next_conversation = SubResource("Resource_ftpk2")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_kaxg8"]
+script = ExtResource("6_qfo73")
+text = "I should probably go to bed now. It would be sensible. But maybe I could play just one more level?"
+speaker = "Me"
+button1text = "Not yet"
+button1followup = SubResource("Resource_ylxnd")
+button2text = "Go to sleep"
+button2followup = SubResource("Resource_86mpt")
+metadata/_custom_type_script = "uid://dqfr480su1o7h"
+
+[sub_resource type="Resource" id="Resource_b1sdf"]
+script = ExtResource("4_qfo73")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6q1x"]
@@ -22,7 +58,11 @@ size = Vector2(20, 28)
 
 [node name="Home_Bed" type="StaticBody2D" unique_id=558507055]
 script = ExtResource("1_a6d8t")
-dialogue = SubResource("Resource_5455w")
+dialogues = Dictionary[String, ExtResource("2_c6q1x")]({
+"B4": SubResource("Resource_2ms1w"),
+"G4": SubResource("Resource_kaxg8"),
+"NOSKIP": SubResource("Resource_b1sdf")
+})
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
 texture = ExtResource("6_a6d8t")

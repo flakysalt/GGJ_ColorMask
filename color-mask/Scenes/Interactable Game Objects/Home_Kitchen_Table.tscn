@@ -1,10 +1,88 @@
 [gd_scene format=3 uid="uid://b2or3kpoiypdw"]
 
-[ext_resource type="Script" path="res://Scripts/interactable_character.gd" id="1_xvfyb"]
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_xvfyb"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_bpki6"]
+[ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_secwe"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_taymx"]
 [ext_resource type="Texture2D" uid="uid://dyd2e06g8xo65" path="res://Assets/Asset Pack (Donarg)/VX Ace/B-C-D-E All Tiles 7 No Shadows.png" id="5_8tpru"]
 [ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_knslx"]
+[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_taymx"]
+
+[sub_resource type="Resource" id="Resource_pg5wy"]
+script = ExtResource("2_bpki6")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_00dy5"]
+script = ExtResource("4_taymx")
+text = "I'm hungry, but I have nothing to eat at home. I should go and get something easy."
+speaker = "Me"
+next_conversation = SubResource("Resource_pg5wy")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_b4uei"]
+script = ExtResource("5_taymx")
+id = "BurgerEaten"
+
+[sub_resource type="Resource" id="Resource_ct2c6"]
+script = ExtResource("2_bpki6")
+followupCommand = SubResource("Resource_b4uei")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_8o110"]
+script = ExtResource("4_taymx")
+text = "Time to eat my burger.
+
+om-nom-nom..."
+speaker = "Me"
+next_conversation = SubResource("Resource_ct2c6")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_uwaxp"]
+script = ExtResource("2_bpki6")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_cwvg5"]
+script = ExtResource("4_taymx")
+text = "Next time I'll have a proper meal. I can't live of junk food all the time."
+speaker = "Me"
+next_conversation = SubResource("Resource_uwaxp")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_s7xcb"]
+script = ExtResource("5_taymx")
+id = "G3"
+
+[sub_resource type="Resource" id="Resource_2o6uw"]
+script = ExtResource("2_bpki6")
+followupCommand = SubResource("Resource_s7xcb")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_s3tp4"]
+script = ExtResource("4_taymx")
+text = "Wow, I had forgotten how great proper food can taste."
+speaker = "Me"
+next_conversation = SubResource("Resource_2o6uw")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_psd35"]
+script = ExtResource("4_taymx")
+text = "I'm really looking forward to this meal. I hope all that effort was worth it.
+
+om-nom-nom..."
+speaker = "Me"
+next_conversation = SubResource("Resource_s3tp4")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_bs07e"]
+script = ExtResource("2_bpki6")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_ixihb"]
+script = ExtResource("4_taymx")
+text = "I am not hungry any more."
+speaker = "Me"
+next_conversation = SubResource("Resource_bs07e")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
 [sub_resource type="Resource" id="Resource_8tpru"]
 script = ExtResource("2_bpki6")
@@ -46,6 +124,13 @@ size = Vector2(48, 40)
 
 [node name="Home_Kitchen_Table" type="StaticBody2D" unique_id=558507055]
 script = ExtResource("1_xvfyb")
+dialogues = Dictionary[String, ExtResource("2_secwe")]({
+"BurgerEaten": SubResource("Resource_8o110"),
+"BurgerReceived": SubResource("Resource_00dy5"),
+"G3": SubResource("Resource_psd35"),
+"MealCooked": SubResource("Resource_cwvg5"),
+"NOSKIP": SubResource("Resource_ixihb")
+})
 dialogue = SubResource("Resource_knslx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]

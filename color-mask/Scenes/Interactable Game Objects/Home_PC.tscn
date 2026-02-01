@@ -1,11 +1,209 @@
 [gd_scene format=3 uid="uid://b2a6lhu2dpw7d"]
 
-[ext_resource type="Script" path="res://Scripts/interactable_character.gd" id="1_pepun"]
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_pepun"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_i8gpu"]
+[ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_ow6l1"]
 [ext_resource type="Script" uid="uid://dvdef5j3i8kfd" path="res://Scripts/DialogueCommands/ActionCommand.gd" id="3_ow6l1"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_8smbr"]
 [ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_utf4y"]
+[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="6_8smbr"]
 [ext_resource type="Texture2D" uid="uid://dyd2e06g8xo65" path="res://Assets/Asset Pack (Donarg)/VX Ace/B-C-D-E All Tiles 7 No Shadows.png" id="6_pepun"]
+[ext_resource type="Script" uid="uid://cbjef5gr1vobn" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="7_8smbr"]
+
+[sub_resource type="Resource" id="Resource_5vcw5"]
+script = ExtResource("2_i8gpu")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_qv02o"]
+script = ExtResource("4_8smbr")
+text = "Let's see what's on the web.
+[Three hours later]
+What!? Why is it so late?
+"
+speaker = "Me"
+next_conversation = SubResource("Resource_5vcw5")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_gxntc"]
+script = ExtResource("2_i8gpu")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_4w2ja"]
+script = ExtResource("4_8smbr")
+text = "[Three hours later]
+
+Nope, that didn't work. At least I didn't feel bad while distracted."
+speaker = "Me"
+next_conversation = SubResource("Resource_gxntc")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_munom"]
+script = ExtResource("4_8smbr")
+text = "Maybe palying some video games will cheer me up.
+"
+speaker = "Me"
+next_conversation = SubResource("Resource_4w2ja")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_slabl"]
+script = ExtResource("2_i8gpu")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_im3ux"]
+script = ExtResource("5_utf4y")
+text = "This is my old PC, my door to the world."
+speaker = "Me"
+button1text = "Browse"
+button1followup = SubResource("Resource_qv02o")
+button2text = "Play"
+button2followup = SubResource("Resource_munom")
+button3text = "Turn off"
+button3followup = SubResource("Resource_slabl")
+metadata/_custom_type_script = "uid://dqfr480su1o7h"
+
+[sub_resource type="Resource" id="Resource_utf4y"]
+script = ExtResource("2_i8gpu")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_d2vcc"]
+script = ExtResource("4_8smbr")
+text = "[Three hours later]
+What!? Why is it so late?"
+speaker = "Me"
+next_conversation = SubResource("Resource_utf4y")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_fdtox"]
+script = ExtResource("4_8smbr")
+text = "Let's see what's on the web.
+"
+speaker = "Me"
+next_conversation = SubResource("Resource_d2vcc")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_8smbr"]
+script = ExtResource("2_i8gpu")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_e0e26"]
+script = ExtResource("2_i8gpu")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_4hiw6"]
+script = ExtResource("2_i8gpu")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_so5b5"]
+script = ExtResource("5_utf4y")
+text = "Shoot! Look at the time.  Now I feel even worse!"
+speaker = "Me"
+button1text = "Give up"
+button1followup = SubResource("Resource_8smbr")
+button2text = "Give up"
+button2followup = SubResource("Resource_e0e26")
+button3text = "Give up"
+button3followup = SubResource("Resource_4hiw6")
+metadata/_custom_type_script = "uid://dqfr480su1o7h"
+
+[sub_resource type="Resource" id="Resource_cpicf"]
+script = ExtResource("4_8smbr")
+text = "Okay, the news were depressing. I need something to cheer me up.  Let's watch some funny cat videos. 
+Just one.
+[Yet another hour passes.]
+"
+speaker = "Me"
+next_conversation = SubResource("Resource_so5b5")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_e81qm"]
+script = ExtResource("2_i8gpu")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_tme3c"]
+script = ExtResource("5_utf4y")
+text = "Let'S see whats in the news first. I'll buy the tickets directly after.
+[Another hour passes.]"
+speaker = "Me"
+button1text = "Buy ticket"
+button1followup = SubResource("Resource_cpicf")
+button2text = "Give up"
+button2followup = SubResource("Resource_e81qm")
+button3text = "Give up"
+metadata/_custom_type_script = "uid://dqfr480su1o7h"
+
+[sub_resource type="Resource" id="Resource_jfgjb"]
+script = ExtResource("2_i8gpu")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_p5udo"]
+script = ExtResource("5_utf4y")
+text = "Okay, open browser.
+
+Oh, I got an email. 
+[An hour passes.]
+Hmm, mostly ads."
+speaker = "Me"
+button1text = "Buy ticket"
+button1followup = SubResource("Resource_tme3c")
+button2text = "Close"
+button2followup = SubResource("Resource_jfgjb")
+metadata/_custom_type_script = "uid://dqfr480su1o7h"
+
+[sub_resource type="Resource" id="Resource_iiluw"]
+script = ExtResource("2_i8gpu")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_61k21"]
+script = ExtResource("5_utf4y")
+text = "This is my old PC, my door to the world."
+speaker = "Me"
+button1text = "Browse"
+button1followup = SubResource("Resource_fdtox")
+button2text = "Buy Ticket"
+button2followup = SubResource("Resource_p5udo")
+button3text = "Turn off"
+button3followup = SubResource("Resource_iiluw")
+metadata/_custom_type_script = "uid://dqfr480su1o7h"
+
+[sub_resource type="Resource" id="Resource_tlryj"]
+script = ExtResource("6_8smbr")
+id = "B4"
+
+[sub_resource type="Resource" id="Resource_06kjq"]
+script = ExtResource("7_8smbr")
+followupCommand = SubResource("Resource_tlryj")
+metadata/_custom_type_script = "uid://cbjef5gr1vobn"
+
+[sub_resource type="Resource" id="Resource_wujyc"]
+script = ExtResource("2_i8gpu")
+followupCommand = SubResource("Resource_06kjq")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_5vyhs"]
+script = ExtResource("4_8smbr")
+text = "Click here... add to shop.... confirm.... done! I've got the ticket!  YAY!"
+speaker = "Me"
+next_conversation = SubResource("Resource_wujyc")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_4612s"]
+script = ExtResource("5_utf4y")
+text = "Okay, Me, ignore those pop-ups. Don't get distracted. I need those concert tickets!"
+speaker = "Me"
+button1text = "Buy tickets"
+button1followup = SubResource("Resource_5vyhs")
+metadata/_custom_type_script = "uid://dqfr480su1o7h"
+
+[sub_resource type="Resource" id="Resource_7cf4m"]
+script = ExtResource("2_i8gpu")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_wjh0o"]
+script = ExtResource("4_8smbr")
+text = "I got the ticket. No more time for distractions!"
+speaker = "Me"
+next_conversation = SubResource("Resource_7cf4m")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
 [sub_resource type="Resource" id="Resource_4teau"]
 script = ExtResource("2_i8gpu")
@@ -52,6 +250,12 @@ size = Vector2(32, 39.5)
 
 [node name="Home_PC" type="StaticBody2D" unique_id=558507055]
 script = ExtResource("1_pepun")
+dialogues = Dictionary[String, ExtResource("2_ow6l1")]({
+"B1": SubResource("Resource_im3ux"),
+"B3": SubResource("Resource_61k21"),
+"B4": SubResource("Resource_4612s"),
+"NOSKIP": SubResource("Resource_wjh0o")
+})
 dialogue = SubResource("Resource_5455w")
 
 [node name="Sprite2D Keyboard" type="Sprite2D" parent="." unique_id=1241807206]
@@ -69,3 +273,5 @@ region_rect = Rect2(96, 250, 64, 26)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=892489500]
 shape = SubResource("RectangleShape2D_i8gpu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1897599871]

@@ -1,11 +1,140 @@
 [gd_scene format=3 uid="uid://b72716ttm4m4g"]
 
-[ext_resource type="Script" path="res://Scripts/interactable_character.gd" id="1_72pt4"]
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_72pt4"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_cb6iv"]
+[ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_xk7oi"]
 [ext_resource type="Script" uid="uid://dvdef5j3i8kfd" path="res://Scripts/DialogueCommands/ActionCommand.gd" id="3_cilx8"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_xk7oi"]
+[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_1iw8k"]
 [ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_8urku"]
 [ext_resource type="Texture2D" uid="uid://dyd2e06g8xo65" path="res://Assets/Asset Pack (Donarg)/VX Ace/B-C-D-E All Tiles 7 No Shadows.png" id="6_72pt4"]
+[ext_resource type="Script" uid="uid://cbjef5gr1vobn" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="6_ylfs2"]
+
+[sub_resource type="Resource" id="Resource_nsr0v"]
+script = ExtResource("2_cb6iv")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_eeebu"]
+script = ExtResource("4_xk7oi")
+text = "My phone. But whom should I call? I don't want to bother anyone with my problems."
+speaker = "Me"
+next_conversation = SubResource("Resource_nsr0v")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_tkem1"]
+script = ExtResource("2_cb6iv")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_c3vtp"]
+script = ExtResource("2_cb6iv")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_k2ceu"]
+script = ExtResource("2_cb6iv")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_hgp8s"]
+script = ExtResource("2_cb6iv")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_pc3jj"]
+script = ExtResource("2_cb6iv")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_bnjur"]
+script = ExtResource("5_1iw8k")
+id = "R1"
+
+[sub_resource type="Resource" id="Resource_nmonv"]
+script = ExtResource("2_cb6iv")
+followupCommand = SubResource("Resource_bnjur")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_vdxep"]
+script = ExtResource("4_xk7oi")
+text = "That went so much better than expecred! I should get ready."
+speaker = "Me"
+next_conversation = SubResource("Resource_nmonv")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_dxbwa"]
+script = ExtResource("6_ylfs2")
+anim_name = "Face Player"
+followupCommand = SubResource("Resource_vdxep")
+metadata/_custom_type_script = "uid://cbjef5gr1vobn"
+
+[sub_resource type="Resource" id="Resource_5bub3"]
+script = ExtResource("4_xk7oi")
+text = "[She hang's up.]"
+next_conversation = SubResource("Resource_dxbwa")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_1uh6u"]
+script = ExtResource("4_xk7oi")
+text = "You know what? It's been too long to catch up over the phone. Just come over!
+See you soon!"
+speaker = "Friend"
+next_conversation = SubResource("Resource_5bub3")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_625a3"]
+script = ExtResource("4_xk7oi")
+text = "Hello! Wow, it's you! I haven't heard from you in so long! How are you?"
+speaker = "Friend"
+next_conversation = SubResource("Resource_1uh6u")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_u3sdu"]
+script = ExtResource("4_xk7oi")
+text = "It's ringing.
+
+Why is this so nerve-wrecking?"
+speaker = "Me"
+next_conversation = SubResource("Resource_625a3")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_sa8od"]
+script = ExtResource("4_xk7oi")
+text = "Okay, three times is the charm! 
+
+Why is it so hard to press these numbers?"
+speaker = "Me"
+next_conversation = SubResource("Resource_u3sdu")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_fnnm5"]
+script = ExtResource("5_8urku")
+text = "We haven't been in contact for months. What if she doesn't want to have anything to do with me any more?"
+speaker = "Me"
+button1text = "Leave"
+button1followup = SubResource("Resource_hgp8s")
+button2text = "Give up"
+button2followup = SubResource("Resource_pc3jj")
+button3text = "Call friend"
+button3followup = SubResource("Resource_sa8od")
+metadata/_custom_type_script = "uid://dqfr480su1o7h"
+
+[sub_resource type="Resource" id="Resource_2olvd"]
+script = ExtResource("5_8urku")
+text = "Should I really? I don't want to bother them."
+speaker = "Me"
+button1text = "Abort!"
+button1followup = SubResource("Resource_c3vtp")
+button2text = "Turn away"
+button2followup = SubResource("Resource_k2ceu")
+button3text = "Call Friend"
+button3followup = SubResource("Resource_fnnm5")
+metadata/_custom_type_script = "uid://dqfr480su1o7h"
+
+[sub_resource type="Resource" id="Resource_ikoue"]
+script = ExtResource("5_8urku")
+text = "My phone."
+speaker = "Me"
+button1text = "Leave"
+button1followup = SubResource("Resource_tkem1")
+button2text = "Call friend"
+button2followup = SubResource("Resource_2olvd")
+metadata/_custom_type_script = "uid://dqfr480su1o7h"
 
 [sub_resource type="Resource" id="Resource_4teau"]
 script = ExtResource("2_cb6iv")
@@ -51,6 +180,11 @@ metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
 [node name="Home_Phone" type="StaticBody2D" unique_id=558507055]
 script = ExtResource("1_72pt4")
+dialogues = Dictionary[String, ExtResource("2_xk7oi")]({
+"G2": SubResource("Resource_eeebu"),
+"NOSKIP": null,
+"R1": SubResource("Resource_ikoue")
+})
 dialogue = SubResource("Resource_5455w")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]

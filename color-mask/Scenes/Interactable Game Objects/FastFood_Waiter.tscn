@@ -2,57 +2,59 @@
 
 [ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_o4w0k"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_eedx4"]
-[ext_resource type="Script" uid="uid://dvdef5j3i8kfd" path="res://Scripts/DialogueCommands/ActionCommand.gd" id="3_iymo7"]
+[ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_iymo7"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_cqna8"]
-[ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_2isl8"]
+[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_o4w0k"]
 [ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/blackbeltf_spritesheet.png" id="6_xbwl1"]
 
-[sub_resource type="Resource" id="Resource_4teau"]
+[sub_resource type="Resource" id="Resource_cqna8"]
 script = ExtResource("2_eedx4")
 metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 
-[sub_resource type="Resource" id="Resource_et4wj"]
-script = ExtResource("3_iymo7")
-metadata/_custom_type_script = "uid://dvdef5j3i8kfd"
-
-[sub_resource type="Resource" id="Resource_021n5"]
-script = ExtResource("2_eedx4")
-followupCommand = SubResource("Resource_et4wj")
-metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
-
-[sub_resource type="Resource" id="Resource_shgqj"]
+[sub_resource type="Resource" id="Resource_2isl8"]
 script = ExtResource("4_cqna8")
-text = "This is when you choose option 2"
-next_conversation = SubResource("Resource_021n5")
+text = "Hello. Please use our terminal to order your food."
+speaker = "Burger Guy"
+next_conversation = SubResource("Resource_cqna8")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
-[sub_resource type="Resource" id="Resource_mwvus"]
+[sub_resource type="Resource" id="Resource_eedx4"]
+script = ExtResource("5_o4w0k")
+id = "BurgerReceived"
+
+[sub_resource type="Resource" id="Resource_iymo7"]
+script = ExtResource("2_eedx4")
+followupCommand = SubResource("Resource_eedx4")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_xbwl1"]
+script = ExtResource("4_cqna8")
+text = "Here is your Burger. 
+Have a bright day."
+speaker = "Burger Guy"
+next_conversation = SubResource("Resource_iymo7")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_tfhbt"]
 script = ExtResource("2_eedx4")
 metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 
-[sub_resource type="Resource" id="Resource_u23te"]
-script = ExtResource("5_2isl8")
-text = "What should you choose?"
-button1text = "Interesting"
-button1followup = SubResource("Resource_4teau")
-button2text = "Tell me more"
-button2followup = SubResource("Resource_shgqj")
-button3text = "Leave me alone"
-button3followup = SubResource("Resource_mwvus")
-metadata/_custom_type_script = "uid://dqfr480su1o7h"
-
-[sub_resource type="Resource" id="Resource_5455w"]
+[sub_resource type="Resource" id="Resource_cw4xk"]
 script = ExtResource("4_cqna8")
-text = "Here is your food. Enjoy your meal and have a nice and colorful day."
-speaker = "Waiter"
-next_conversation = SubResource("Resource_u23te")
+text = "I've had enough burgers for today."
+speaker = "Me"
+next_conversation = SubResource("Resource_tfhbt")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wict8"]
 
 [node name="FastFood_Waiter" type="StaticBody2D" unique_id=558507055]
 script = ExtResource("1_o4w0k")
-dialogue = SubResource("Resource_5455w")
+dialogues = Dictionary[String, ExtResource("2_iymo7")]({
+"BurgerOrdered ": SubResource("Resource_2isl8"),
+"BurgerReceived": SubResource("Resource_xbwl1"),
+"NOSKIP": SubResource("Resource_cw4xk")
+})
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
 texture = ExtResource("6_xbwl1")

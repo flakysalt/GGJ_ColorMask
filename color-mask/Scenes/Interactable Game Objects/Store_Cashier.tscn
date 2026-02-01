@@ -1,57 +1,70 @@
 [gd_scene format=3 uid="uid://g2on6q4nj0rq"]
 
-[ext_resource type="Script" path="res://Scripts/interactable_character.gd" id="1_ovmwk"]
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_ovmwk"]
+[ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_ovmwk"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_uhn70"]
-[ext_resource type="Script" uid="uid://dvdef5j3i8kfd" path="res://Scripts/DialogueCommands/ActionCommand.gd" id="3_3h2dn"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_o5g3l"]
-[ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_a6pgv"]
+[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_uhn70"]
 [ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/blackbeltf_spritesheet.png" id="6_bwfqp"]
 
-[sub_resource type="Resource" id="Resource_4teau"]
+[sub_resource type="Resource" id="Resource_3h2dn"]
 script = ExtResource("2_uhn70")
 metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 
-[sub_resource type="Resource" id="Resource_et4wj"]
-script = ExtResource("3_3h2dn")
-metadata/_custom_type_script = "uid://dvdef5j3i8kfd"
-
-[sub_resource type="Resource" id="Resource_021n5"]
-script = ExtResource("2_uhn70")
-followupCommand = SubResource("Resource_et4wj")
-metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
-
-[sub_resource type="Resource" id="Resource_shgqj"]
+[sub_resource type="Resource" id="Resource_o5g3l"]
 script = ExtResource("4_o5g3l")
-text = "This is when you choose option 2"
-next_conversation = SubResource("Resource_021n5")
+text = "I should pick up my gropceries first."
+speaker = "Me"
+next_conversation = SubResource("Resource_3h2dn")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
-[sub_resource type="Resource" id="Resource_mwvus"]
+[sub_resource type="Resource" id="Resource_a6pgv"]
+script = ExtResource("5_uhn70")
+id = "R2"
+
+[sub_resource type="Resource" id="Resource_bwfqp"]
+script = ExtResource("2_uhn70")
+followupCommand = SubResource("Resource_a6pgv")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_cwkyo"]
+script = ExtResource("4_o5g3l")
+text = "*BEEP* *BEEP* 
+
+Thank you for your purchase. Enjoy the bright weather."
+speaker = "Cashier"
+next_conversation = SubResource("Resource_bwfqp")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_h7rbp"]
+script = ExtResource("4_o5g3l")
+text = "Please place your items there.
+
+*BEEP*"
+speaker = "Cashier"
+next_conversation = SubResource("Resource_cwkyo")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_ea35y"]
 script = ExtResource("2_uhn70")
 metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 
-[sub_resource type="Resource" id="Resource_u23te"]
-script = ExtResource("5_a6pgv")
-text = "What should you choose?"
-button1text = "Interesting"
-button1followup = SubResource("Resource_4teau")
-button2text = "Tell me more"
-button2followup = SubResource("Resource_shgqj")
-button3text = "Leave me alone"
-button3followup = SubResource("Resource_mwvus")
-metadata/_custom_type_script = "uid://dqfr480su1o7h"
-
-[sub_resource type="Resource" id="Resource_5455w"]
+[sub_resource type="Resource" id="Resource_gpi46"]
 script = ExtResource("4_o5g3l")
-text = "This is the first dialogue"
-next_conversation = SubResource("Resource_u23te")
+text = "That's the cashier. They seem busy."
+speaker = "Me"
+next_conversation = SubResource("Resource_ea35y")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wict8"]
 
 [node name="Store_Cashier" type="StaticBody2D" unique_id=558507055]
 script = ExtResource("1_ovmwk")
-dialogue = SubResource("Resource_5455w")
+dialogues = Dictionary[String, ExtResource("2_ovmwk")]({
+"GotGroceries": SubResource("Resource_o5g3l"),
+"NOSKIP": SubResource("Resource_gpi46"),
+"R2": SubResource("Resource_h7rbp")
+})
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
 texture = ExtResource("6_bwfqp")
