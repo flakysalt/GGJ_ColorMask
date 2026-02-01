@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bua23yprvvx5w"]
 
 [ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_l7l87"]
-[ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/blackbeltf_spritesheet.png" id="1_wict8"]
+[ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/Characters/blackbeltf_spritesheet.png" id="1_wict8"]
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_lydgo"]
 [ext_resource type="Texture2D" uid="uid://bnatovtc6use2" path="res://Assets/notes.png" id="4_lummc"]
 [ext_resource type="Gradient" uid="uid://ds0frtydyhlhm" path="res://Assets/rainbow_gradient.tres" id="5_tvjhp"]

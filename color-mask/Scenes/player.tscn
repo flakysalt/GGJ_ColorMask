@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cw411bnd1130" path="res://Scripts/player.gd" id="1_v0iea"]
 [ext_resource type="Shader" uid="uid://cc7d1ybmuywqp" path="res://Assets/Shader/isolate_color.gdshader" id="2_6t5aa"]
-[ext_resource type="Texture2D" uid="uid://t4i3f3e5uhb2" path="res://Assets/Placeholder/thieff_spritesheet.png" id="3_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://t4i3f3e5uhb2" path="res://Assets/Placeholder/Characters/thieff_spritesheet.png" id="3_6t5aa"]
 [ext_resource type="PackedScene" uid="uid://bkbs2n6dut4qb" path="res://Scenes/camera_2d.tscn" id="4_vgqql"]
+[ext_resource type="AudioStream" uid="uid://bsp4p1c41qic2" path="res://Assets/Sound/499064__16h_panska_skerl_jan__3_walking-large-gravel.wav" id="5_fkybt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vgqql"]
 shader = ExtResource("2_6t5aa")
@@ -143,8 +144,8 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=833487810]
-collision_layer = 385
-collision_mask = 385
+collision_layer = 897
+collision_mask = 897
 script = ExtResource("1_v0iea")
 speed = 150
 step_length = 16
@@ -173,6 +174,11 @@ animation = &"walk_up"
 frame = 1
 
 [node name="Camera2D" parent="." unique_id=1035717600 instance=ExtResource("4_vgqql")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=909473931]
+stream = ExtResource("5_fkybt")
+volume_db = -10.0
+pitch_scale = 1.5
 
 [connection signal="area_entered" from="InteractArea" to="." method="_on_interact_area_area_entered"]
 [connection signal="area_exited" from="InteractArea" to="." method="_on_interact_area_area_exited"]

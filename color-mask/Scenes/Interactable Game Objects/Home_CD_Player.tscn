@@ -1,139 +1,28 @@
 [gd_scene format=3 uid="uid://cy4jy5bo3mre4"]
 
 [ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_voxju"]
-[ext_resource type="Script" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="2_4ia6t"]
-[ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_7ougv"]
-[ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="3_le64h"]
 [ext_resource type="Texture2D" uid="uid://dyd2e06g8xo65" path="res://Assets/Asset Pack (Donarg)/VX Ace/B-C-D-E All Tiles 7 No Shadows.png" id="4_e8mn1"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_le64h"]
-[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="4_mrduy"]
 [ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_7ougv"]
-[ext_resource type="Texture2D" uid="uid://bnatovtc6use2" path="res://Assets/notes.png" id="7_7ougv"]
-[ext_resource type="Gradient" uid="uid://ds0frtydyhlhm" path="res://Assets/rainbow_gradient.tres" id="8_mrduy"]
 
-[sub_resource type="Resource" id="Resource_7sa8m"]
-script = ExtResource("3_le64h")
-metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
-
-[sub_resource type="Resource" id="Resource_xvulg"]
-script = ExtResource("4_mrduy")
-id = "B1"
-
-[sub_resource type="Resource" id="Resource_t58yv"]
-script = ExtResource("3_le64h")
-followupCommand = SubResource("Resource_xvulg")
-metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
-
-[sub_resource type="Resource" id="Resource_qoab7"]
+[sub_resource type="Resource" id="Resource_e8mn1"]
 script = ExtResource("4_le64h")
-text = "What?! I didn't know that. I'd love to go, but... where to start? And going all on my own? No thanks."
-speaker = "ME"
-next_conversation = SubResource("Resource_t58yv")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
-[sub_resource type="Resource" id="Resource_l3uda"]
-script = ExtResource("4_le64h")
-text = "Don't forget: Those lovely people will give a concert tomorrow near YOUR location. And there are still tickets left!"
-speaker = "Radio"
-next_conversation = SubResource("Resource_qoab7")
-metadata/_custom_type_script = "uid://e0a4j4rm6ew"
-
-[sub_resource type="Resource" id="Resource_8vqm2"]
-script = ExtResource("4_le64h")
-text = "Hey, they are playing my favorite band."
-speaker = "Me"
-next_conversation = SubResource("Resource_l3uda")
-metadata/_custom_type_script = "uid://e0a4j4rm6ew"
-
-[sub_resource type="Resource" id="Resource_jxi1u"]
+[sub_resource type="Resource" id="Resource_o45k1"]
 script = ExtResource("5_7ougv")
-text = "This is my trusty radio. Maybe that will brighten my mood if I turn on some music. Or maybe it'll be just bad news again."
+text = "I should turn on some music. Maybe that will brighten my mood."
 speaker = "Me"
-button1text = "Ignore"
-button1followup = SubResource("Resource_7sa8m")
-button2text = "Turn on"
-button2followup = SubResource("Resource_8vqm2")
+button1text = "Play happy music"
+button1followup = SubResource("Resource_e8mn1")
 metadata/_custom_type_script = "uid://dqfr480su1o7h"
-
-[sub_resource type="Resource" id="Resource_vh04c"]
-script = ExtResource("2_4ia6t")
-anim_name = "MusicOn"
-
-[sub_resource type="Resource" id="Resource_v6mh1"]
-script = ExtResource("3_le64h")
-followupCommand = SubResource("Resource_vh04c")
-metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
-
-[sub_resource type="Resource" id="Resource_c0omd"]
-script = ExtResource("4_le64h")
-text = "They are again playing songs of my favorite band. I think they really want to promote that concert. "
-speaker = "Me"
-next_conversation = SubResource("Resource_v6mh1")
-metadata/_custom_type_script = "uid://e0a4j4rm6ew"
-
-[sub_resource type="Resource" id="Resource_5tn7s"]
-script = ExtResource("4_le64h")
-text = "🎶 🎵🎵 🎶 🎵🎵"
-speaker = "Radio"
-next_conversation = SubResource("Resource_c0omd")
-metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o45k1"]
 size = Vector2(14, 16)
 
-[sub_resource type="Animation" id="Animation_t58yv"]
-resource_name = "MusicOn"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CPUParticles2D:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_qoab7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CPUParticles2D:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_l3uda"]
-_data = {
-&"MusicOn": SubResource("Animation_t58yv"),
-&"RESET": SubResource("Animation_qoab7")
-}
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8vqm2"]
-particles_animation = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 2
-particles_anim_loop = false
-
-[sub_resource type="Curve" id="Curve_jxi1u"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.76495135, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[node name="Home_CD_Player" type="StaticBody2D" unique_id=558507055 node_paths=PackedStringArray("animationPlayer")]
+[node name="Home_CD_Player" type="StaticBody2D" unique_id=558507055]
 script = ExtResource("1_voxju")
-dialogues = Dictionary[String, ExtResource("2_7ougv")]({
-"B1": SubResource("Resource_jxi1u"),
-"NOSKIP": SubResource("Resource_5tn7s")
-})
-animationPlayer = NodePath("AnimationPlayer")
+dialogue = SubResource("Resource_o45k1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
 scale = Vector2(0.5, 0.5)
@@ -143,22 +32,3 @@ region_rect = Rect2(450, 204, 30, 34)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=892489500]
 shape = SubResource("RectangleShape2D_o45k1")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1543420895]
-libraries/ = SubResource("AnimationLibrary_l3uda")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=299760794]
-material = SubResource("CanvasItemMaterial_8vqm2")
-emitting = false
-amount = 3
-texture = ExtResource("7_7ougv")
-direction = Vector2(0, -1)
-spread = 30.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 10.0
-initial_velocity_max = 20.0
-scale_amount_min = 0.2
-scale_amount_max = 0.4
-scale_amount_curve = SubResource("Curve_jxi1u")
-color_initial_ramp = ExtResource("8_mrduy")
-anim_offset_max = 1.0
