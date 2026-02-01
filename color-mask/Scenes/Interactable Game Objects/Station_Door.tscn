@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_r524b"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_noo06"]
 [ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="5_b16hr"]
-[ext_resource type="Texture2D" uid="uid://doid0uxsnvfum" path="res://Assets/Placeholder/Tileset/House_Tileset.png" id="5_hbvtw"]
+[ext_resource type="Texture2D" uid="uid://ck83o7myhxcrj" path="res://Assets/32x32_objects.png" id="6_b16hr"]
 
 [sub_resource type="Resource" id="Resource_53bci"]
 script = ExtResource("2_r524b")
@@ -39,7 +39,7 @@ metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
 [sub_resource type="Resource" id="Resource_dawux"]
 script = ExtResource("4_noo06")
-text = "Unfortunately, there will be other times in your future when the world loses its color agian. But now you know that the color can come back."
+text = "Unfortunately, there will be other times in your future when the world loses its color again. But now you know that the color can come back."
 speaker = "Narrator"
 next_conversation = SubResource("Resource_j8qsv")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
@@ -89,7 +89,7 @@ command = SubResource("Resource_s4gia")
 metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b16hr"]
-size = Vector2(14, 14)
+size = Vector2(103, 63)
 
 [node name="Station_Train_Door" type="StaticBody2D" unique_id=558507055]
 script = ExtResource("1_ikp3f")
@@ -102,9 +102,10 @@ dialogues = Dictionary[String, ExtResource("2_hbvtw")]({
 dialogueList = Array[ExtResource("5_b16hr")]([SubResource("Resource_sn60f"), SubResource("Resource_atlhi"), SubResource("Resource_q7r07"), SubResource("Resource_ve2mh")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
-texture = ExtResource("5_hbvtw")
+texture = ExtResource("6_b16hr")
 region_enabled = true
-region_rect = Rect2(545, 33, 14, 14)
+region_rect = Rect2(13, 98, 103, 66)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=892489500]
+position = Vector2(-0.5, 1.5)
 shape = SubResource("RectangleShape2D_b16hr")
