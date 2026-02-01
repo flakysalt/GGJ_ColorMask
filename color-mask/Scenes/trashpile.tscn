@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="6_7btea"]
 [ext_resource type="Texture2D" uid="uid://cv631iv8k30dt" path="res://Assets/16x16_objects.png" id="7_ej8tr"]
 [ext_resource type="Script" uid="uid://dvdef5j3i8kfd" path="res://Scripts/DialogueCommands/ActionCommand.gd" id="7_rkbm2"]
-[ext_resource type="Script" path="res://Scripts/DialogueWithKey.gd" id="8_4m11r"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="8_4m11r"]
 
 [sub_resource type="Resource" id="Resource_7u5wn"]
 script = ExtResource("5_d1jb2")
@@ -48,12 +48,11 @@ metadata/_custom_type_script = "uid://dvdef5j3i8kfd"
 
 [sub_resource type="Resource" id="Resource_d1jb2"]
 script = ExtResource("8_4m11r")
-key = "Grey"
+key = "B2"
 command = SubResource("Resource_xk5ad")
 
 [sub_resource type="Resource" id="Resource_t27ef"]
 script = ExtResource("8_4m11r")
-key = "R1"
 command = SubResource("Resource_kysu3")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aoto3"]

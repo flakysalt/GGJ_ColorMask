@@ -1,10 +1,28 @@
 [gd_scene format=3 uid="uid://8dtee0ohcxgc"]
 
 [ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_mfhun"]
-[ext_resource type="Script" path="res://Scripts/DialogueWithKey.gd" id="2_ld6vy"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="2_ld6vy"]
 [ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="3_jhx0e"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="4_6g8n0"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="5_g0nsj"]
+[ext_resource type="Texture2D" uid="uid://cv631iv8k30dt" path="res://Assets/16x16_objects.png" id="6_ld6vy"]
+
+[sub_resource type="Resource" id="Resource_mfhun"]
+script = ExtResource("4_6g8n0")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_ld6vy"]
+script = ExtResource("5_g0nsj")
+text = "Have nothing to throw away."
+speaker = "Me"
+next_conversation = SubResource("Resource_mfhun")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_jhx0e"]
+script = ExtResource("2_ld6vy")
+key = "Cleanup"
+command = SubResource("Resource_ld6vy")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
 
 [sub_resource type="Resource" id="Resource_eiq4n"]
 script = ExtResource("3_jhx0e")
@@ -24,16 +42,19 @@ metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
 [sub_resource type="Resource" id="Resource_p8fuq"]
 script = ExtResource("2_ld6vy")
-key = "Cleanup"
+key = "B2"
 command = SubResource("Resource_tt6g1")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ucv1q"]
 
-[node name="Trashcan" type="Node2D" unique_id=2009990706]
+[node name="Trashcan" type="StaticBody2D" unique_id=1794268289]
 script = ExtResource("1_mfhun")
-dialogueList = Array[ExtResource("2_ld6vy")]([SubResource("Resource_p8fuq")])
+dialogueList = Array[ExtResource("2_ld6vy")]([SubResource("Resource_jhx0e"), SubResource("Resource_p8fuq")])
+
+[node name="Trashcan" type="Sprite2D" parent="." unique_id=1354957228]
+texture = ExtResource("6_ld6vy")
+region_enabled = true
+region_rect = Rect2(368, 6, 16, 28)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=699857211]
 shape = SubResource("RectangleShape2D_ucv1q")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=625811437]
