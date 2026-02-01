@@ -78,7 +78,7 @@ dialogueList = Array[ExtResource("6_bpqkf")]([SubResource("Resource_p0c3d"), Sub
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
 texture = ExtResource("2_y38jf")
 region_enabled = true
-region_rect = Rect2(545, 33, 14, 14)
+region_rect = Rect2(528, 80, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=892489500]
 shape = SubResource("RectangleShape2D_b16hr")

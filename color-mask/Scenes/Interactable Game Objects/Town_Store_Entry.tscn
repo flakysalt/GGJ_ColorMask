@@ -19,4 +19,5 @@ region_rect = Rect2(545, 33, 14, 14)
 shape = SubResource("RectangleShape2D_b16hr")
 
 [node name="PushZone" parent="." unique_id=933193684 instance=ExtResource("6_xkufj")]
+scale = Vector2(2, 2)
 id_to_deactivate = "B2"
