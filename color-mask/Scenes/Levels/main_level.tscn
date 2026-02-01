@@ -4,9 +4,14 @@
 [ext_resource type="TileSet" uid="uid://bjk4xfx3sjbfa" path="res://Assets/forest_tileset.tres" id="2_ikcpc"]
 [ext_resource type="PackedScene" path="res://Scenes/camera_2d.tscn" id="3_5erdv"]
 [ext_resource type="PackedScene" uid="uid://ca1e7m4k4nre4" path="res://Scenes/player.tscn" id="3_qbrl8"]
-[ext_resource type="PackedScene" path="res://Scenes/interactable_character.tscn" id="5_a2ia3"]
+[ext_resource type="PackedScene" uid="uid://bua23yprvvx5w" path="res://Scenes/interactable_character.tscn" id="5_a2ia3"]
+[ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="6_2jcip"]
 [ext_resource type="PackedScene" uid="uid://b71wrw204jeu8" path="res://Scenes/conversation_system.tscn" id="6_236hc"]
+[ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="7_6l6h0"]
 [ext_resource type="PackedScene" uid="uid://bjscxbuyk4rgr" path="res://Scenes/SceneTransition.tscn" id="7_lwkuy"]
+[ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="7_o18aq"]
+[ext_resource type="Script" uid="uid://cbjef5gr1vobn" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="8_hd7sb"]
+[ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="8_o18aq"]
 [ext_resource type="PackedScene" uid="uid://bpi50q0p2380m" path="res://Scenes/push_zone.tscn" id="8_tqiex"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5erdv"]
@@ -15,6 +20,32 @@ shader_parameter/hide = true
 shader_parameter/color = Color(0.25441423, 0.5433338, 0.04846759, 1)
 shader_parameter/strength = 0.575
 shader_parameter/saturation = 0.3090000146775
+
+[sub_resource type="Resource" id="Resource_hd7sb"]
+script = ExtResource("7_o18aq")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_unus1"]
+script = ExtResource("8_hd7sb")
+anim_name = "Sing"
+metadata/_custom_type_script = "uid://cbjef5gr1vobn"
+
+[sub_resource type="Resource" id="Resource_vgie2"]
+script = ExtResource("7_6l6h0")
+text = "What can i do for you today?"
+speaker = "Trisi"
+button1text = "See ya!"
+button1followup = SubResource("Resource_hd7sb")
+button2text = "Sing for me!"
+button2followup = SubResource("Resource_unus1")
+metadata/_custom_type_script = "uid://dqfr480su1o7h"
+
+[sub_resource type="Resource" id="Resource_5vthg"]
+script = ExtResource("8_o18aq")
+text = "Hi how are you?"
+speaker = "Trisi"
+next_conversation = SubResource("Resource_vgie2")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
 [node name="MainLevel" type="Node2D" unique_id=450960749]
 
@@ -40,6 +71,9 @@ position = Vector2(1, 0)
 
 [node name="InteractableCharacter" parent="." unique_id=221575232 instance=ExtResource("5_a2ia3")]
 position = Vector2(-69, 0)
+dialogues = Dictionary[String, ExtResource("6_2jcip")]({
+"neverclear": SubResource("Resource_5vthg")
+})
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1092367271]
 

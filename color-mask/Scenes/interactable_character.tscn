@@ -2,17 +2,66 @@
 
 [ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_l7l87"]
 [ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/blackbeltf_spritesheet.png" id="1_wict8"]
-[ext_resource type="Script" uid="uid://dvdef5j3i8kfd" path="res://Scripts/DialogueCommands/ActionCommand.gd" id="2_lydgo"]
+[ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_lydgo"]
+[ext_resource type="Texture2D" uid="uid://bnatovtc6use2" path="res://Assets/notes.png" id="4_lummc"]
+[ext_resource type="Gradient" uid="uid://ds0frtydyhlhm" path="res://Assets/rainbow_gradient.tres" id="5_tvjhp"]
 
 [sub_resource type="Resource" id="Resource_lummc"]
 script = ExtResource("2_lydgo")
-metadata/_custom_type_script = "uid://dvdef5j3i8kfd"
+metadata/_custom_type_script = "uid://bi0h4eo4axkeu"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wict8"]
 
-[node name="InteractableCharacter" type="StaticBody2D" unique_id=558507055]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tvjhp"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 2
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_tvjhp"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.76495135, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Animation" id="Animation_lummc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_tvjhp"]
+resource_name = "Sing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4teau"]
+_data = {
+&"RESET": SubResource("Animation_lummc"),
+&"Sing": SubResource("Animation_tvjhp")
+}
+
+[node name="InteractableCharacter" type="StaticBody2D" unique_id=558507055 node_paths=PackedStringArray("animationPlayer")]
 script = ExtResource("1_l7l87")
 dialogue = SubResource("Resource_lummc")
+animationPlayer = NodePath("AnimationPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
 texture = ExtResource("1_wict8")
@@ -21,3 +70,23 @@ vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=892489500]
 shape = SubResource("CircleShape2D_wict8")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1431045536]
+material = SubResource("CanvasItemMaterial_tvjhp")
+emitting = false
+amount = 3
+texture = ExtResource("4_lummc")
+direction = Vector2(0, -1)
+spread = 30.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+scale_amount_min = 0.2
+scale_amount_max = 0.4
+scale_amount_curve = SubResource("Curve_tvjhp")
+color_initial_ramp = ExtResource("5_tvjhp")
+anim_offset_max = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2039043742]
+root_node = NodePath("../CPUParticles2D")
+libraries/ = SubResource("AnimationLibrary_4teau")
