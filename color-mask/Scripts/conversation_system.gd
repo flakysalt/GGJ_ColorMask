@@ -11,12 +11,15 @@ var button3Command : DialogueCommand
 @export var button2 : AutoSizeButton
 @export var button3 : AutoSizeButton
 
+@export var initialCaller : Node
+
 func _ready() -> void:
 	add_to_group("ui_system")
 
-func show_dialogue(command: DialogueCommand):
+func show_dialogue(command: DialogueCommand, caller: Node):
 	visible = true
 	$AnimationPlayer.stop()
+	initialCaller = caller
 
 	$VBoxContainer/AnsweButtons.visible = false
 	if(command is ChoiceConversationCommand):
@@ -45,7 +48,7 @@ func show_dialogue(command: DialogueCommand):
 	pass
 
 func close_conversation():
-	#make player move again
+	initialCaller = null
 	visible =false
 	
 func _on_color_rect_gui_input(event: InputEvent) -> void:
@@ -54,11 +57,11 @@ func _on_color_rect_gui_input(event: InputEvent) -> void:
 			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
 			return
 		if nextCommand != null:
-			nextCommand.execute(self)
+			nextCommand.execute(initialCaller)
 
 func _on_button_pressed() -> void:
-	button1Command.execute(self)
+	button1Command.execute(initialCaller)
 func _on_button_2_pressed() -> void:
-	button2Command.execute(self)
+	button2Command.execute(initialCaller)
 func _on_button_3_pressed() -> void:
-	button3Command.execute(self)
+	button3Command.execute(initialCaller)

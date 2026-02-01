@@ -13,5 +13,5 @@ class_name ChoiceConversationCommand
 
 func execute(caller : Node) -> void:
 	var ui_system : UiSystem = caller.get_tree().get_first_node_in_group("ui_system")
-	ui_system.show_dialogue(self)
+	ui_system.show_dialogue(self,caller)
 	
