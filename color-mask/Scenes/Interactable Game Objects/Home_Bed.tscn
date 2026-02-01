@@ -1,28 +1,57 @@
 [gd_scene format=3 uid="uid://gch1k1wpnen0"]
 
 [ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_a6d8t"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="2_a6d8t"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_tgx8w"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_qfo73"]
+[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_c6q1x"]
 [ext_resource type="Texture2D" uid="uid://dyd2e06g8xo65" path="res://Assets/Asset Pack (Donarg)/VX Ace/B-C-D-E All Tiles 7 No Shadows.png" id="6_a6d8t"]
 
-[sub_resource type="Resource" id="Resource_ir5fp"]
+[sub_resource type="Resource" id="Resource_fc1tv"]
 script = ExtResource("2_tgx8w")
 metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 
-[sub_resource type="Resource" id="Resource_5455w"]
+[sub_resource type="Resource" id="Resource_qfo73"]
 script = ExtResource("4_qfo73")
-text = "I should sleep but I although I have no energy, I can't calm down. I need to go out and do something.
-"
+text = "I feel like I'm full of bees, I don't think I can sleep yet."
 speaker = "Me"
-next_conversation = SubResource("Resource_ir5fp")
+next_conversation = SubResource("Resource_fc1tv")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
+[sub_resource type="Resource" id="Resource_8edqe"]
+script = ExtResource("2_a6d8t")
+key = "G4"
+command = SubResource("Resource_qfo73")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Resource" id="Resource_2ms1w"]
+script = ExtResource("5_c6q1x")
+id = "G4"
+
+[sub_resource type="Resource" id="Resource_ylxnd"]
+script = ExtResource("2_tgx8w")
+followupCommand = SubResource("Resource_2ms1w")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_5ovn3"]
+script = ExtResource("4_qfo73")
+text = "It's been a long day, I'll lay down to be ready for tomorrow!"
+speaker = "Me"
+next_conversation = SubResource("Resource_ylxnd")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_ftpk2"]
+script = ExtResource("2_a6d8t")
+key = "G4"
+command = SubResource("Resource_5ovn3")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6q1x"]
-size = Vector2(20, 28)
+size = Vector2(36, 61)
 
 [node name="Home_Bed" type="StaticBody2D" unique_id=558507055]
 script = ExtResource("1_a6d8t")
-dialogue = SubResource("Resource_5455w")
+dialogueList = Array[ExtResource("2_a6d8t")]([SubResource("Resource_8edqe"), SubResource("Resource_ftpk2")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
 texture = ExtResource("6_a6d8t")
@@ -30,5 +59,5 @@ region_enabled = true
 region_rect = Rect2(270, 18, 36, 62)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=892489500]
-position = Vector2(0, -1)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_c6q1x")
