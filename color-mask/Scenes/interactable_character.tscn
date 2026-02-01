@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_lydgo"]
 [ext_resource type="Texture2D" uid="uid://bnatovtc6use2" path="res://Assets/notes.png" id="4_lummc"]
 [ext_resource type="Gradient" uid="uid://ds0frtydyhlhm" path="res://Assets/rainbow_gradient.tres" id="5_tvjhp"]
+[ext_resource type="PackedScene" uid="uid://cp85cnac0fj7e" path="res://Scenes/InteractionParticle.tscn" id="6_4teau"]
 
 [sub_resource type="Resource" id="Resource_lummc"]
 script = ExtResource("2_lydgo")
@@ -90,3 +91,5 @@ anim_offset_max = 1.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2039043742]
 root_node = NodePath("../CPUParticles2D")
 libraries/ = SubResource("AnimationLibrary_4teau")
+
+[node name="CPUParticles2D2" parent="." unique_id=1390114633 instance=ExtResource("6_4teau")]

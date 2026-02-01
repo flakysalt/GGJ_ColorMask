@@ -7,4 +7,4 @@ class_name ChangeColorCommand
 func execute(caller : Node) -> void:
 	var camera : ShaderCamera = caller.get_tree().get_first_node_in_group("camera")
 	camera.transition_to_preset(shaderPresetName,transitionTime)
-	GlobalState.currentMaskState = shaderPresetName
+	GlobalState.set_mask_state(shaderPresetName)
