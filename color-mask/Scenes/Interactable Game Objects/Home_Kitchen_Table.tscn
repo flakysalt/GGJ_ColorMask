@@ -3,14 +3,21 @@
 [ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_xvfyb"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_bpki6"]
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_secwe"]
+[ext_resource type="Script" uid="uid://c3kp8xfthc2aw" path="res://Scripts/DialogueCommands/ChangeColorCommand.gd" id="3_secwe"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_taymx"]
 [ext_resource type="Texture2D" uid="uid://dyd2e06g8xo65" path="res://Assets/Asset Pack (Donarg)/VX Ace/B-C-D-E All Tiles 7 No Shadows.png" id="5_8tpru"]
 [ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_taymx"]
 [ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="6_bpki6"]
 
+[sub_resource type="Resource" id="Resource_vxsoc"]
+script = ExtResource("3_secwe")
+shaderPresetName = 1
+metadata/_custom_type_script = "uid://c3kp8xfthc2aw"
+
 [sub_resource type="Resource" id="Resource_b4uei"]
 script = ExtResource("5_taymx")
-id = "BurgerEaten"
+id = "G1"
+followupCommand = SubResource("Resource_vxsoc")
 
 [sub_resource type="Resource" id="Resource_ct2c6"]
 script = ExtResource("2_bpki6")
@@ -37,9 +44,15 @@ speaker = "Me"
 next_conversation = SubResource("Resource_pg5wy")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
+[sub_resource type="Resource" id="Resource_y6ks3"]
+script = ExtResource("3_secwe")
+shaderPresetName = 7
+metadata/_custom_type_script = "uid://c3kp8xfthc2aw"
+
 [sub_resource type="Resource" id="Resource_s7xcb"]
 script = ExtResource("5_taymx")
 id = "G3"
+followupCommand = SubResource("Resource_y6ks3")
 
 [sub_resource type="Resource" id="Resource_2o6uw"]
 script = ExtResource("2_bpki6")
@@ -90,22 +103,39 @@ key = "BurgerReceived"
 command = SubResource("Resource_00dy5")
 metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
 
+[sub_resource type="Resource" id="Resource_bpki6"]
+script = ExtResource("6_bpki6")
+key = "G1"
+command = SubResource("Resource_8o110")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
 [sub_resource type="Resource" id="Resource_knslx"]
 script = ExtResource("6_bpki6")
 key = "MealCooked"
 command = SubResource("Resource_cwvg5")
 metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
 
-[sub_resource type="Resource" id="Resource_bpki6"]
-script = ExtResource("6_bpki6")
-key = "BurgerEaten"
-command = SubResource("Resource_8o110")
-metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
-
 [sub_resource type="Resource" id="Resource_taymx"]
 script = ExtResource("6_bpki6")
 key = "G3"
 command = SubResource("Resource_psd35")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Resource" id="Resource_717o0"]
+script = ExtResource("2_bpki6")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_0apbi"]
+script = ExtResource("4_taymx")
+text = "i've had enough to eat for a today."
+speaker = "Me"
+next_conversation = SubResource("Resource_717o0")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_31x17"]
+script = ExtResource("6_bpki6")
+key = "NOSKIP"
+command = SubResource("Resource_0apbi")
 metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvfyb"]
@@ -120,7 +150,7 @@ dialogues = Dictionary[String, ExtResource("2_secwe")]({
 "MealCooked": SubResource("Resource_cwvg5"),
 "NOSKIP": SubResource("Resource_ixihb")
 })
-dialogueList = Array[ExtResource("6_bpki6")]([SubResource("Resource_secwe"), SubResource("Resource_knslx"), SubResource("Resource_bpki6"), SubResource("Resource_taymx")])
+dialogueList = Array[ExtResource("6_bpki6")]([SubResource("Resource_secwe"), SubResource("Resource_bpki6"), SubResource("Resource_knslx"), SubResource("Resource_taymx"), SubResource("Resource_31x17")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
 texture = ExtResource("5_8tpru")

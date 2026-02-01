@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_7h1bu"]
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_7h1bu"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_ubv68"]
-[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="3_ubv68"]
+[ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="3_ubv68"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_r34u2"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="6_sfqky"]
 [ext_resource type="Texture2D" uid="uid://cwgrg1abxen6" path="res://Assets/Placeholder/zeo254-completed-commission.png" id="6_t06wy"]
 
 [sub_resource type="Resource" id="Resource_4ghw8"]
@@ -23,6 +24,14 @@ speaker = "Me"
 next_conversation = SubResource("Resource_r34u2")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
+[sub_resource type="Resource" id="Resource_o3522"]
+script = ExtResource("6_sfqky")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Resource" id="Resource_fjmxa"]
+script = ExtResource("6_sfqky")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iyf7w"]
 size = Vector2(16, 15)
 
@@ -32,6 +41,7 @@ dialogues = Dictionary[String, ExtResource("2_7h1bu")]({
 "G2": SubResource("Resource_5r2ce"),
 "NOSKIP": null
 })
+dialogueList = Array[ExtResource("6_sfqky")]([SubResource("Resource_o3522"), SubResource("Resource_fjmxa")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
 texture = ExtResource("6_t06wy")
