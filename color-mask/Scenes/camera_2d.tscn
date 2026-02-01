@@ -31,18 +31,3 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
-
-[node name="ColorButton" type="Button" parent="DebugUi/VBoxContainer" unique_id=579642943]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "AllColors"
-
-[node name="GreyButton" type="Button" parent="DebugUi/VBoxContainer" unique_id=1942528997]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Full Grey"
-
-[connection signal="pressed" from="DebugUi/VBoxContainer/ColorButton" to="DebugUi" method="_on_color_button_pressed"]
-[connection signal="pressed" from="DebugUi/VBoxContainer/GreyButton" to="DebugUi" method="_on_grey_button_pressed"]

@@ -9,12 +9,11 @@ enum MaskState{
 	Four,
 	Five,
 	Six,
-	Seve,
+	Seven,
 	Eight,
 	Nine,
 	Ten,
 	Eleven,
-	Twelve,
 	Full
 }
 
