@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://rsl0rowio8mb"
 
 GlobalState="*uid://dkv2khi1fsud8"
 Audio="*uid://p6tjrvvo02cv"
+DialogueSystem="*uid://dqbf4qxppu282"
 
 [display]
 
