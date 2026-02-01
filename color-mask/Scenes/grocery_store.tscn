@@ -4,7 +4,9 @@
 [ext_resource type="TileSet" uid="uid://d18ojy7cg3g4n" path="res://Assets/walls_interior.tres" id="2_hellp"]
 [ext_resource type="TileSet" uid="uid://blcqsh7rpfvhl" path="res://objects_int.tres" id="3_wf2wy"]
 [ext_resource type="TileSet" uid="uid://ff3cpbewntrj" path="res://objects_int_16x16.tres" id="4_53auk"]
-[ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/blackbeltf_spritesheet.png" id="5_a7j5u"]
+[ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/Characters/blackbeltf_spritesheet.png" id="5_a7j5u"]
+[ext_resource type="PackedScene" uid="uid://bjscxbuyk4rgr" path="res://Scenes/SceneTransition.tscn" id="6_a7j5u"]
+[ext_resource type="PackedScene" uid="uid://ca1e7m4k4nre4" path="res://Scenes/player.tscn" id="7_xmame"]
 
 [node name="Node2D" type="Node2D" unique_id=102230757]
 
@@ -31,3 +33,11 @@ texture = ExtResource("5_a7j5u")
 hframes = 3
 vframes = 4
 frame = 2
+
+[node name="SceneTransition" parent="." unique_id=1734695462 instance=ExtResource("6_a7j5u")]
+position = Vector2(304, 297)
+scene_to_transition_to = "res://Scenes/town_scene.tscn"
+
+[node name="Player" parent="." unique_id=833487810 instance=ExtResource("7_xmame")]
+position = Vector2(304, 239)
+scale = Vector2(2, 2)

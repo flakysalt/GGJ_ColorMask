@@ -148,7 +148,7 @@ animations = [{
 collision_layer = 897
 collision_mask = 897
 script = ExtResource("1_v0iea")
-speed = 150
+speed = 80
 step_length = 16
 use_smooth_movement = true
 

@@ -188,4 +188,8 @@ shape = SubResource("CapsuleShape2D_k0128")
 position = Vector2(264, 979)
 scene_to_transition_to = "res://Scenes/home_scene.tscn"
 
+[node name="SceneTransition2" parent="." unique_id=1322722042 instance=ExtResource("13_yf8cf")]
+position = Vector2(968, 409)
+scene_to_transition_to = "res://Scenes/grocery_store.tscn"
+
 [editable path="FlowersInteractable"]
