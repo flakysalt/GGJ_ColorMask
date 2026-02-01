@@ -12,6 +12,7 @@ func interact():
 		if GlobalState.hasState(entry.key):
 			continue
 		entry.command.execute(self)
+		return
 
 func play_animation(animation_name : String):
 	animationPlayer.play(animation_name)
