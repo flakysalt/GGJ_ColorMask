@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://dro7508jq7f20"]
 
-[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_pqb1v"]
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/Interactables/interactable_character.gd" id="1_pqb1v"]
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_pqb1v"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_vw1rm"]
 [ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="3_2j1at"]
 [ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="3_vw1rm"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_jsqk7"]
-[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="5_pqb1v"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueCommands/DialogueWithKey.gd" id="5_pqb1v"]
 [ext_resource type="Texture2D" uid="uid://doid0uxsnvfum" path="res://Assets/Placeholder/Tileset/House_Tileset.png" id="8_2j1at"]
 
 [sub_resource type="Resource" id="Resource_rjnej"]

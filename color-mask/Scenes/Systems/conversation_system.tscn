@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b71wrw204jeu8"]
 
-[ext_resource type="Script" uid="uid://ckd7hel7p133f" path="res://Scripts/conversation_system.gd" id="1_1luoo"]
+[ext_resource type="Script" uid="uid://ckd7hel7p133f" path="res://Scripts/Systems/ConversationSystem.gd" id="1_1luoo"]
 [ext_resource type="FontVariation" uid="uid://bmjk3k8seyiks" path="res://Assets/Font/font_bold.tres" id="2_2m3s7"]
 [ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="2_s4hv8"]
 [ext_resource type="FontFile" uid="uid://n2lo0cj6uqjw" path="res://Assets/Font/ci-gamedev-font.ttf" id="2_u3yxg"]

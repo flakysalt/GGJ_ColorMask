@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://b2or3kpoiypdw"]
 
-[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_xvfyb"]
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/Interactables/interactable_character.gd" id="1_xvfyb"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_bpki6"]
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_secwe"]
 [ext_resource type="Script" uid="uid://c3kp8xfthc2aw" path="res://Scripts/DialogueCommands/ChangeColorCommand.gd" id="3_secwe"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_taymx"]
 [ext_resource type="Texture2D" uid="uid://dyd2e06g8xo65" path="res://Assets/Asset Pack (Donarg)/VX Ace/B-C-D-E All Tiles 7 No Shadows.png" id="5_8tpru"]
 [ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_taymx"]
-[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="6_bpki6"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueCommands/DialogueWithKey.gd" id="6_bpki6"]
 
 [sub_resource type="Resource" id="Resource_vxsoc"]
 script = ExtResource("3_secwe")

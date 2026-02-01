@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://202hpmxa3tmq"]
 
-[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_k5oia"]
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/Interactables/interactable_character.gd" id="1_k5oia"]
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_je82a"]
 [ext_resource type="Texture2D" uid="uid://doid0uxsnvfum" path="res://Assets/Placeholder/Tileset/House_Tileset.png" id="2_y38jf"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="3_bpqkf"]
 [ext_resource type="Resource" uid="uid://dee4kwxnuusu8" path="res://Assets/TempResource/friend_talk_endresource.tres" id="3_p0c3d"]
 [ext_resource type="Script" uid="uid://cbjef5gr1vobn" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="4_exygg"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_p0c3d"]
-[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="6_bpqkf"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueCommands/DialogueWithKey.gd" id="6_bpqkf"]
 
 [sub_resource type="Resource" id="Resource_rp3ye"]
 script = ExtResource("4_exygg")

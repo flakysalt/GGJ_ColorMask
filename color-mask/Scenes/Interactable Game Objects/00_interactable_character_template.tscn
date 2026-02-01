@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dedn4uwykc6io"]
 
-[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_6g45h"]
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/Interactables/interactable_character.gd" id="1_6g45h"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_su37w"]
 [ext_resource type="Script" uid="uid://dvdef5j3i8kfd" path="res://Scripts/DialogueCommands/ActionCommand.gd" id="3_oyb0y"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_v714l"]

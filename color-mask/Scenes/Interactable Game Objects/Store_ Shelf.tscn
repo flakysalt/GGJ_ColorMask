@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cya03j16keswg"]
 
-[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_670cx"]
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/Interactables/interactable_character.gd" id="1_670cx"]
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_expdb"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="3_4mbxp"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_ogybp"]
-[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_expdb"]
+[ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_expdb"]
 [ext_resource type="Texture2D" uid="uid://df42p1ccgr6ec" path="res://Assets/Asset Pack (Donarg)/VX Ace/B-C-D-E All Tiles 6.png" id="6_4mbxp"]
-[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="6_ogybp"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueCommands/DialogueWithKey.gd" id="6_ogybp"]
 
 [sub_resource type="Resource" id="Resource_nq3qn"]
 script = ExtResource("5_expdb")

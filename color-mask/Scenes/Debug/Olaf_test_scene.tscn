@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dck0qmngb6gno"]
 
-[ext_resource type="PackedScene" uid="uid://ca1e7m4k4nre4" path="res://Scenes/player.tscn" id="1_v6gsh"]
+[ext_resource type="PackedScene" uid="uid://ca1e7m4k4nre4" path="res://Scenes/Systems/player.tscn" id="1_v6gsh"]
 [ext_resource type="PackedScene" uid="uid://dro7508jq7f20" path="res://Scenes/Interactable Game Objects/FastFood_Interface.tscn" id="2_empj5"]
 [ext_resource type="PackedScene" uid="uid://dwas6h80teuwb" path="res://Scenes/Interactable Game Objects/FastFood_Waiter.tscn" id="3_xsi2e"]
 [ext_resource type="PackedScene" uid="uid://gch1k1wpnen0" path="res://Scenes/Interactable Game Objects/Home_Bed.tscn" id="5_f2csj"]

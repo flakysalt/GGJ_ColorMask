@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cy4jy5bo3mre4"]
 
-[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_voxju"]
-[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="2_w1gdo"]
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/Interactables/interactable_character.gd" id="1_voxju"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueCommands/DialogueWithKey.gd" id="2_w1gdo"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="3_c1t0w"]
 [ext_resource type="Texture2D" uid="uid://dyd2e06g8xo65" path="res://Assets/Asset Pack (Donarg)/VX Ace/B-C-D-E All Tiles 7 No Shadows.png" id="4_e8mn1"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_le64h"]

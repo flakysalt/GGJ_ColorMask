@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d0rjwiq7qc82u"]
 
-[ext_resource type="Script" uid="uid://yxj7qx1mpkx1" path="res://Scripts/spatial_audio.gd" id="1_e613p"]
+[ext_resource type="Script" uid="uid://yxj7qx1mpkx1" path="res://Scripts/Interactables/spatial_audio.gd" id="1_e613p"]
 
 [node name="SpatialAudio" type="Area2D" unique_id=868192196]
 script = ExtResource("1_e613p")

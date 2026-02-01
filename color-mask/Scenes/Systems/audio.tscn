@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cpk3hhvdmk6sg" path="res://Assets/Music/layer03.wav" id="3_k46ri"]
 [ext_resource type="AudioStream" uid="uid://c7mbicn3eojwa" path="res://Assets/Music/layer04.wav" id="4_etkin"]
 [ext_resource type="AudioStream" uid="uid://dhcginvcbxbs5" path="res://Assets/Music/layer05.wav" id="5_fkw8n"]
-[ext_resource type="Script" uid="uid://cmf1gjob6rhg8" path="res://Scripts/audio.gd" id="6_4thc6"]
+[ext_resource type="Script" uid="uid://cmf1gjob6rhg8" path="res://Scripts/Systems/AudioSystem.gd" id="6_4thc6"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_e0u3b"]
 stream_count = 5

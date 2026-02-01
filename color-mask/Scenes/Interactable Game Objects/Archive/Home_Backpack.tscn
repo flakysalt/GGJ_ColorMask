@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cy1po404j2bbq"]
 
-[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_qujh7"]
-[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="2_2efi6"]
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/Interactables/interactable_character.gd" id="1_qujh7"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueCommands/DialogueWithKey.gd" id="2_2efi6"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_bslcu"]
 [ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_lbicj"]
 [ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/Characters/blackbeltf_spritesheet.png" id="6_em4co"]

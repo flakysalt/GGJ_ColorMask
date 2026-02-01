@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://xidpyncasgfa"]
 
-[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_kxxmc"]
-[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="2_kxxmc"]
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/Interactables/interactable_character.gd" id="1_kxxmc"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueCommands/DialogueWithKey.gd" id="2_kxxmc"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_r47cc"]
-[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="3_8q838"]
+[ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="3_8q838"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="5_3qqsj"]
 [ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/Characters/blackbeltf_spritesheet.png" id="6_0wock"]
 

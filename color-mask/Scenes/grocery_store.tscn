@@ -5,8 +5,8 @@
 [ext_resource type="TileSet" uid="uid://blcqsh7rpfvhl" path="res://Assets/Tilesets/objects_int.tres" id="3_wf2wy"]
 [ext_resource type="TileSet" uid="uid://ff3cpbewntrj" path="res://Assets/Tilesets/objects_int_16x16.tres" id="4_53auk"]
 [ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/Characters/blackbeltf_spritesheet.png" id="5_a7j5u"]
-[ext_resource type="PackedScene" uid="uid://bjscxbuyk4rgr" path="res://Scenes/SceneTransition.tscn" id="6_a7j5u"]
-[ext_resource type="PackedScene" uid="uid://ca1e7m4k4nre4" path="res://Scenes/player.tscn" id="7_xmame"]
+[ext_resource type="PackedScene" uid="uid://bjscxbuyk4rgr" path="res://Scenes/Systems/SceneTransition.tscn" id="6_a7j5u"]
+[ext_resource type="PackedScene" uid="uid://ca1e7m4k4nre4" path="res://Scenes/Systems/player.tscn" id="7_xmame"]
 
 [node name="Node2D" type="Node2D" unique_id=102230757]
 

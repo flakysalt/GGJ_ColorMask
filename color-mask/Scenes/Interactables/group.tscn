@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://uskchkjge218"]
 
 [ext_resource type="Texture2D" uid="uid://c4nbkmdqd4fuo" path="res://Assets/Placeholder/Characters/woman_spritesheet.png" id="1_ary3j"]
-[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_neqkc"]
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/Interactables/interactable_character.gd" id="1_neqkc"]
 [ext_resource type="Texture2D" uid="uid://bga2su1b1hfe1" path="res://Assets/Placeholder/Characters/executivef_spritesheet.png" id="2_52hu7"]
-[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="2_p1egs"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueCommands/DialogueWithKey.gd" id="2_p1egs"]
 [ext_resource type="Texture2D" uid="uid://bpqab7kplqbw3" path="res://Assets/Placeholder/Characters/man_spritesheet.png" id="3_cn6wd"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="3_m0quq"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="3_xjhnc"]

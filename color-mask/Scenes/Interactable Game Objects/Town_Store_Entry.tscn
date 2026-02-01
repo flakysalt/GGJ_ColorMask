@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dursjv52r6wyo"]
 
-[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_cxxgw"]
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/Interactables/interactable_character.gd" id="1_cxxgw"]
 [ext_resource type="Texture2D" uid="uid://doid0uxsnvfum" path="res://Assets/Placeholder/Tileset/House_Tileset.png" id="5_ccuun"]
-[ext_resource type="PackedScene" uid="uid://bpi50q0p2380m" path="res://Scenes/push_zone.tscn" id="6_xkufj"]
+[ext_resource type="PackedScene" uid="uid://bpi50q0p2380m" path="res://Scenes/Interactables/push_zone.tscn" id="6_xkufj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b16hr"]
 size = Vector2(14, 14)

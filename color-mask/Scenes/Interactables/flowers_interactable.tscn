@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ckn5r6islrat1"]
 
-[ext_resource type="Script" uid="uid://bksud0spqnmtk" path="res://Scripts/flowers_interactable.gd" id="1_8r63t"]
+[ext_resource type="Script" uid="uid://bksud0spqnmtk" path="res://Scripts/Interactables/flowers_interactable.gd" id="1_8r63t"]
 [ext_resource type="Script" uid="uid://c3kp8xfthc2aw" path="res://Scripts/DialogueCommands/ChangeColorCommand.gd" id="2_odg8p"]
-[ext_resource type="Script" uid="uid://b2j03tb1b60s4" path="res://Scripts/flowers.gd" id="2_wkyfk"]
+[ext_resource type="Script" uid="uid://b2j03tb1b60s4" path="res://Scripts/Interactables/flowers.gd" id="2_wkyfk"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="4_hqxmk"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="5_1505b"]
 

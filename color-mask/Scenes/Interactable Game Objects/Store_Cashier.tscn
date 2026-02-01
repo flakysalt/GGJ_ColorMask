@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://g2on6q4nj0rq"]
 
-[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_ovmwk"]
-[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="2_ovmwk"]
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/Interactables/interactable_character.gd" id="1_ovmwk"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueCommands/DialogueWithKey.gd" id="2_ovmwk"]
 [ext_resource type="Script" uid="uid://c3kp8xfthc2aw" path="res://Scripts/DialogueCommands/ChangeColorCommand.gd" id="3_3h2dn"]
 [ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="4_o5g3l"]
 [ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_a6pgv"]

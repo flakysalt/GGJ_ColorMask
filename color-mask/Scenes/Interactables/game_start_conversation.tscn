@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://db2t0s4a60j7r"]
 
-[ext_resource type="Script" uid="uid://dwqfmjlm1yc1l" path="res://Scripts/AutoConversation.gd" id="1_vj0e5"]
+[ext_resource type="Script" uid="uid://dwqfmjlm1yc1l" path="res://Scripts/Interactables/AutoConversation.gd" id="1_vj0e5"]
 
 [node name="GameStartConversation" type="Node2D" unique_id=1605847366]
 script = ExtResource("1_vj0e5")

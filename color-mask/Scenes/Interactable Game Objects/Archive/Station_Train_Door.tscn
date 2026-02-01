@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwek753b1aovu"]
 
-[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_ikp3f"]
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/Interactables/interactable_character.gd" id="1_ikp3f"]
 [ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/Characters/blackbeltf_spritesheet.png" id="6_4352s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wict8"]
