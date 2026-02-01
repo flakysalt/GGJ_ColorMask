@@ -62,7 +62,6 @@ tile_set = ExtResource("2_ikcpc")
 
 [node name="Player" parent="." unique_id=833487810 instance=ExtResource("3_qbrl8")]
 position = Vector2(8, 8)
-speed = 30
 
 [node name="InteractableCharacter" parent="." unique_id=221575232 instance=ExtResource("5_a2ia3")]
 position = Vector2(-69, 0)

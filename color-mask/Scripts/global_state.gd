@@ -21,13 +21,24 @@ var state: Array[String] = []
 
 var currentMaskState : MaskState
 
-func increase_color_mask():
-	currentMaskState += 1
+func set_mask_state(state : MaskState):
+	currentMaskState = state
 	match currentMaskState:
-		1,2,3:
+		0,1,2:
 			Audio.set_layer(true,1)
 			pass
-		
+		3,4,5:
+			Audio.set_layer(true,2)
+			pass
+		6,7:
+			Audio.set_layer(true,3)
+			pass
+		8,9,10:
+			Audio.set_layer(true,4)
+			pass
+		11,12:
+			Audio.set_layer(true,5)
+			pass
 
 func addToState(id : String):
 	state.append(id)

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cp85cnac0fj7e"]
+
+[ext_resource type="Gradient" uid="uid://ds0frtydyhlhm" path="res://Assets/rainbow_gradient.tres" id="1_negg3"]
+
+[sub_resource type="Curve" id="Curve_4teau"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.20833333, 1), 0.0, 0.0, 0, 0, Vector2(0.8333334, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="InteractionParticle" type="CPUParticles2D" unique_id=1390114633]
+lifetime = 8.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 2.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_4teau")
+color = Color(1, 1, 1, 0.47843137)
+color_ramp = ExtResource("1_negg3")
