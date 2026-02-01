@@ -44,9 +44,29 @@ func _process(delta: float) -> void:
 		State.SmoothMovement:
 			velocity = inputVector * speed + impulse_velocity
 			impulse_velocity = impulse_velocity.lerp(Vector2.ZERO, 5 * delta)  # Decay over time
+			update_animation(inputVector)
 			move_and_slide()
 	pass
 	
+func update_animation(direction: Vector2):
+	var animated_sprite = $AnimatedSprite2D
+	
+	if(direction != Vector2.ZERO):
+		animated_sprite.play()
+		if abs(direction.y) > abs(direction.x):
+			if direction.y > 0:
+				animated_sprite.animation = "walk_down"
+			else:
+				animated_sprite.animation = "walk_up"
+		else:
+			if direction.x > 0:
+				animated_sprite.animation = "walk_right"
+			else:
+				animated_sprite.animation = "walk_left"
+				
+	else:
+		animated_sprite.stop()
+		animated_sprite.frame = 1 
 func handle_movement(delta):
 	var direction : Vector2 = (goal_movement_position- global_position).normalized()
 	velocity = direction * speed
