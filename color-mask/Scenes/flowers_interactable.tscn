@@ -75,6 +75,7 @@ finishDialogue = SubResource("Resource_hqxmk")
 position = Vector2(-114.50333, -155.40594)
 script = ExtResource("2_wkyfk")
 command = SubResource("Resource_74cep")
+keyToBeActive = "B1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flowers1" unique_id=841295116]
 shape = SubResource("CircleShape2D_dbma1")
@@ -83,6 +84,7 @@ shape = SubResource("CircleShape2D_dbma1")
 position = Vector2(-401.50333, -237.40594)
 script = ExtResource("2_wkyfk")
 command = SubResource("Resource_qoeom")
+keyToBeActive = "B1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flowers2" unique_id=1037920916]
 shape = SubResource("CircleShape2D_dbma1")
@@ -91,6 +93,7 @@ shape = SubResource("CircleShape2D_dbma1")
 position = Vector2(-273.50333, -504.40594)
 script = ExtResource("2_wkyfk")
 command = SubResource("Resource_j88dg")
+keyToBeActive = "B1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flowers3" unique_id=671266506]
 shape = SubResource("CircleShape2D_dbma1")
@@ -99,6 +102,7 @@ shape = SubResource("CircleShape2D_dbma1")
 position = Vector2(45.496674, -471.40594)
 script = ExtResource("2_wkyfk")
 command = SubResource("Resource_880qs")
+keyToBeActive = "B1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flowers4" unique_id=2018002094]
 shape = SubResource("CircleShape2D_dbma1")
@@ -107,6 +111,7 @@ shape = SubResource("CircleShape2D_dbma1")
 position = Vector2(13.496674, -281.40594)
 script = ExtResource("2_wkyfk")
 command = SubResource("Resource_qimub")
+keyToBeActive = "B1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flowers5" unique_id=2061545711]
 shape = SubResource("CircleShape2D_dbma1")
