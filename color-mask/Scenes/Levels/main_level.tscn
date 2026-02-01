@@ -2,7 +2,6 @@
 
 [ext_resource type="Shader" uid="uid://cc7d1ybmuywqp" path="res://Assets/Shader/isolate_color.gdshader" id="1_ikcpc"]
 [ext_resource type="TileSet" uid="uid://bjk4xfx3sjbfa" path="res://Assets/forest_tileset.tres" id="2_ikcpc"]
-[ext_resource type="PackedScene" uid="uid://bkbs2n6dut4qb" path="res://Scenes/camera_2d.tscn" id="3_5erdv"]
 [ext_resource type="PackedScene" uid="uid://ca1e7m4k4nre4" path="res://Scenes/player.tscn" id="3_qbrl8"]
 [ext_resource type="PackedScene" uid="uid://bua23yprvvx5w" path="res://Scenes/interactable_character.tscn" id="5_a2ia3"]
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="6_2jcip"]
@@ -66,9 +65,6 @@ tile_set = ExtResource("2_ikcpc")
 position = Vector2(8, 8)
 speed = 30
 
-[node name="Camera2D" parent="Player" unique_id=1035717600 instance=ExtResource("3_5erdv")]
-position = Vector2(1, 0)
-
 [node name="InteractableCharacter" parent="." unique_id=221575232 instance=ExtResource("5_a2ia3")]
 position = Vector2(-69, 0)
 dialogues = Dictionary[String, ExtResource("6_2jcip")]({
@@ -86,5 +82,3 @@ position = Vector2(-46, 35)
 position = Vector2(-46, -35)
 id_to_deactivate = "aa"
 push_speed = 150.0
-
-[editable path="Player/Camera2D"]

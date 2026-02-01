@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cw411bnd1130" path="res://Scripts/player.gd" id="1_v0iea"]
 [ext_resource type="Shader" uid="uid://cc7d1ybmuywqp" path="res://Assets/Shader/isolate_color.gdshader" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://t4i3f3e5uhb2" path="res://Assets/Placeholder/thieff_spritesheet.png" id="3_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://bkbs2n6dut4qb" path="res://Scenes/camera_2d.tscn" id="4_vgqql"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vgqql"]
 shader = ExtResource("2_6t5aa")
@@ -170,6 +171,8 @@ debug_color = Color(0.41203457, 0.48126835, 0.9553395, 0.41960785)
 sprite_frames = SubResource("SpriteFrames_x3wgy")
 animation = &"walk_up"
 frame = 1
+
+[node name="Camera2D" parent="." unique_id=1035717600 instance=ExtResource("4_vgqql")]
 
 [connection signal="area_entered" from="InteractArea" to="." method="_on_interact_area_area_entered"]
 [connection signal="area_exited" from="InteractArea" to="." method="_on_interact_area_area_exited"]
