@@ -18,6 +18,13 @@
 [ext_resource type="PackedScene" uid="uid://dursjv52r6wyo" path="res://Scenes/Interactable Game Objects/Town_Store_Entry.tscn" id="14_n4fm3"]
 [ext_resource type="PackedScene" uid="uid://dro7508jq7f20" path="res://Scenes/Interactable Game Objects/FastFood_Interface.tscn" id="15_mia5s"]
 [ext_resource type="PackedScene" uid="uid://dwas6h80teuwb" path="res://Scenes/Interactable Game Objects/FastFood_Waiter.tscn" id="16_vj2kj"]
+[ext_resource type="PackedScene" uid="uid://bv8htic037but" path="res://Scenes/Interactable Game Objects/Station_Door.tscn" id="19_mia5s"]
+[ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="20_43q37"]
+[ext_resource type="PackedScene" uid="uid://xidpyncasgfa" path="res://Scenes/Interactable Game Objects/Station_Friend.tscn" id="20_vj2kj"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="21_47fco"]
+[ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="22_gnln1"]
+[ext_resource type="Resource" uid="uid://c3q6kndsacg6y" path="res://Assets/End_scene.tres" id="23_u5hxc"]
+[ext_resource type="Script" uid="uid://cbjef5gr1vobn" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="24_up6wo"]
 
 [sub_resource type="Resource" id="Resource_a074a"]
 script = ExtResource("10_d4ljt")
@@ -61,6 +68,132 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_n4fm3"),
 &"ShowFriend": SubResource("Animation_mia5s")
+}
+
+[sub_resource type="Resource" id="Resource_b16hr"]
+script = ExtResource("22_gnln1")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_bu4d5"]
+script = ExtResource("10_d4ljt")
+text = "Wouldn't it be nice to travel and see a bit of the world?
+
+One day!"
+speaker = "Me"
+next_conversation = SubResource("Resource_b16hr")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_sn60f"]
+script = ExtResource("21_47fco")
+key = "R4"
+command = SubResource("Resource_bu4d5")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Resource" id="Resource_hb7re"]
+script = ExtResource("22_gnln1")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_qaf3w"]
+script = ExtResource("10_d4ljt")
+text = "Tomorrow we'll make a trip and visit the concert. I'm still feeling a bit of dread, but it'll be fine with my friend coming along. I even feel a bit of excitement! How strange."
+speaker = "Me"
+next_conversation = SubResource("Resource_hb7re")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_atlhi"]
+script = ExtResource("21_47fco")
+key = "G4"
+command = SubResource("Resource_qaf3w")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Resource" id="Resource_53bci"]
+script = ExtResource("22_gnln1")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_p72ob"]
+script = ExtResource("10_d4ljt")
+text = "I should probably greet my friend before boarding the train. Ignoring them would be rude."
+speaker = "Me"
+next_conversation = SubResource("Resource_53bci")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_q7r07"]
+script = ExtResource("21_47fco")
+key = "FriendGreeted"
+command = SubResource("Resource_p72ob")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Resource" id="Resource_rq22k"]
+script = ExtResource("24_up6wo")
+anim_name = "Friend walks up"
+followupCommand = ExtResource("23_u5hxc")
+metadata/_custom_type_script = "uid://cbjef5gr1vobn"
+
+[sub_resource type="Resource" id="Resource_ccog8"]
+script = ExtResource("21_47fco")
+key = "NOSKIP"
+command = SubResource("Resource_rq22k")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Animation" id="Animation_vj2kj"]
+resource_name = "Friend walks up"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Station_Friend:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 5.9333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1091, 229), Vector2(1318, 225), Vector2(1319, 160)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Station_Friend:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_43q37"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Station_Friend:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1319, 160)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Station_Friend:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tfnw7"]
+_data = {
+&"Friend walks up": SubResource("Animation_vj2kj"),
+&"RESET": SubResource("Animation_43q37")
 }
 
 [node name="Node2D2" type="Node2D" unique_id=160401232]
@@ -252,5 +385,17 @@ scene_to_transition_to = "res://Scenes/home_scene.tscn"
 [node name="SceneTransition2" parent="." unique_id=1322722042 instance=ExtResource("13_yf8cf")]
 position = Vector2(1006, 392)
 scene_to_transition_to = "res://Scenes/grocery_store.tscn"
+
+[node name="Station_Train_Door" parent="." unique_id=998029583 instance=ExtResource("19_mia5s")]
+position = Vector2(1282, 113)
+dialogues = Dictionary[String, ExtResource("20_43q37")]({})
+dialogueList = Array[ExtResource("21_47fco")]([SubResource("Resource_sn60f"), SubResource("Resource_atlhi"), SubResource("Resource_q7r07"), SubResource("Resource_ccog8")])
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Station_Train_Door" unique_id=810784291]
+libraries/ = SubResource("AnimationLibrary_tfnw7")
+
+[node name="Station_Friend" parent="." unique_id=135082965 instance=ExtResource("20_vj2kj")]
+visible = false
+position = Vector2(1319, 160)
 
 [editable path="FlowersInteractable"]

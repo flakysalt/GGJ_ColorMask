@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ContinueConversationCommand" format=3 uid="uid://c3q6kndsacg6y"]
+
+[ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="1_aqm8f"]
+
+[sub_resource type="Resource" id="Resource_4lela"]
+script = ExtResource("1_aqm8f")
+text = "Congratulations, you completed the game.
+
+Press ALT + F4 to continue."
+speaker = "THE DEV TEAM"
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_ltynv"]
+script = ExtResource("1_aqm8f")
+text = "Unfortunately, there will be other times in your future when the world loses its color again. But now you know that the color can come back."
+speaker = "Narrator"
+next_conversation = SubResource("Resource_4lela")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[resource]
+script = ExtResource("1_aqm8f")
+text = "You leave town for a great day with your friend at the concert. You will cherish the memory for the rest of your life. "
+speaker = "Narrator"
+next_conversation = SubResource("Resource_ltynv")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
