@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_pqb1v"]
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_pqb1v"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_vw1rm"]
-[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="3_2j1at"]
+[ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="3_2j1at"]
 [ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="3_vw1rm"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_jsqk7"]
-[ext_resource type="Texture2D" uid="uid://dyd2e06g8xo65" path="res://Assets/Asset Pack (Donarg)/VX Ace/B-C-D-E All Tiles 7 No Shadows.png" id="4_mrxqm"]
 [ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="5_pqb1v"]
+[ext_resource type="Texture2D" uid="uid://doid0uxsnvfum" path="res://Assets/Placeholder/Tileset/House_Tileset.png" id="8_2j1at"]
 
 [sub_resource type="Resource" id="Resource_rjnej"]
 script = ExtResource("3_2j1at")
@@ -102,10 +102,9 @@ dialogues = Dictionary[String, ExtResource("2_pqb1v")]({
 dialogueList = Array[ExtResource("5_pqb1v")]([SubResource("Resource_es2uy"), SubResource("Resource_766nd")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
-texture = ExtResource("4_mrxqm")
-hframes = 2
+texture = ExtResource("8_2j1at")
 region_enabled = true
-region_rect = Rect2(96, 250, 64, 26)
+region_rect = Rect2(482, 39, 12, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=892489500]
 position = Vector2(0, -2)
