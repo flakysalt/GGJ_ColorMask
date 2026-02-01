@@ -12,7 +12,11 @@
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="10_d4ljt"]
 [ext_resource type="PackedScene" uid="uid://bpi50q0p2380m" path="res://Scenes/push_zone.tscn" id="10_yf8cf"]
 [ext_resource type="Texture2D" uid="uid://ck83o7myhxcrj" path="res://Assets/32x32_objects.png" id="12_k0128"]
+[ext_resource type="PackedScene" uid="uid://202hpmxa3tmq" path="res://Scenes/Interactable Game Objects/Town_Friend_House.tscn" id="13_ah0is"]
 [ext_resource type="PackedScene" uid="uid://bjscxbuyk4rgr" path="res://Scenes/SceneTransition.tscn" id="13_yf8cf"]
+[ext_resource type="PackedScene" uid="uid://dursjv52r6wyo" path="res://Scenes/Interactable Game Objects/Town_Store_Entry.tscn" id="14_n4fm3"]
+[ext_resource type="PackedScene" uid="uid://dro7508jq7f20" path="res://Scenes/Interactable Game Objects/FastFood_Interface.tscn" id="15_mia5s"]
+[ext_resource type="PackedScene" uid="uid://dwas6h80teuwb" path="res://Scenes/Interactable Game Objects/FastFood_Waiter.tscn" id="16_vj2kj"]
 
 [sub_resource type="Resource" id="Resource_a074a"]
 script = ExtResource("10_d4ljt")
@@ -184,12 +188,24 @@ position = Vector2(1374, 43.000008)
 rotation = 1.5839293
 shape = SubResource("CapsuleShape2D_k0128")
 
+[node name="Town_Friend_House" parent="." unique_id=558507055 instance=ExtResource("13_ah0is")]
+position = Vector2(1256, 936)
+
+[node name="Town_Store_Entry" parent="." unique_id=1973206664 instance=ExtResource("14_n4fm3")]
+position = Vector2(1006, 393)
+
+[node name="FastFood_Interface" parent="." unique_id=1272768938 instance=ExtResource("15_mia5s")]
+position = Vector2(652, 174)
+
+[node name="FastFood_Waiter" parent="." unique_id=1733169505 instance=ExtResource("16_vj2kj")]
+position = Vector2(264, 979)
+
 [node name="SceneTransition" parent="." unique_id=1734695462 instance=ExtResource("13_yf8cf")]
 position = Vector2(264, 979)
 scene_to_transition_to = "res://Scenes/home_scene.tscn"
 
 [node name="SceneTransition2" parent="." unique_id=1322722042 instance=ExtResource("13_yf8cf")]
-position = Vector2(968, 409)
+position = Vector2(1006, 392)
 scene_to_transition_to = "res://Scenes/grocery_store.tscn"
 
 [editable path="FlowersInteractable"]
