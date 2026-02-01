@@ -81,7 +81,7 @@ metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 [sub_resource type="Resource" id="Resource_5dstw"]
 script = ExtResource("4_jsqk7")
 text = "I'm no longer hungry."
-speaker = "Interface"
+speaker = "Me"
 next_conversation = SubResource("Resource_xsvog")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
