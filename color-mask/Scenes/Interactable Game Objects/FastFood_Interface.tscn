@@ -1,26 +1,105 @@
 [gd_scene format=3 uid="uid://dro7508jq7f20"]
 
 [ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_pqb1v"]
+[ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_pqb1v"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_vw1rm"]
+[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="3_2j1at"]
+[ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="3_vw1rm"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_jsqk7"]
 [ext_resource type="Texture2D" uid="uid://dyd2e06g8xo65" path="res://Assets/Asset Pack (Donarg)/VX Ace/B-C-D-E All Tiles 7 No Shadows.png" id="4_mrxqm"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="5_pqb1v"]
 
-[sub_resource type="Resource" id="Resource_mrxqm"]
+[sub_resource type="Resource" id="Resource_rjnej"]
+script = ExtResource("3_2j1at")
+id = "BurgerOrdered "
+
+[sub_resource type="Resource" id="Resource_sctk3"]
+script = ExtResource("2_vw1rm")
+followupCommand = SubResource("Resource_rjnej")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_pqb1v"]
+script = ExtResource("4_jsqk7")
+text = "Thank you for placing the order. Please pick up your food at the counter."
+speaker = "Interface"
+next_conversation = SubResource("Resource_sctk3")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_sunak"]
+script = ExtResource("3_2j1at")
+id = "BurgerOrdered "
+
+[sub_resource type="Resource" id="Resource_arkew"]
+script = ExtResource("2_vw1rm")
+followupCommand = SubResource("Resource_sunak")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_vw1rm"]
+script = ExtResource("4_jsqk7")
+text = "Thank you for placing the order. Please pick up your food at the counter."
+speaker = "Interface"
+next_conversation = SubResource("Resource_arkew")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_qogbp"]
+script = ExtResource("3_2j1at")
+id = "BurgerOrdered "
+
+[sub_resource type="Resource" id="Resource_jm5f1"]
+script = ExtResource("2_vw1rm")
+followupCommand = SubResource("Resource_qogbp")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_jsqk7"]
+script = ExtResource("4_jsqk7")
+text = "Thank you for placing the order. Please pick up your food at the counter."
+speaker = "Interface"
+next_conversation = SubResource("Resource_jm5f1")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_2j1at"]
+script = ExtResource("3_vw1rm")
+text = "Please choose your order."
+speaker = "Interface"
+button1text = "Fast Food"
+button1followup = SubResource("Resource_pqb1v")
+button2text = "Fast Food"
+button2followup = SubResource("Resource_vw1rm")
+button3text = "Fast Food"
+button3followup = SubResource("Resource_jsqk7")
+metadata/_custom_type_script = "uid://dqfr480su1o7h"
+
+[sub_resource type="Resource" id="Resource_es2uy"]
+script = ExtResource("5_pqb1v")
+key = "BurgerOrdered "
+command = SubResource("Resource_2j1at")
+
+[sub_resource type="Resource" id="Resource_xsvog"]
 script = ExtResource("2_vw1rm")
 metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 
-[sub_resource type="Resource" id="Resource_7p1o6"]
+[sub_resource type="Resource" id="Resource_5dstw"]
 script = ExtResource("4_jsqk7")
-text = "Here is your food. Have a good day."
-next_conversation = SubResource("Resource_mrxqm")
+text = "I'm no longer hungry."
+speaker = "Interface"
+next_conversation = SubResource("Resource_xsvog")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_766nd"]
+script = ExtResource("5_pqb1v")
+key = "NOSKIP"
+command = SubResource("Resource_5dstw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7p1o6"]
 size = Vector2(32, 22)
 
 [node name="FastFood_Interface" type="StaticBody2D" unique_id=558507055]
 script = ExtResource("1_pqb1v")
-dialogue = SubResource("Resource_7p1o6")
+dialogues = Dictionary[String, ExtResource("2_pqb1v")]({
+"BurgerOrdered ": SubResource("Resource_2j1at"),
+"NOSKIP": null
+})
+dialogueList = Array[ExtResource("5_pqb1v")]([SubResource("Resource_es2uy"), SubResource("Resource_766nd")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
 texture = ExtResource("4_mrxqm")

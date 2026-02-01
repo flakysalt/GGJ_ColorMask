@@ -23,67 +23,58 @@
 [node name="OlafTestScene" type="Node2D" unique_id=1581901319]
 
 [node name="Player" parent="." unique_id=833487810 instance=ExtResource("1_v6gsh")]
-position = Vector2(54, 116)
+position = Vector2(9, 114)
 
 [node name="FastFood_Interface" parent="." unique_id=558507055 instance=ExtResource("2_empj5")]
-position = Vector2(198, 19)
+position = Vector2(28, 79)
 
 [node name="FastFood_Waiter" parent="." unique_id=1623161283 instance=ExtResource("3_xsi2e")]
-position = Vector2(240, 20)
+position = Vector2(58, 81)
 
 [node name="Home_Backpack" parent="." unique_id=2060277385 instance=ExtResource("4_eu3aj")]
-position = Vector2(293, -60)
+position = Vector2(126, 136)
 
 [node name="Home_Bed" parent="." unique_id=1316347756 instance=ExtResource("5_f2csj")]
-position = Vector2(331, -57)
+position = Vector2(154, 151)
 
 [node name="Home_CD_Player" parent="." unique_id=2079676951 instance=ExtResource("6_wxgly")]
-position = Vector2(323, -10)
+position = Vector2(100, 172)
 
 [node name="Home_Kitchen_Table" parent="." unique_id=1153220843 instance=ExtResource("7_xvusb")]
-position = Vector2(341, -153)
+position = Vector2(159, 84)
 
 [node name="Home_Litter" parent="." unique_id=979862695 instance=ExtResource("8_sa8jy")]
-position = Vector2(365, -35)
+position = Vector2(201, 172)
 
 [node name="Home_PC" parent="." unique_id=1954010972 instance=ExtResource("9_vxa00")]
-position = Vector2(259, -69)
+position = Vector2(93, 137)
 
 [node name="Home_Phone" parent="." unique_id=361461421 instance=ExtResource("10_lsflr")]
-position = Vector2(216, -68)
+position = Vector2(94, 102)
 
 [node name="Home_Stove" parent="." unique_id=1288214059 instance=ExtResource("11_d66uo")]
-position = Vector2(390, -149)
+position = Vector2(208, 88)
 
 [node name="Station_Train_Door" parent="." unique_id=1498433737 instance=ExtResource("12_ufjv6")]
-position = Vector2(-158, 173)
+position = Vector2(-61, 157)
 
 [node name="Station_Friend" parent="." unique_id=1472910108 instance=ExtResource("13_twdhs")]
-position = Vector2(-132, 168)
+position = Vector2(-39, 153)
 
 [node name="Store_ Self_check_out" parent="." unique_id=2079151625 instance=ExtResource("14_6xgfp")]
-position = Vector2(-110, -37)
-
-[node name="Store_ Self_check_out2" parent="." unique_id=1474037794 instance=ExtResource("14_6xgfp")]
-position = Vector2(-110, -37)
+position = Vector2(-92, 57)
 
 [node name="Store_ Shelf" parent="." unique_id=916350816 instance=ExtResource("15_di72x")]
-position = Vector2(-184, -45)
+position = Vector2(-152, 85)
 
 [node name="Store_Cashier" parent="." unique_id=1679961200 instance=ExtResource("16_3m7up")]
-position = Vector2(-217, 22)
+position = Vector2(-96, 81)
 
 [node name="Store_Exit" parent="." unique_id=1416723356 instance=ExtResource("17_vrvcf")]
-position = Vector2(-89, 1)
+position = Vector2(-74, 83)
 
 [node name="Town_Store_Entry" parent="." unique_id=47052495 instance=ExtResource("18_hqr2b")]
-position = Vector2(-36, -17)
+position = Vector2(-38, 84)
 
 [node name="Park_Flower" parent="." unique_id=658503051 instance=ExtResource("19_f2csj")]
-position = Vector2(404, 125)
-
-[node name="Station_Train_Door2" parent="." unique_id=1373038658 instance=ExtResource("12_ufjv6")]
-position = Vector2(200, 199)
-
-[node name="Station_Friend2" parent="." unique_id=1143409070 instance=ExtResource("13_twdhs")]
-position = Vector2(235, 179)
+position = Vector2(15, 168)
