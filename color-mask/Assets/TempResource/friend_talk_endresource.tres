@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CloseConversationCommand" format=3 uid="uid://dee4kwxnuusu8"]
+
+[ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="1_kx8wp"]
+[ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_bhpws"]
+
+[sub_resource type="Resource" id="Resource_rp3ye"]
+script = ExtResource("1_kx8wp")
+id = "BellRang"
+
+[resource]
+script = ExtResource("2_bhpws")
+followupCommand = SubResource("Resource_rp3ye")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"

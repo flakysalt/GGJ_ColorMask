@@ -183,6 +183,7 @@ pitch_scale = 1.5
 
 [node name="Label" type="Label" parent="." unique_id=1702927473]
 visible = false
+z_index = 4096
 offset_left = -18.0
 offset_top = -29.0
 offset_right = 21.0

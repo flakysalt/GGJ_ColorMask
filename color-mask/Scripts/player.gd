@@ -94,12 +94,12 @@ func handle_movement(delta):
 	
 	
 func handle_interact():
-	if currentInteractable != null && Input.is_action_just_pressed("interact"):
+	if currentInteractable != null && Input.is_action_just_pressed("interact") and currentInteractable.visible:
 		currentInteractable.interact()
 
 func interactwith(body: Node2D):
 	print(body.name)
-	if(body.has_method("interact")):
+	if(body.has_method("interact") && body.visible):
 		label.visible = true
 
 		currentInteractable = body
