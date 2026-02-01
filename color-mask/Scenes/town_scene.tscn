@@ -9,7 +9,9 @@
 [ext_resource type="TileSet" uid="uid://ff3cpbewntrj" path="res://objects_int_16x16.tres" id="6_vtsy7"]
 [ext_resource type="TileSet" uid="uid://blcqsh7rpfvhl" path="res://objects_int.tres" id="8_dbma1"]
 [ext_resource type="PackedScene" uid="uid://ckn5r6islrat1" path="res://Scenes/flowers_interactable.tscn" id="9_4ik1y"]
+[ext_resource type="PackedScene" uid="uid://uskchkjge218" path="res://Scenes/Levels/group.tscn" id="9_k0128"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="10_d4ljt"]
+[ext_resource type="PackedScene" uid="uid://bpi50q0p2380m" path="res://Scenes/push_zone.tscn" id="10_yf8cf"]
 
 [sub_resource type="Resource" id="Resource_a074a"]
 script = ExtResource("10_d4ljt")
@@ -61,6 +63,14 @@ tile_set = ExtResource("8_dbma1")
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=316158625]
 tile_map_data = PackedByteArray("AABEAAQAAAAGAAMAAABGAAYAAAAGAAMAAABIAAcAAAAGAAMAAABKAAcAAAAGAAMAAABMAAcAAAAAAAMAAABQAAcAAAACAAMAAABXAAcAAAAGAAMAAABZAAcAAAAGAAMAAABbAAcAAAAGAAMAAABdAAcAAAAGAAMAAABfAAcAAAAGAAMAAABVAAcAAAAGAAMAAAA=")
 tile_set = ExtResource("8_dbma1")
+
+[node name="group" parent="." unique_id=814400032 instance=ExtResource("9_k0128")]
+position = Vector2(445, 659)
+
+[node name="PushZone" parent="group" unique_id=933193684 instance=ExtResource("10_yf8cf")]
+position = Vector2(14, 12)
+scale = Vector2(2.5, 2.5)
+id_to_deactivate = "R3"
 
 [node name="FlowersInteractable" parent="." unique_id=430487294 instance=ExtResource("9_4ik1y")]
 position = Vector2(476.50333, 813.40594)
