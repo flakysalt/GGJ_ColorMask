@@ -59,7 +59,7 @@ var presets = {
 
 func _ready():
 	add_to_group("camera")
-	apply_preset(GlobalStateClass.MaskState.Full)
+	apply_preset(GlobalStateClass.MaskState.Grey)
 
 # Apply a preset by name
 func apply_preset(preset_name: GlobalStateClass.MaskState):
