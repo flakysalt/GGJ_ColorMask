@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ColorMask"
-run/main_scene="uid://b4kpe3pa8jwn3"
+run/main_scene="uid://dref5krpt31c0"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

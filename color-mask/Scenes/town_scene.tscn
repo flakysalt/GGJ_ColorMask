@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="10_d4ljt"]
 [ext_resource type="PackedScene" uid="uid://bpi50q0p2380m" path="res://Scenes/push_zone.tscn" id="10_yf8cf"]
 [ext_resource type="Texture2D" uid="uid://ck83o7myhxcrj" path="res://Assets/32x32_objects.png" id="12_k0128"]
+[ext_resource type="PackedScene" uid="uid://bjscxbuyk4rgr" path="res://Scenes/SceneTransition.tscn" id="13_yf8cf"]
 
 [sub_resource type="Resource" id="Resource_a074a"]
 script = ExtResource("10_d4ljt")
@@ -58,7 +59,7 @@ tile_map_data = PackedByteArray("AAA5ABEAAAASABEAAABOABcAAAAUABQAAABDAAcAAAACABU
 tile_set = ExtResource("6_vtsy7")
 
 [node name="Player" parent="." unique_id=833487810 instance=ExtResource("5_805re")]
-position = Vector2(493, 827)
+position = Vector2(293, 1000)
 
 [node name="group" parent="." unique_id=814400032 instance=ExtResource("9_k0128")]
 position = Vector2(445, 659)
@@ -182,5 +183,9 @@ region_rect = Rect2(116, 97, 24, 64)
 position = Vector2(1374, 43.000008)
 rotation = 1.5839293
 shape = SubResource("CapsuleShape2D_k0128")
+
+[node name="SceneTransition" parent="." unique_id=1734695462 instance=ExtResource("13_yf8cf")]
+position = Vector2(264, 979)
+scene_to_transition_to = "res://Scenes/home_scene.tscn"
 
 [editable path="FlowersInteractable"]

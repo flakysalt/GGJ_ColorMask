@@ -5,6 +5,8 @@ class_name PlayerCharacter
 @export var step_length : int = 50
 @export var use_smooth_movement :bool
 
+@onready var label = $Label
+
 var impulse_velocity : Vector2 = Vector2.ZERO
 
 @onready var footstep_audio = $AudioStreamPlayer2D
@@ -98,6 +100,8 @@ func handle_interact():
 func interactwith(body: Node2D):
 	print(body.name)
 	if(body.has_method("interact")):
+		label.visible = true
+
 		currentInteractable = body
 
 func _on_interact_area_area_entered(area: Area2D) -> void:
@@ -107,9 +111,13 @@ func _on_interact_area_body_entered(body: Node2D) -> void:
 func _on_interact_area_body_exited(body: Node2D) -> void:
 	if body == currentInteractable:
 		currentInteractable = null
+		label.visible = false
+
 func _on_interact_area_area_exited(area: Area2D) -> void:
 	if area == currentInteractable:
 		currentInteractable = null
+		label.visible = false
+
 
 
 func _on_footstep_finished():

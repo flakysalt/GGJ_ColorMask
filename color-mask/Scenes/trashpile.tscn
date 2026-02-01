@@ -56,6 +56,7 @@ script = ExtResource("8_4m11r")
 command = SubResource("Resource_kysu3")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aoto3"]
+radius = 71.568146
 
 [sub_resource type="Animation" id="Animation_0odaw"]
 resource_name = "Cleanup"
