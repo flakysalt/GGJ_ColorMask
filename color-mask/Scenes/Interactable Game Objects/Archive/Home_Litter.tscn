@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cexv0wp8r4jq0"]
+
+[ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_qx4uw"]
+[ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/Characters/blackbeltf_spritesheet.png" id="2_0wk73"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wict8"]
+
+[node name="Home_Litter" type="StaticBody2D" unique_id=558507055]
+script = ExtResource("1_qx4uw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
+texture = ExtResource("2_0wk73")
+hframes = 3
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=892489500]
+shape = SubResource("CircleShape2D_wict8")

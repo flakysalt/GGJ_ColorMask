@@ -4,21 +4,11 @@
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_kke2d"]
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_yjl1q"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_yjl1q"]
-[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_0j5ao"]
+[ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_0j5ao"]
 [ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_ghp6w"]
 [ext_resource type="Script" uid="uid://cbjef5gr1vobn" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="6_8hw3k"]
 [ext_resource type="Texture2D" uid="uid://dyd2e06g8xo65" path="res://Assets/Asset Pack (Donarg)/VX Ace/B-C-D-E All Tiles 7 No Shadows.png" id="6_rm86x"]
-
-[sub_resource type="Resource" id="Resource_nfxo4"]
-script = ExtResource("2_kke2d")
-metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
-
-[sub_resource type="Resource" id="Resource_k2gxt"]
-script = ExtResource("4_yjl1q")
-text = "That's my stove. I know I should make a healthy meal, but my fridge is totally empty. "
-speaker = "Me"
-next_conversation = SubResource("Resource_nfxo4")
-metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="8_yjl1q"]
 
 [sub_resource type="Resource" id="Resource_qcsbk"]
 script = ExtResource("2_kke2d")
@@ -74,6 +64,35 @@ speaker = "Me"
 next_conversation = SubResource("Resource_8lqpn")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
+[sub_resource type="Resource" id="Resource_nfxo4"]
+script = ExtResource("2_kke2d")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_k2gxt"]
+script = ExtResource("4_yjl1q")
+text = "That's my stove. I know I should make a healthy meal, but my fridge is totally empty. "
+speaker = "Me"
+next_conversation = SubResource("Resource_nfxo4")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_ghp6w"]
+script = ExtResource("8_yjl1q")
+key = "G3"
+command = SubResource("Resource_vrvuq")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Resource" id="Resource_0j5ao"]
+script = ExtResource("8_yjl1q")
+key = "R2"
+command = SubResource("Resource_k2gxt")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Resource" id="Resource_8hw3k"]
+script = ExtResource("8_yjl1q")
+key = "NOSKIP"
+command = SubResource("Resource_rtrnh")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kke2d"]
 size = Vector2(30, 33)
 
@@ -84,6 +103,7 @@ dialogues = Dictionary[String, ExtResource("2_yjl1q")]({
 "NOSKIP": SubResource("Resource_rtrnh"),
 "R2": SubResource("Resource_k2gxt")
 })
+dialogueList = Array[ExtResource("8_yjl1q")]([SubResource("Resource_ghp6w"), SubResource("Resource_0j5ao"), SubResource("Resource_8hw3k")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
 texture = ExtResource("6_rm86x")

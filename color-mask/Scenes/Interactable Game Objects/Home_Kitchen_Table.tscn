@@ -5,19 +5,8 @@
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_secwe"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_taymx"]
 [ext_resource type="Texture2D" uid="uid://dyd2e06g8xo65" path="res://Assets/Asset Pack (Donarg)/VX Ace/B-C-D-E All Tiles 7 No Shadows.png" id="5_8tpru"]
-[ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_knslx"]
-[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_taymx"]
-
-[sub_resource type="Resource" id="Resource_pg5wy"]
-script = ExtResource("2_bpki6")
-metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
-
-[sub_resource type="Resource" id="Resource_00dy5"]
-script = ExtResource("4_taymx")
-text = "I'm hungry, but I have nothing to eat at home. I should go and get something easy."
-speaker = "Me"
-next_conversation = SubResource("Resource_pg5wy")
-metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+[ext_resource type="Script" uid="uid://blhsq5c5vct26" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_taymx"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="6_bpki6"]
 
 [sub_resource type="Resource" id="Resource_b4uei"]
 script = ExtResource("5_taymx")
@@ -37,15 +26,15 @@ speaker = "Me"
 next_conversation = SubResource("Resource_ct2c6")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
-[sub_resource type="Resource" id="Resource_uwaxp"]
+[sub_resource type="Resource" id="Resource_pg5wy"]
 script = ExtResource("2_bpki6")
 metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
 
-[sub_resource type="Resource" id="Resource_cwvg5"]
+[sub_resource type="Resource" id="Resource_00dy5"]
 script = ExtResource("4_taymx")
-text = "Next time I'll have a proper meal. I can't live of junk food all the time."
+text = "I'm hungry, but I have nothing to eat at home. I should go and get something easy."
 speaker = "Me"
-next_conversation = SubResource("Resource_uwaxp")
+next_conversation = SubResource("Resource_pg5wy")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
 [sub_resource type="Resource" id="Resource_s7xcb"]
@@ -73,6 +62,17 @@ speaker = "Me"
 next_conversation = SubResource("Resource_s3tp4")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
+[sub_resource type="Resource" id="Resource_uwaxp"]
+script = ExtResource("2_bpki6")
+metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_cwvg5"]
+script = ExtResource("4_taymx")
+text = "Next time I'll have a proper meal. I can't live of junk food all the time."
+speaker = "Me"
+next_conversation = SubResource("Resource_uwaxp")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
 [sub_resource type="Resource" id="Resource_bs07e"]
 script = ExtResource("2_bpki6")
 metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
@@ -84,40 +84,29 @@ speaker = "Me"
 next_conversation = SubResource("Resource_bs07e")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
-[sub_resource type="Resource" id="Resource_8tpru"]
-script = ExtResource("2_bpki6")
-metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
-
-[sub_resource type="Resource" id="Resource_xvfyb"]
-script = ExtResource("4_taymx")
-text = "Well, not the healthiest, but better than nothing, I guess."
-next_conversation = SubResource("Resource_8tpru")
-metadata/_custom_type_script = "uid://e0a4j4rm6ew"
-
-[sub_resource type="Resource" id="Resource_bpki6"]
-script = ExtResource("2_bpki6")
-metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
-
 [sub_resource type="Resource" id="Resource_secwe"]
-script = ExtResource("4_taymx")
-text = "Yummy. This tastes so good. How could I forget how much I liked this? I feel much more energetic now."
-next_conversation = SubResource("Resource_bpki6")
-metadata/_custom_type_script = "uid://e0a4j4rm6ew"
-
-[sub_resource type="Resource" id="Resource_taymx"]
-script = ExtResource("2_bpki6")
-metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+script = ExtResource("6_bpki6")
+key = "BurgerReceived"
+command = SubResource("Resource_00dy5")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
 
 [sub_resource type="Resource" id="Resource_knslx"]
-script = ExtResource("5_knslx")
-text = "I could eat something."
-button1text = "Eat Fast Food"
-button1followup = SubResource("Resource_xvfyb")
-button2text = "Eat Healthy Meal"
-button2followup = SubResource("Resource_secwe")
-button3text = "Leave"
-button3followup = SubResource("Resource_taymx")
-metadata/_custom_type_script = "uid://dqfr480su1o7h"
+script = ExtResource("6_bpki6")
+key = "MealCooked"
+command = SubResource("Resource_cwvg5")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Resource" id="Resource_bpki6"]
+script = ExtResource("6_bpki6")
+key = "BurgerEaten"
+command = SubResource("Resource_8o110")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Resource" id="Resource_taymx"]
+script = ExtResource("6_bpki6")
+key = "G3"
+command = SubResource("Resource_psd35")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvfyb"]
 size = Vector2(48, 40)
@@ -131,7 +120,7 @@ dialogues = Dictionary[String, ExtResource("2_secwe")]({
 "MealCooked": SubResource("Resource_cwvg5"),
 "NOSKIP": SubResource("Resource_ixihb")
 })
-dialogue = SubResource("Resource_knslx")
+dialogueList = Array[ExtResource("6_bpki6")]([SubResource("Resource_secwe"), SubResource("Resource_knslx"), SubResource("Resource_bpki6"), SubResource("Resource_taymx")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
 texture = ExtResource("5_8tpru")
