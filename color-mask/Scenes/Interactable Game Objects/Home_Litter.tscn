@@ -1,25 +1,11 @@
 [gd_scene format=3 uid="uid://cexv0wp8r4jq0"]
 
 [ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_wxp1f"]
-[ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_aem7d"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_yxj0p"]
 [ext_resource type="Script" uid="uid://dvdef5j3i8kfd" path="res://Scripts/DialogueCommands/ActionCommand.gd" id="3_aem7d"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_ec7y3"]
 [ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_c1pyd"]
-[ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/blackbeltf_spritesheet.png" id="6_vu5t1"]
-
-[sub_resource type="Resource" id="Resource_ec7y3"]
-script = ExtResource("2_yxj0p")
-metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
-
-[sub_resource type="Resource" id="Resource_c1pyd"]
-script = ExtResource("4_ec7y3")
-text = "Look at this mess. It's just depressing! I should clean up. 
-
-Later."
-speaker = "Me"
-next_conversation = SubResource("Resource_ec7y3")
-metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+[ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/Characters/blackbeltf_spritesheet.png" id="6_vu5t1"]
 
 [sub_resource type="Resource" id="Resource_4teau"]
 script = ExtResource("2_yxj0p")
@@ -65,10 +51,6 @@ metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
 [node name="Home_Litter" type="StaticBody2D" unique_id=558507055]
 script = ExtResource("1_wxp1f")
-dialogues = Dictionary[String, ExtResource("2_aem7d")]({
-"B2": null,
-"R1": SubResource("Resource_c1pyd")
-})
 dialogue = SubResource("Resource_5455w")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]

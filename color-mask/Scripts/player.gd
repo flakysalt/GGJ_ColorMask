@@ -7,6 +7,11 @@ class_name PlayerCharacter
 
 var impulse_velocity : Vector2 = Vector2.ZERO
 
+@onready var footstep_audio = $AudioStreamPlayer2D
+@export var min_pitch = 1.9
+@export var max_pitch = 2.1
+
+
 var state : State
 var currentInteractable
 var goal_movement_position : Vector2
@@ -19,6 +24,7 @@ enum State{
 }
 
 func _ready() -> void:
+	footstep_audio.finished.connect(_on_footstep_finished)
 	add_to_group("player")
 	if use_smooth_movement:
 		state = State.SmoothMovement
@@ -34,6 +40,13 @@ func _process(delta: float) -> void:
 	
 	var inputVector = Vector2(input_x,input_y)
 	
+	if (inputVector != Vector2.ZERO):
+		if not footstep_audio.playing:
+			randomize_pitch()
+			footstep_audio.play()
+	else:
+		footstep_audio.stop()
+
 	match state:
 		State.Idle:
 			if(inputVector != Vector2.ZERO):
@@ -97,3 +110,13 @@ func _on_interact_area_body_exited(body: Node2D) -> void:
 func _on_interact_area_area_exited(area: Area2D) -> void:
 	if area == currentInteractable:
 		currentInteractable = null
+
+
+func _on_footstep_finished():
+	# If still moving, play again with new random pitch
+	if velocity.length() > 0:
+		randomize_pitch()
+		footstep_audio.play()
+
+func randomize_pitch():
+	footstep_audio.pitch_scale = randf_range(min_pitch, max_pitch)

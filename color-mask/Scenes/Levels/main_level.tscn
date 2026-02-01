@@ -8,9 +8,12 @@
 [ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="7_6l6h0"]
 [ext_resource type="PackedScene" uid="uid://bjscxbuyk4rgr" path="res://Scenes/SceneTransition.tscn" id="7_lwkuy"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="7_o18aq"]
+[ext_resource type="Script" uid="uid://c3kp8xfthc2aw" path="res://Scripts/DialogueCommands/ChangeColorCommand.gd" id="8_5iftk"]
 [ext_resource type="Script" uid="uid://cbjef5gr1vobn" path="res://Scripts/DialogueCommands/PlayAnimationCommand.gd" id="8_hd7sb"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="8_o18aq"]
 [ext_resource type="PackedScene" uid="uid://bpi50q0p2380m" path="res://Scenes/push_zone.tscn" id="8_tqiex"]
+[ext_resource type="PackedScene" uid="uid://d0rjwiq7qc82u" path="res://Scenes/spatial_audio.tscn" id="13_g5xey"]
+[ext_resource type="AudioStream" uid="uid://dl1ir2u231kbc" path="res://Assets/Sound/753374__klankbeeld__park-wind-nl-1129-am-220617_0405.wav" id="14_omwgp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5erdv"]
 shader = ExtResource("1_ikcpc")
@@ -28,6 +31,11 @@ script = ExtResource("8_hd7sb")
 anim_name = "Sing"
 metadata/_custom_type_script = "uid://cbjef5gr1vobn"
 
+[sub_resource type="Resource" id="Resource_g5xey"]
+script = ExtResource("8_5iftk")
+shaderPresetName = 12
+metadata/_custom_type_script = "uid://c3kp8xfthc2aw"
+
 [sub_resource type="Resource" id="Resource_vgie2"]
 script = ExtResource("7_6l6h0")
 text = "What can i do for you today?"
@@ -36,6 +44,8 @@ button1text = "See ya!"
 button1followup = SubResource("Resource_hd7sb")
 button2text = "Sing for me!"
 button2followup = SubResource("Resource_unus1")
+button3text = "make it colorful"
+button3followup = SubResource("Resource_g5xey")
 metadata/_custom_type_script = "uid://dqfr480su1o7h"
 
 [sub_resource type="Resource" id="Resource_5vthg"]
@@ -76,3 +86,15 @@ position = Vector2(-46, 35)
 position = Vector2(-46, -35)
 id_to_deactivate = "aa"
 push_speed = 150.0
+
+[node name="SpatialAudio" parent="." unique_id=1250851828 instance=ExtResource("13_g5xey")]
+max_volume_db = -20.0
+fade_speed = 40.0
+
+[node name="AudioStreamPlayer2D" parent="SpatialAudio" index="0" unique_id=1821332744]
+stream = ExtResource("14_omwgp")
+
+[node name="CollisionPolygon2D" parent="SpatialAudio" index="1" unique_id=518314062]
+polygon = PackedVector2Array(-30, 91, -10, 144, 95, 89, 76, 29, -21, 47)
+
+[editable path="SpatialAudio"]

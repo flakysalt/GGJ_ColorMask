@@ -22,5 +22,4 @@ stream_4/volume = 0.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=970392893]
 stream = SubResource("AudioStreamSynchronized_e0u3b")
-autoplay = true
 script = ExtResource("6_4thc6")
