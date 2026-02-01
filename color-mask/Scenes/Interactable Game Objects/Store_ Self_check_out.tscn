@@ -3,9 +3,8 @@
 [ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_asfnn"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_dyt4a"]
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_nq3qn"]
-[ext_resource type="Script" uid="uid://dvdef5j3i8kfd" path="res://Scripts/DialogueCommands/ActionCommand.gd" id="3_nq3qn"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_157b1"]
-[ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_7qlap"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="5_asfnn"]
 [ext_resource type="Texture2D" uid="uid://dl84228afmb47" path="res://Assets/Asset Pack (Donarg)/All Tileset 16x16.png" id="6_asfnn"]
 
 [sub_resource type="Resource" id="Resource_157b1"]
@@ -20,45 +19,11 @@ speaker = "Me"
 next_conversation = SubResource("Resource_157b1")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
-[sub_resource type="Resource" id="Resource_4teau"]
-script = ExtResource("2_dyt4a")
-metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
-
-[sub_resource type="Resource" id="Resource_et4wj"]
-script = ExtResource("3_nq3qn")
-metadata/_custom_type_script = "uid://dvdef5j3i8kfd"
-
-[sub_resource type="Resource" id="Resource_021n5"]
-script = ExtResource("2_dyt4a")
-followupCommand = SubResource("Resource_et4wj")
-metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
-
-[sub_resource type="Resource" id="Resource_shgqj"]
-script = ExtResource("4_157b1")
-text = "This is when you choose option 2"
-next_conversation = SubResource("Resource_021n5")
-metadata/_custom_type_script = "uid://e0a4j4rm6ew"
-
-[sub_resource type="Resource" id="Resource_mwvus"]
-script = ExtResource("2_dyt4a")
-metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
-
-[sub_resource type="Resource" id="Resource_u23te"]
-script = ExtResource("5_7qlap")
-text = "What should you choose?"
-button1text = "Interesting"
-button1followup = SubResource("Resource_4teau")
-button2text = "Tell me more"
-button2followup = SubResource("Resource_shgqj")
-button3text = "Leave me alone"
-button3followup = SubResource("Resource_mwvus")
-metadata/_custom_type_script = "uid://dqfr480su1o7h"
-
-[sub_resource type="Resource" id="Resource_5455w"]
-script = ExtResource("4_157b1")
-text = "This is the first dialogue"
-next_conversation = SubResource("Resource_u23te")
-metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+[sub_resource type="Resource" id="Resource_dyt4a"]
+script = ExtResource("5_asfnn")
+key = "NoSkip"
+command = SubResource("Resource_7qlap")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dyt4a"]
 size = Vector2(14, 14)
@@ -68,7 +33,7 @@ script = ExtResource("1_asfnn")
 dialogues = Dictionary[String, ExtResource("2_nq3qn")]({
 "NOSKIP": SubResource("Resource_7qlap")
 })
-dialogue = SubResource("Resource_5455w")
+dialogueList = Array[ExtResource("5_asfnn")]([SubResource("Resource_dyt4a")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
 texture = ExtResource("6_asfnn")

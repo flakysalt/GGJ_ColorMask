@@ -1,33 +1,63 @@
 [gd_scene format=3 uid="uid://xidpyncasgfa"]
 
 [ext_resource type="Script" uid="uid://pf1lq1an044l" path="res://Scripts/interactable_character.gd" id="1_kxxmc"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="2_kxxmc"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_r47cc"]
-[ext_resource type="Script" uid="uid://dqfr480su1o7h" path="res://Scripts/DialogueCommands/ChoiceConversaitionCommand.gd" id="5_t7tdp"]
+[ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="3_8q838"]
+[ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="5_3qqsj"]
 [ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/Characters/blackbeltf_spritesheet.png" id="6_0wock"]
 
-[sub_resource type="Resource" id="Resource_otow8"]
+[sub_resource type="Resource" id="Resource_5jkhq"]
+script = ExtResource("3_8q838")
+id = "FriendGreeted"
+
+[sub_resource type="Resource" id="Resource_t7tdp"]
 script = ExtResource("2_r47cc")
+followupCommand = SubResource("Resource_5jkhq")
 metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+
+[sub_resource type="Resource" id="Resource_0wock"]
+script = ExtResource("5_3qqsj")
+text = "Get on the train. I'll be righ tbehind you."
+speaker = "Friend"
+next_conversation = SubResource("Resource_t7tdp")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_qhdsv"]
+script = ExtResource("5_3qqsj")
+text = "There you are. Good morning. Let's go! I'm so exited to see the band live!"
+speaker = "Friend"
+next_conversation = SubResource("Resource_0wock")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_0wd8u"]
+script = ExtResource("2_kxxmc")
+key = "FriendGreeted"
+command = SubResource("Resource_qhdsv")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
 
 [sub_resource type="Resource" id="Resource_kxxmc"]
-script = ExtResource("2_r47cc")
-metadata/_custom_type_script = "uid://b5lfrf3nl7dtc"
+script = ExtResource("5_3qqsj")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
-[sub_resource type="Resource" id="Resource_sydo8"]
-script = ExtResource("5_t7tdp")
-text = "Hi, there you are. The train is leaving shortly. Let's go! I'll board the train right behind you. "
+[sub_resource type="Resource" id="Resource_ukbh1"]
+script = ExtResource("5_3qqsj")
+text = "Let's get on the train already before it leaves without us."
 speaker = "Friend"
-button1text = "Not yet"
-button1followup = SubResource("Resource_otow8")
-button2text = "Let's go!"
-button2followup = SubResource("Resource_kxxmc")
-metadata/_custom_type_script = "uid://dqfr480su1o7h"
+next_conversation = SubResource("Resource_kxxmc")
+metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="Resource" id="Resource_pjcgd"]
+script = ExtResource("2_kxxmc")
+key = "NOSKIP"
+command = SubResource("Resource_ukbh1")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wict8"]
 
 [node name="Station_Friend" type="StaticBody2D" unique_id=558507055]
 script = ExtResource("1_kxxmc")
-dialogue = SubResource("Resource_sydo8")
+dialogueList = Array[ExtResource("2_kxxmc")]([SubResource("Resource_0wd8u"), SubResource("Resource_pjcgd")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
 texture = ExtResource("6_0wock")

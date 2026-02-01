@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_eyaq8"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_cqna8"]
 [ext_resource type="Script" path="res://Scripts/DialogueCommands/SetGlobalStateCommand.gd" id="5_o4w0k"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="6_eedx4"]
 [ext_resource type="Texture2D" uid="uid://dtpwutqm454n0" path="res://Assets/Placeholder/Characters/blackbeltf_spritesheet.png" id="6_xbwl1"]
 
 [sub_resource type="Resource" id="Resource_o4w0k"]
@@ -45,6 +46,24 @@ speaker = "Me"
 next_conversation = SubResource("Resource_2isl8")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
+[sub_resource type="Resource" id="Resource_tfhbt"]
+script = ExtResource("6_eedx4")
+key = "BurgerOrdered "
+command = SubResource("Resource_6btyk")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Resource" id="Resource_cw4xk"]
+script = ExtResource("6_eedx4")
+key = "BurgerReceived"
+command = SubResource("Resource_cqna8")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Resource" id="Resource_de5qk"]
+script = ExtResource("6_eedx4")
+key = "NOSKIP"
+command = SubResource("Resource_xbwl1")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_wict8"]
 
 [node name="FastFood_Waiter" type="StaticBody2D" unique_id=558507055]
@@ -54,6 +73,7 @@ dialogues = Dictionary[String, ExtResource("2_eyaq8")]({
 "BurgerReceived": SubResource("Resource_cqna8"),
 "NOSKIP": SubResource("Resource_xbwl1")
 })
+dialogueList = Array[ExtResource("6_eedx4")]([SubResource("Resource_tfhbt"), SubResource("Resource_cw4xk"), SubResource("Resource_de5qk")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
 texture = ExtResource("6_xbwl1")

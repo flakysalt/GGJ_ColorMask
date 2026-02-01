@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bi0h4eo4axkeu" path="res://Scripts/DialogueCommands/DialogueCommand.gd" id="2_hbvtw"]
 [ext_resource type="Script" uid="uid://b5lfrf3nl7dtc" path="res://Scripts/DialogueCommands/CloseConversationCommand.gd" id="2_r524b"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="4_noo06"]
+[ext_resource type="Script" uid="uid://cdtr7rlkj7keh" path="res://Scripts/DialogueWithKey.gd" id="5_b16hr"]
 [ext_resource type="Texture2D" uid="uid://doid0uxsnvfum" path="res://Assets/Placeholder/Tileset/House_Tileset.png" id="5_hbvtw"]
 
 [sub_resource type="Resource" id="Resource_53bci"]
@@ -63,6 +64,30 @@ speaker = "Me"
 next_conversation = SubResource("Resource_b16hr")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
 
+[sub_resource type="Resource" id="Resource_sn60f"]
+script = ExtResource("5_b16hr")
+key = "R4"
+command = SubResource("Resource_bu4d5")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Resource" id="Resource_atlhi"]
+script = ExtResource("5_b16hr")
+key = "G4"
+command = SubResource("Resource_qaf3w")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Resource" id="Resource_q7r07"]
+script = ExtResource("5_b16hr")
+key = "FriendGreeted"
+command = SubResource("Resource_p72ob")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
+[sub_resource type="Resource" id="Resource_ve2mh"]
+script = ExtResource("5_b16hr")
+key = "NOSKIP"
+command = SubResource("Resource_s4gia")
+metadata/_custom_type_script = "uid://cdtr7rlkj7keh"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b16hr"]
 size = Vector2(14, 14)
 
@@ -74,6 +99,7 @@ dialogues = Dictionary[String, ExtResource("2_hbvtw")]({
 "NOSKIP": SubResource("Resource_s4gia"),
 "R4": SubResource("Resource_bu4d5")
 })
+dialogueList = Array[ExtResource("5_b16hr")]([SubResource("Resource_sn60f"), SubResource("Resource_atlhi"), SubResource("Resource_q7r07"), SubResource("Resource_ve2mh")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
 texture = ExtResource("5_hbvtw")
