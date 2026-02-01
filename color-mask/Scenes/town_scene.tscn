@@ -7,15 +7,19 @@
 [ext_resource type="TileSet" uid="uid://ri2pl424qfv4" path="res://Assets/vegetation.tres" id="4_f7oef"]
 [ext_resource type="PackedScene" uid="uid://ca1e7m4k4nre4" path="res://Scenes/player.tscn" id="5_805re"]
 [ext_resource type="TileSet" uid="uid://ff3cpbewntrj" path="res://objects_int_16x16.tres" id="6_vtsy7"]
-[ext_resource type="TileSet" uid="uid://blcqsh7rpfvhl" path="res://objects_int.tres" id="8_dbma1"]
 [ext_resource type="PackedScene" uid="uid://ckn5r6islrat1" path="res://Scenes/flowers_interactable.tscn" id="9_4ik1y"]
 [ext_resource type="PackedScene" uid="uid://uskchkjge218" path="res://Scenes/Levels/group.tscn" id="9_k0128"]
 [ext_resource type="Script" uid="uid://e0a4j4rm6ew" path="res://Scripts/DialogueCommands/ConversationCommand.gd" id="10_d4ljt"]
 [ext_resource type="PackedScene" uid="uid://bpi50q0p2380m" path="res://Scenes/push_zone.tscn" id="10_yf8cf"]
+[ext_resource type="Texture2D" uid="uid://ck83o7myhxcrj" path="res://Assets/32x32_objects.png" id="12_k0128"]
 
 [sub_resource type="Resource" id="Resource_a074a"]
 script = ExtResource("10_d4ljt")
 metadata/_custom_type_script = "uid://e0a4j4rm6ew"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k0128"]
+radius = 106.03027
+height = 602.0271
 
 [node name="Node2D2" type="Node2D" unique_id=160401232]
 
@@ -54,15 +58,7 @@ tile_map_data = PackedByteArray("AAA5ABEAAAASABEAAABOABcAAAAUABQAAABDAAcAAAACABU
 tile_set = ExtResource("6_vtsy7")
 
 [node name="Player" parent="." unique_id=833487810 instance=ExtResource("5_805re")]
-position = Vector2(476.50333, 813.40594)
-
-[node name="Train" type="TileMapLayer" parent="." unique_id=190852124]
-tile_map_data = PackedByteArray("AABGAAQAAAAAAA4AAABWAAQAAAAIAA4AAAA=")
-tile_set = ExtResource("8_dbma1")
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=316158625]
-tile_map_data = PackedByteArray("AABEAAQAAAAGAAMAAABGAAYAAAAGAAMAAABIAAcAAAAGAAMAAABKAAcAAAAGAAMAAABMAAcAAAAAAAMAAABQAAcAAAACAAMAAABXAAcAAAAGAAMAAABZAAcAAAAGAAMAAABbAAcAAAAGAAMAAABdAAcAAAAGAAMAAABfAAcAAAAGAAMAAABVAAcAAAAGAAMAAAA=")
-tile_set = ExtResource("8_dbma1")
+position = Vector2(493, 827)
 
 [node name="group" parent="." unique_id=814400032 instance=ExtResource("9_k0128")]
 position = Vector2(445, 659)
@@ -77,5 +73,114 @@ position = Vector2(476.50333, 813.40594)
 
 [node name="Flowers1" parent="FlowersInteractable" index="0" unique_id=416284613]
 command = SubResource("Resource_a074a")
+
+[node name="Train2" type="Sprite2D" parent="." unique_id=363721697]
+position = Vector2(1375, 54)
+texture = ExtResource("12_k0128")
+region_enabled = true
+region_rect = Rect2(0, 460, 512, 52)
+
+[node name="trainstation" type="StaticBody2D" parent="." unique_id=730544225]
+
+[node name="Gate" type="Sprite2D" parent="trainstation" unique_id=1048321089]
+position = Vector2(1288, 112)
+texture = ExtResource("12_k0128")
+region_enabled = true
+region_rect = Rect2(0, 97, 141, 65)
+
+[node name="Fence" type="Sprite2D" parent="trainstation" unique_id=1332925082]
+position = Vector2(1192, 112)
+texture = ExtResource("12_k0128")
+region_enabled = true
+region_rect = Rect2(116, 97, 24, 64)
+
+[node name="Fence3" type="Sprite2D" parent="trainstation" unique_id=50550296]
+position = Vector2(1165, 112)
+texture = ExtResource("12_k0128")
+region_enabled = true
+region_rect = Rect2(116, 97, 24, 64)
+
+[node name="Fence2" type="Sprite2D" parent="trainstation" unique_id=304436380]
+position = Vector2(1218, 112)
+texture = ExtResource("12_k0128")
+region_enabled = true
+region_rect = Rect2(116, 97, 24, 64)
+
+[node name="Fence7" type="Sprite2D" parent="trainstation" unique_id=1671319989]
+position = Vector2(1396, 111)
+texture = ExtResource("12_k0128")
+region_enabled = true
+region_rect = Rect2(116, 97, 24, 64)
+
+[node name="Fence8" type="Sprite2D" parent="trainstation" unique_id=1600436945]
+position = Vector2(1371, 111)
+texture = ExtResource("12_k0128")
+region_enabled = true
+region_rect = Rect2(116, 97, 24, 64)
+
+[node name="Fence9" type="Sprite2D" parent="trainstation" unique_id=1613853729]
+position = Vector2(1422, 111)
+texture = ExtResource("12_k0128")
+region_enabled = true
+region_rect = Rect2(116, 97, 24, 64)
+
+[node name="Fence10" type="Sprite2D" parent="trainstation" unique_id=1595295436]
+position = Vector2(1472, 111)
+texture = ExtResource("12_k0128")
+region_enabled = true
+region_rect = Rect2(116, 97, 24, 64)
+
+[node name="Fence11" type="Sprite2D" parent="trainstation" unique_id=1753479647]
+position = Vector2(1447, 111)
+texture = ExtResource("12_k0128")
+region_enabled = true
+region_rect = Rect2(116, 97, 24, 64)
+
+[node name="Fence12" type="Sprite2D" parent="trainstation" unique_id=135638034]
+position = Vector2(1498, 111)
+texture = ExtResource("12_k0128")
+region_enabled = true
+region_rect = Rect2(116, 97, 24, 64)
+
+[node name="Fence13" type="Sprite2D" parent="trainstation" unique_id=460207989]
+position = Vector2(1547, 111)
+texture = ExtResource("12_k0128")
+region_enabled = true
+region_rect = Rect2(116, 97, 24, 64)
+
+[node name="Fence14" type="Sprite2D" parent="trainstation" unique_id=243633085]
+position = Vector2(1522, 111)
+texture = ExtResource("12_k0128")
+region_enabled = true
+region_rect = Rect2(116, 97, 24, 64)
+
+[node name="Fence15" type="Sprite2D" parent="trainstation" unique_id=505195412]
+position = Vector2(1573, 111)
+texture = ExtResource("12_k0128")
+region_enabled = true
+region_rect = Rect2(116, 97, 24, 64)
+
+[node name="Fence4" type="Sprite2D" parent="trainstation" unique_id=1378362761]
+position = Vector2(1113, 89)
+texture = ExtResource("12_k0128")
+region_enabled = true
+region_rect = Rect2(116, 97, 24, 64)
+
+[node name="Fence5" type="Sprite2D" parent="trainstation" unique_id=820402761]
+position = Vector2(1088, 45)
+texture = ExtResource("12_k0128")
+region_enabled = true
+region_rect = Rect2(116, 97, 24, 64)
+
+[node name="Fence6" type="Sprite2D" parent="trainstation" unique_id=1600662078]
+position = Vector2(1139, 103)
+texture = ExtResource("12_k0128")
+region_enabled = true
+region_rect = Rect2(116, 97, 24, 64)
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="trainstation" unique_id=1934057255]
+position = Vector2(1374, 43.000008)
+rotation = 1.5839293
+shape = SubResource("CapsuleShape2D_k0128")
 
 [editable path="FlowersInteractable"]
