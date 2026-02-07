@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@export var camera : Camera2D
+@export var camera : ShaderCamera
 @onready var container = $VBoxContainer
 
 func _ready() -> void:
@@ -11,7 +11,7 @@ func _ready() -> void:
 		container.add_child(button)
 
 func on_color_button_pressed(state : GlobalStateClass.MaskState):
-	camera.transition_to_preset(state)
+	camera.transition_to_preset(state,3)
 
 	pass
 	

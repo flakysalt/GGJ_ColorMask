@@ -153,6 +153,7 @@ dialogues = Dictionary[String, ExtResource("2_secwe")]({
 dialogueList = Array[ExtResource("6_bpki6")]([SubResource("Resource_secwe"), SubResource("Resource_bpki6"), SubResource("Resource_knslx"), SubResource("Resource_taymx"), SubResource("Resource_31x17")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241807206]
+position = Vector2(1, 0)
 texture = ExtResource("5_8tpru")
 region_enabled = true
 region_rect = Rect2(8, 412, 48, 40)

@@ -7,13 +7,6 @@ class_name ShaderCamera
 # Define presets as dictionaries
 var presets = {
 	GlobalStateClass.MaskState.Full: {
-		"show_reds": true,
-		"show_oranges": true,
-		"show_yellows": true,
-		"show_greens": true,
-		"show_cyans": true,
-		"show_blues": true,
-		"show_magentas": true,
 		"red_saturation": 1.0,
 		"orange_saturation": 1.0,
 		"yellow_saturation": 1.0,
@@ -23,13 +16,6 @@ var presets = {
 		"magenta_saturation": 1.0
 	},
 	GlobalStateClass.MaskState.Grey: {
-		"show_reds": false,
-		"show_oranges": false,
-		"show_yellows": false,
-		"show_greens": false,
-		"show_cyans": false,
-		"show_blues": false,
-		"show_magentas": false,
 		"red_saturation": 0.0,
 		"orange_saturation": 0.0,
 		"yellow_saturation": 0.0,
@@ -39,13 +25,6 @@ var presets = {
 		"magenta_saturation": 0.0
 	},
 	GlobalStateClass.MaskState.One: {
-		"show_reds": false,
-		"show_oranges": false,
-		"show_yellows": true,
-		"show_greens": true,
-		"show_cyans": false,
-		"show_blues": false,
-		"show_magentas": false,
 		"red_saturation": 0.0,
 		"orange_saturation": 0.0,
 		"yellow_saturation": 0.1,
@@ -55,13 +34,6 @@ var presets = {
 		"magenta_saturation": 0.0
 	},
 	GlobalStateClass.MaskState.Two: {
-		"show_reds": false,
-		"show_oranges": false,
-		"show_yellows": true,
-		"show_greens": true,
-		"show_cyans": true,
-		"show_blues": true,
-		"show_magentas": false,
 		"red_saturation": 0.0,
 		"orange_saturation": 0.0,
 		"yellow_saturation": 0.1,
@@ -71,13 +43,6 @@ var presets = {
 		"magenta_saturation": 0.0
 	},
 	GlobalStateClass.MaskState.Three: {
-		"show_reds": false,
-		"show_oranges": true,
-		"show_yellows": true,
-		"show_greens": true,
-		"show_cyans": true,
-		"show_blues": true,
-		"show_magentas": true,
 		"red_saturation": 0.0,
 		"orange_saturation": 0.1,
 		"yellow_saturation": 0.1,
@@ -87,13 +52,6 @@ var presets = {
 		"magenta_saturation": 0.3
 	},
 	GlobalStateClass.MaskState.Four: {
-		"show_reds": true,
-		"show_oranges": true,
-		"show_yellows": true,
-		"show_greens": true,
-		"show_cyans": true,
-		"show_blues": true,
-		"show_magentas": true,
 		"red_saturation": 0.3,
 		"orange_saturation": 0.35,
 		"yellow_saturation": 0.1,
@@ -103,13 +61,6 @@ var presets = {
 		"magenta_saturation": 0.3
 	},
 	GlobalStateClass.MaskState.Five: {
-		"show_reds": true,
-		"show_oranges": true,
-		"show_yellows": true,
-		"show_greens": true,
-		"show_cyans": true,
-		"show_blues": true,
-		"show_magentas": true,
 		"red_saturation": 0.3,
 		"orange_saturation": 0.35,
 		"yellow_saturation": 0.1,
@@ -119,13 +70,6 @@ var presets = {
 		"magenta_saturation": 0.3
 	},
 	GlobalStateClass.MaskState.Six: {
-		"show_reds": true,
-		"show_oranges": true,
-		"show_yellows": true,
-		"show_greens": true,
-		"show_cyans": true,
-		"show_blues": true,
-		"show_magentas": true,
 		"red_saturation": 0.4,
 		"orange_saturation": 0.5,
 		"yellow_saturation": 0.1,
@@ -135,13 +79,6 @@ var presets = {
 		"magenta_saturation": 0.6
 	},
 	GlobalStateClass.MaskState.Seven: {
-		"show_reds": true,
-		"show_oranges": true,
-		"show_yellows": true,
-		"show_greens": true,
-		"show_cyans": true,
-		"show_blues": true,
-		"show_magentas": true,
 		"red_saturation": 0.4,
 		"orange_saturation": 0.5,
 		"yellow_saturation": 0.3,
@@ -151,13 +88,6 @@ var presets = {
 		"magenta_saturation": 0.6
 	},
 	GlobalStateClass.MaskState.Eight: {
-		"show_reds": true,
-		"show_oranges": true,
-		"show_yellows": true,
-		"show_greens": true,
-		"show_cyans": true,
-		"show_blues": true,
-		"show_magentas": true,
 		"red_saturation": 0.6,
 		"orange_saturation": 0.5,
 		"yellow_saturation": 0.6,
@@ -167,13 +97,6 @@ var presets = {
 		"magenta_saturation": 0.8
 	},
 	GlobalStateClass.MaskState.Nine: {
-		"show_reds": true,
-		"show_oranges": true,
-		"show_yellows": true,
-		"show_greens": true,
-		"show_cyans": true,
-		"show_blues": true,
-		"show_magentas": true,
 		"red_saturation": 0.6,
 		"orange_saturation": 0.5,
 		"yellow_saturation": 0.6,
@@ -183,13 +106,6 @@ var presets = {
 		"magenta_saturation": 0.8
 	},
 	GlobalStateClass.MaskState.Ten: {
-		"show_reds": true,
-		"show_oranges": true,
-		"show_yellows": true,
-		"show_greens": true,
-		"show_cyans": true,
-		"show_blues": true,
-		"show_magentas": true,
 		"red_saturation": 0.8,
 		"orange_saturation": 0.8,
 		"yellow_saturation": 0.8,
@@ -199,13 +115,6 @@ var presets = {
 		"magenta_saturation": 0.8
 	},
 	GlobalStateClass.MaskState.Eleven: {
-		"show_reds": true,
-		"show_oranges": true,
-		"show_yellows": true,
-		"show_greens": true,
-		"show_cyans": true,
-		"show_blues": true,
-		"show_magentas": true,
 		"red_saturation": 0.8,
 		"orange_saturation": 0.8,
 		"yellow_saturation": 0.8,
@@ -244,14 +153,8 @@ func transition_to_preset(preset_name: GlobalStateClass.MaskState, duration: flo
 		var current_value = shader_material.get_shader_parameter(param_name)
 		var target_value = target_preset[param_name]
 		
-		# Only tween numeric values
-		if typeof(target_value) == TYPE_FLOAT or typeof(target_value) == TYPE_INT:
-			tween.tween_method(
-				func(value): shader_material.set_shader_parameter(param_name, value),
-				current_value,
-				target_value,
-				duration
-			)
-		else:
-			# Immediately set booleans
-			shader_material.set_shader_parameter(param_name, target_value)
+		tween.tween_method(
+			func(value): shader_material.set_shader_parameter(param_name, value),
+			current_value,
+			target_value,
+			duration).set_trans(Tween.TRANS_ELASTIC)

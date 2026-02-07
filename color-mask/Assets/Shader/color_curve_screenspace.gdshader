@@ -2,14 +2,6 @@ shader_type canvas_item;
 
 
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
-// Color filters - enable/disable individual color ranges
-uniform bool show_reds = true;
-uniform bool show_oranges = true;
-uniform bool show_yellows = true;
-uniform bool show_greens = true;
-uniform bool show_cyans = true;
-uniform bool show_blues = true;
-uniform bool show_magentas = true;
 
 // Saturation controls for each color (0.0 = grayscale, 1.0 = full color)
 uniform float red_saturation : hint_range(0.0, 1.0) = 1.0;
@@ -62,25 +54,25 @@ void fragment() {
 	float saturation_multiplier = 0.0; // Default to grayscale
 	
 	// Check if pixel matches any enabled color range
-	if (show_reds && is_in_hue_range(hsv.x, red_hue_center, hue_range)) {
+	if (is_in_hue_range(hsv.x, red_hue_center, hue_range)) {
 		saturation_multiplier = red_saturation;
 	}
-	else if (show_oranges && is_in_hue_range(hsv.x, orange_hue_center, hue_range)) {
+	else if (is_in_hue_range(hsv.x, orange_hue_center, hue_range)) {
 		saturation_multiplier = orange_saturation;
 	}
-	else if (show_yellows && is_in_hue_range(hsv.x, yellow_hue_center, hue_range)) {
+	else if (is_in_hue_range(hsv.x, yellow_hue_center, hue_range)) {
 		saturation_multiplier = yellow_saturation;
 	}
-	else if (show_greens && is_in_hue_range(hsv.x, green_hue_center, hue_range)) {
+	else if (is_in_hue_range(hsv.x, green_hue_center, hue_range)) {
 		saturation_multiplier = green_saturation;
 	}
-	else if (show_cyans && is_in_hue_range(hsv.x, cyan_hue_center, hue_range)) {
+	else if (is_in_hue_range(hsv.x, cyan_hue_center, hue_range)) {
 		saturation_multiplier = cyan_saturation;
 	}
-	else if (show_blues && is_in_hue_range(hsv.x, blue_hue_center, hue_range)) {
+	else if (is_in_hue_range(hsv.x, blue_hue_center, hue_range)) {
 		saturation_multiplier = blue_saturation;
 	}
-	else if (show_magentas && is_in_hue_range(hsv.x, magenta_hue_center, hue_range)) {
+	else if (is_in_hue_range(hsv.x, magenta_hue_center, hue_range)) {
 		saturation_multiplier = magenta_saturation;
 	}
 	
